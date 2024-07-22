@@ -2,6 +2,8 @@ const Encore    	= require('@symfony/webpack-encore');
 const path      	= require('path');
 const pathExists    = require( 'path-exists' );
 
+const themeAssetsPath         = './vendor/vankosoft/application/src/Vankosoft/ApplicationBundle/Resources/themes/default/assets';
+
 Encore
     .setOutputPath( 'public/admin-panel/build/velzon-default/' )
     .setPublicPath( '/build/velzon-default/' )
@@ -62,7 +64,6 @@ Encore
     .addEntry( 'js/layout', './themes/WebGuitarPro_VelzonSaas/assets/js/layout.js' )
     .addEntry( 'js/app', './themes/WebGuitarPro_VelzonSaas/assets/app.js' )
     .addEntry( 'js/app-login', './themes/WebGuitarPro_VelzonSaas/assets/app-login.js' )
-    .addEntry( 'js/remove-duplicates', './themes/WebGuitarPro_VelzonSaas/assets/remove-duplicates.js' )
 ;
 
 Encore.configureDefinePlugin( ( options ) => {
