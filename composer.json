@@ -13,7 +13,7 @@
     ],
     "require": {
         "php": "^8.0",
-        "symfony/webpack-encore-bundle": "^1.12"
+        "symfony/webpack-encore-bundle": "^2.1"
     },
     "config": {
         "sort-packages": true,
