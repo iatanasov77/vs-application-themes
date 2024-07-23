@@ -6,7 +6,13 @@
         <form class="p-3">
             <div class="form-group m-0">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
+                    <input type="text" class="form-control"
+                    	name="searchCriteria"
+                    	placeholder="{{ 'vs_application.form.search' | trans( {},'VSApplicationBundle' ) }} ..."
+                    	autocomplete="off"
+                    	aria-label="Recipient's username"
+                    	value="{% if searchCriteria is defined %}{{ searchCriteria }}{% endif %}"
+                    >
                     <button class="btn btn-primary" type="submit"><i class="mdi mdi-magnify"></i></button>
                 </div>
             </div>
