@@ -12,8 +12,10 @@
 {% block title %}{{ parent() }} :: {{ pageTitle }}{% endblock %}
 
 {% block pageTitle %}
-    <h2 class="pageheader-title"><i class="icon_genius"></i> {{ pageTitle }}</h2>
-    <p class="pageheader-text">Proin placerat ante duiullam scelerisque a velit ac porta, fusce sit amet vestibulum mi. Morbi lobortis pulvinar quam.</p>
+    <h4 class="pageheader-title">
+    	<i class="ri-settings-5-line"></i> 
+        {{ pageTitle }}
+   	</h4>
 {% endblock %}
 
 {% block content %}
