@@ -2,7 +2,7 @@
 
 {% block root %}
     {% set breadcrumbs = knp_menu_get_breadcrumbs_array(item) %}
-	<ol class="breadcrumb">
+	<ol class="breadcrumb m-0">
     {% for link in breadcrumbs %}
         {%- if loop.index == 1 %}
         	<li class="breadcrumb-item"><a href="/" class="breadcrumb-link">{{ 'vs_application.menu.home' | trans( {},'VSApplicationBundle' ) }}</a></li>
