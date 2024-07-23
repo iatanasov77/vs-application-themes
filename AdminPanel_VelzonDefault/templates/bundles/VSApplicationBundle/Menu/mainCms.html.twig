@@ -37,7 +37,10 @@
                     aria-controls="submenu-cms-{{ loop.index }}"
                     href="#submenu-cms-{{ loop.index }}"
                  >
+                    {#
                     <i data-feather="{{ parentItem.attributes.iconClass }}" class="icon-dual"></i> 
+                    #}
+                    <i class="{{ parentItem.attributes.iconClass }}"></i> 
                     <span data-key="t-{{ parentItem.name }}">{{ parentItem.name }}</span>
                 </a>
                 
