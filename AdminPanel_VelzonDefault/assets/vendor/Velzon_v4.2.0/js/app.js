@@ -1016,7 +1016,6 @@ File: Main Js File
 
 		// notification messages
 		if (document.getElementsByClassName("notification-check")) {
-			alert('EHO');
 			function emptyNotification() {
 				Array.from(document.querySelectorAll("#notificationItemsTabContent .tab-pane")).forEach(function (elem) {
 					if (elem.querySelectorAll(".notification-item").length > 0) {
@@ -1031,7 +1030,7 @@ File: Main Js File
 						if (!emptyNotificationElem) {
 							elem.innerHTML += '<div class="empty-notification-elem">\
 							<div class="w-25 w-sm-50 pt-3 mx-auto">\
-								<img src="assets/images/svg/bell.svg" class="img-fluid" alt="user-pic">\
+								<img src="/build/velzon-child/images/svg/bell.svg" class="img-fluid" alt="user-pic">\
 							</div>\
 							<div class="text-center pb-5 mt-2">\
 								<h6 class="fs-18 fw-semibold lh-base">Hey! You have no any notifications </h6>\
