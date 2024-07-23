@@ -13,8 +13,11 @@
 
                 <div class="card-body p-4">
                     <div class="text-center mt-2">
-                        <h5 class="text-primary">{{ 'orfey.template.login.welcome_back' | trans( {},'OrfeyBilling' ) }}</h5>
-                        <p class="text-muted">{{ 'orfey.template.login.sign_in_to_continue' | trans( {},'OrfeyBilling' ) }}</p>
+                        <h5 class="text-primary">{{ 'vs_application.form.login.welcome_back' | trans( {},'VSApplicationBundle' ) }}</h5>
+                        <p class="text-muted">
+                            {{ 'vs_application.form.login.sign_in_to_continue' | trans( {},'VSApplicationBundle' ) }} 
+                            {{ applicationTitle | trans( {},'VSApplicationBundle' ) }}
+                        </p>
                     </div>
                     
                     {% if error %}
@@ -41,7 +44,7 @@
                                 {% if formCreateAccount %}
                                     <div class="float-end">
                                         <a href="{{ path( 'vs_users_forgot_password_form' ) }}" class="text-muted">
-                                            {{ 'vs_application.form.login.button_forgot_password' | trans( {},'VSApplicationBundle' ) }}
+                                            {{ 'vs_application.form.login.forgot_password_question' | trans( {},'VSApplicationBundle' ) }}
                                         </a>
                                     </div>
                                 {% endif %}
