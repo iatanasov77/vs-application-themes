@@ -6,13 +6,15 @@
         {{ vs_form.errors( formErrors ) }}     
     {% endif %}
     
-    <label class="custom-control custom-checkbox">  
-        <input type="checkbox" id="page_form_enabled" name="settings_form[maintenanceMode]" 
-            class="custom-control-input form-check-input"
+    <div class="form-check form-check-secondary mb-3">
+        <input type="checkbox" id="settings_form_maintenanceMode" name="settings_form[maintenanceMode]" 
+            class="form-check-input"
             {% if form.vars.value.maintenanceMode %}checked="checked"{% endif %}
         />
-        <span class="custom-control-label">{{ 'vs_application.form.maintenance_mode' | trans( {},'VSApplicationBundle' ) }}</span>
-    </label>
+        <label class="form-check-label" for="settings_form_maintenanceMode">
+            {{ 'vs_application.form.maintenance_mode' | trans( {},'VSApplicationBundle' ) }}
+        </label>
+    </div>
 
     {% set comboDataSourceUrl  = path( 'vs_cms_pages_tree_combo_with_leafs', {'taxonomyId': pcTaxonomyId}) %}
     {% set comboTreePlaceholder = 'vs_application.form.maintenance_page_placeholder' | trans( {},'VSApplicationBundle' ) %}
@@ -37,13 +39,13 @@
     " %}
     <div class="form-group">
         {{ form_label(form.maintenancePage, null, {
-            'label_attr': {'class': 'col-form-label'}
+            'label_attr': {'class': 'form-label'}
             }) 
         }}
         
         {{ form_widget(form.maintenancePage, {
             'attr': {
-                'class': 'easyui-combotree',
+                'class': 'form-select easyui-combotree',
                 'data-options': comboDataOptions,
                 'data-value': applicationId,
             }
@@ -53,13 +55,13 @@
 {% if applicationId %}
 	<div class="form-group">
         {{ form_label(form.theme, null, {
-            'label_attr': {'class': 'col-form-label'}
+            'label_attr': {'class': 'form-label'}
             }) 
         }}
         
         {{ form_widget(form.theme, {
             'attr': {
-                'class': 'form-control',
+                'class': 'form-select',
             }
         }) }}
     </div>
