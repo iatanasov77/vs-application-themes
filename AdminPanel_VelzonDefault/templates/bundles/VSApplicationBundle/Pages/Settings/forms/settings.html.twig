@@ -20,8 +20,8 @@
     {% set comboTreePlaceholder = 'vs_application.form.maintenance_page_placeholder' | trans( {},'VSApplicationBundle' ) %}
     {% set comboDataOptions    = "
     		url:'" ~ comboDataSourceUrl ~ "',
-    		required: true,
-    		multiple: true,
+    		required: false,
+    		multiple: false,
     		checkbox : true,
     		onlyLeafCheck: true,
     		prompt:'" ~ comboTreePlaceholder ~"',
