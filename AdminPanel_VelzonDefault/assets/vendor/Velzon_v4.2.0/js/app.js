@@ -1016,6 +1016,7 @@ File: Main Js File
 
 		// notification messages
 		if (document.getElementsByClassName("notification-check")) {
+			alert('EHO');
 			function emptyNotification() {
 				Array.from(document.querySelectorAll("#notificationItemsTabContent .tab-pane")).forEach(function (elem) {
 					if (elem.querySelectorAll(".notification-item").length > 0) {
