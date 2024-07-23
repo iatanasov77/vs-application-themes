@@ -33,16 +33,16 @@
 	        		data-bs-toggle="collapse"
                     role="button"
                     {% if isCurrentParent %}aria-expanded="true"{% else %}aria-expanded="false"{% endif %}
-                    data-bs-target="#submenu-system-{{ loop.index }}"
-                    aria-controls="submenu-system-{{ loop.index }}"
-                    href="#submenu-system-{{ loop.index }}"
+                    data-bs-target="#submenu-cms-{{ loop.index }}"
+                    aria-controls="submenu-cms-{{ loop.index }}"
+                    href="#submenu-cms-{{ loop.index }}"
                  >
                     <i data-feather="{{ parentItem.attributes.iconClass }}" class="icon-dual"></i> 
                     <span data-key="t-{{ parentItem.name }}">{{ parentItem.name }}</span>
                 </a>
                 
 	            {% if(parentItem.hasChildren) %}
-	            	<div class="collapse menu-dropdown {% if isCurrentParent %}show{% endif %}" id="submenu-system-{{ loop.index }}">
+	            	<div class="collapse menu-dropdown {% if isCurrentParent %}show{% endif %}" id="submenu-cms-{{ loop.index }}">
                         <ul class="nav nav-sm flex-column">
                             {% for childItem in parentItem.children %}
                                 {% if ( childItem.displayed ) %}
