@@ -1,5 +1,12 @@
 <!doctype html>
-<html lang="{{ app.request.locale|slice(0, 2) }}">
+<html lang="{{ app.request.locale|slice(0, 2) }}"
+    data-layout="vertical"
+    data-topbar="light"
+    data-sidebar="dark"
+    data-sidebar-size="lg"
+    data-sidebar-image="none"
+    data-preloader="disable"
+>
 	<head>
         <title>{% block title %}.:: {{ applicationTitle | trans( {},'VSApplicationBundle' ) }}{% endblock %}</title>
 
@@ -11,64 +18,74 @@
         {% endblock %}
 
         {% block head_styles %}
-            {% include '@VSApplication/Layout/head-styles.html.twig' %}
+            {{ encore_entry_link_tags( 'css/app', null, 'VelzonTheme' ) }}
         {% endblock %}
 
         {% block head_scripts %}
-            {% include '@VSApplication/Layout/head-scripts.html.twig' %}
+            {{ encore_entry_script_tags( 'js/layout', null, 'VelzonTheme' ) }}
         {% endblock %}
     </head>
     <body>
-        <div class="dashboard-main-wrapper">
-            {% include '@VSApplication/Layout/alerts.html.twig' %}
-            <div class="dashboard-header">
-                {% include '@VSApplication/Layout/top.html.twig' %}
-            </div>
-            
-            <div class="nav-left-sidebar sidebar-dark">
-                <div class="menu-list">
-                    {% include '@VSApplication/Layout/side.html.twig' %}
+        <!-- Begin page -->
+        <div id="layout-wrapper">
+            <header id="page-topbar">
+                <div class="layout-width">
+                    {% include '@VSApplication/Layout/top.html.twig' %}
                 </div>
-            </div>
+            </header>
             
-            <div class="dashboard-wrapper">
-                <div class="container-fluid  dashboard-content">
-                    <!-- ============================================================== -->
-                    <!-- pageheader -->
-                    <!-- ============================================================== -->
-                    <div class="row">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <div class="page-header">
-                                <h2 class="pageheader-title">{% block pageTitle %}{% endblock %}</h2>
-                                <p class="pageheader-text">Proin placerat ante duiullam scelerisque a velit ac porta, fusce sit amet vestibulum mi. Morbi lobortis pulvinar quam.</p>
-                                <div class="page-breadcrumb">
-                                    <nav aria-label="breadcrumb">
+            <!-- ========== App Menu ========== -->
+            <div class="app-menu navbar-menu">
+                {% include '@VSApplication/Layout/side.html.twig' %}
+            </div>
+            <!-- Left Sidebar End -->
+            
+            <!-- Vertical Overlay-->
+            <div class="vertical-overlay"></div>
+    
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="main-content">
+    
+                <div class="page-content">
+                    <div class="container-fluid">
+                    
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                                    <h4 class="mb-sm-0">{% block pageTitle %}{% endblock %}</h4>
+                        
+                                    <div class="page-title-right">
                                         {{ knp_menu_render('breadcrumbs', {'template': '@VSApplication/Menu/breadcrumb.html.twig'}) }}
-                                    </nav>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- ============================================================== -->
-                    <!-- end pageheader -->
-                    <!-- ============================================================== -->
+                        <!-- end page title -->
                     
-                    {% block content %}{% endblock %}
+                        {% block content %}{% endblock %}
+                    </div>
                 </div>
+                
+                <footer class="footer">
+                    <div class="container-fluid">
+                        {% include '@VSApplication/Layout/footer.html.twig' %}
+                    </div>
+                </footer>
             </div>
-            
-            {% include '@VSApplication/Layout/footer.html.twig' %}
         </div>
         
-        
-        
         <!-- Modal Dialogs -->
-        {% block modals %}{% endblock %}
+        {% block modals %}
+            {% include '@VSApplication/Modal/remove_notification.html.twig' %}
+        {% endblock %}
         
         <!-- Optional JavaScript -->
         {% block body_scripts %}
-            
-       	{% endblock %}
+            {{ encore_entry_script_tags( 'js/app', null, 'VelzonTheme' ) }}
+        {% endblock %}
     </body>
 </html>
                 	

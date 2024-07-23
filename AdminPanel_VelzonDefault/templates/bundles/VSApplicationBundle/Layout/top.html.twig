@@ -1,122 +1,63 @@
-<nav class="navbar navbar-expand-lg bg-white fixed-top">
-    <a class="navbar-brand" href="/">
-        {% if applicationIcon is defined %}
-    		<img src="{{ asset( applicationIcon ) }}" class="layoutTopApplicationIcon" />
-    	{% endif %}
-    	
-        {{ applicationCompany | trans( {},'VSApplicationBundle' ) }} {{ applicationTitle | trans( {},'VSApplicationBundle' ) }}
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse " id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto navbar-right-top">
-            
-        {% if hasTopSearch is defined and hasTopSearch %}
-            <li class="nav-item">
-                <div id="custom-search" class="top-search-bar">
-                    <input class="form-control" type="text" placeholder="Search.." id="SuperAdminPanelSearchInput" />
-                </div>
-            </li>
-        {% endif %}
-            
-        {% if app.user %}
-            <li class="nav-item dropdown notification">
-                <a class="nav-link nav-icons" href="#" id="navbarDropdownMenuLink1"
-                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                >
-                    <i class="fas fa-fw fa-bell"></i>
-                    {% if not app.user.unreadedNotifications.empty %}
-                        <span class="indicator"></span>
-                    {% endif %}
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end notification-dropdown">
-                    <li>
-                        <div class="notification-title">{{ 'vs_users.template.profile_notifications' | trans( {},'VSUsersBundle' ) }}</div>
-                        <div class="notification-list">
-                            <div class="list-group">
+<div class="navbar-header">
+    <div class="d-flex">
+        {% include '@VSApplication/Layout/top-logo.html.twig' %}
 
-                            {# {% for notification in app.user.notifications %} #}
-                            {% for notification in app.user.unreadedNotifications %}
-                                <a href="#" class="list-group-item list-group-item-action active">
-                                    <div class="notification-info">
-                                        <div class="notification-list-user-img">
-                                            <img src="{{ asset( '/build/default/images/avatar-2.jpg' ) }}" alt="" class="user-avatar-md rounded-circle">
-                                        </div>
-                                        <div class="notification-list-user-block">
-                                        	<span class="notification-list-user-name">{{ notification.notificationFrom }}</span>{{ notification.notification }}
-                                            <div class="notification-date">{{ time_diff( notification.date ) }}</div>
-                                        </div>
-                                    </div>
-                                </a>
-                           	{% endfor %}
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="list-footer">
-                        	<a href="{{ path( 'vs_users_profile_show' ) }}#notifications">{{ 'vs_application.template.button_view_all_notifications' | trans( {},'VSApplicationBundle' ) }}</a>
-                        </div>
-                    </li>
-                </ul>
-            </li>
+        <button type="button" class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger" id="topnav-hamburger-icon">
+            <span class="hamburger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+        </button>
 
-        {#
-            <li class="nav-item dropdown connection">
-                <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-fw fa-th"></i> </a>
-                <ul class="dropdown-menu dropdown-menu-right connection-dropdown">
-                    <li class="connection-list">
-                        <div class="row">
-                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                                <a href="#" class="connection-item"><img src="/assets/build/default/images/github.png" alt="" > <span>Github</span></a>
-                            </div>
-                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                                <a href="#" class="connection-item"><img src="/assets/build/default/images/dribbble.png" alt="" > <span>Dribbble</span></a>
-                            </div>
-                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                                <a href="#" class="connection-item"><img src="/assets/build/default/images/dropbox.png" alt="" > <span>Dropbox</span></a>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                                <a href="#" class="connection-item"><img src="/assets/build/default/images/bitbucket.png" alt=""> <span>Bitbucket</span></a>
-                            </div>
-                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                                <a href="#" class="connection-item"><img src="/assets/build/default/images/mail_chimp.png" alt="" ><span>Mail chimp</span></a>
-                            </div>
-                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                                <a href="#" class="connection-item"><img src="/assets/build/default/images/slack.png" alt="" > <span>Slack</span></a>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="conntection-footer"><a href="#">More</a></div>
-                    </li>
-                </ul>
-            </li>
-        #}
-        
-            <li class="nav-item dropdown nav-user">
-                <a class="nav-link nav-user-img dropdown-toggle" href="#" id="navbarDropdownMenuLink2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                {% if app.user.info and app.user.info.avatar %}
-                   <img src="{{ app.user.info.avatar.path|imagine_filter('users_crud_index_thumb') }}" alt="" class="user-avatar-md rounded-circle" />
-                {% else %}
-                    <img src="{{ asset( '/build/default/images/avatar-1.jpg' ) }}" alt="" class="user-avatar-md rounded-circle" />
-                {% endif %}
-                </a>
-                
-                <div class="nav-user-dropdown dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink2">
-                    <div class="nav-user-info">
-                        <h5 class="mb-0 text-white nav-user-name">{{ app.user.info.fullName }}</h5>
-                        <span class="status"></span><span class="ml-2">{{ app.user.info.designation }}</span>
-                    </div>
-                    
-                    {{ knp_menu_render('profile', {'template': '@VSApplication/Menu/profile.html.twig'}) }}
-                </div>
-            </li>
-        {% else %}
-        	<a href="{{ path( 'vs_application_login' ) }}" class="btn btn-primary btn-lg btn-block">Log In</a>
+        {% if hasTopSearch %}
+            {% include '@VSApplication/Layout/top-search-1.html.twig' %}
         {% endif %}
-        </ul>
     </div>
-</nav>
+
+    <div class="d-flex align-items-center">
+
+        {% if hasTopSearch %}
+            {% include '@VSApplication/Layout/top-search-2.html.twig' %}
+        {% endif %}
+        
+        <div class="dropdown ms-1 topbar-head-dropdown header-item">
+            {% set currentLang = ( app.request.locale | split( '_' ) )[1] | lower %}
+            {% set currentFlag = '/build/velzon-child/images/flags/' ~ currentLang ~ '.svg' %}
+            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {#
+                <i class="flag flag-{{ ( app.request.locale | split( '_' ) )[1] | lower }} rounded" style="height: 12px; margin-left: 8px;"></i>
+                #}
+                <img src="{{ asset( currentFlag ) }}" alt="Header Language" height="20" class="rounded">
+            </button>
+            
+            {{ vs_widget_render( 'admin-profile-menu', ['profile-menu-locales'] ) }}
+            
+            {% include '@VSApplication/Layout/notifications.html.twig' %}
+        </div>
+
+		<div class="dropdown ms-sm-3 header-item topbar-user">
+            <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="d-flex align-items-center">
+                    {% if app.user.info and app.user.info.avatar %}
+                       <img src="{{ app.user.info.avatar.path|imagine_filter('users_crud_index_thumb') }}" alt="" class="rounded-circle header-profile-user" />
+                    {% else %}
+                        <img src="{{ asset( 'build/compas-billing-theme/images/users/avatar-1.jpg' ) }}" alt="" class="rounded-circle header-profile-user" />
+                    {% endif %}
+                    
+                    <span class="text-start ms-xl-2">
+                        <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">{{ app.user.info.fullName }}</span>
+                        <span class="d-none d-xl-block ms-1 fs-12 user-name-sub-text">{{ app.user.info.designation }}</span>
+                    </span>
+                </span>
+            </button>
+            <div class="dropdown-menu dropdown-menu-end">
+                <!-- item-->
+                <h6 class="dropdown-header">{{ 'orfey.template.welcome' | trans( {},'OrfeyBilling' ) }} {{ app.user.info.firstName }}!</h6>
+                
+                {{ knp_menu_render('profile', {'template': '@VSApplication/Menu/profile.html.twig'}) }}
+            
+            </div>
+        </div>
+    </div>
+</div>
