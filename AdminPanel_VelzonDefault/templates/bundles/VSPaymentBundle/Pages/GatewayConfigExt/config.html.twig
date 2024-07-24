@@ -1,0 +1,120 @@
+{% extends "@VSApplication/layout.html.twig" %}
+
+{% import "@VSApplication/Macros/form.html.twig" as vs_form %}
+
+{% block title %}{{ parent() }} :: {{ 'vs_payment.template.gateway_config_ext.config.title' | trans( {},'VSPaymentBundle' ) }}{% endblock %}
+{% block pageTitle %}
+	<h4 class="pageheader-title">
+    	<i class="ri-secure-payment-line"></i> 
+        {{ 'vs_payment.template.gateway_config_ext.config.title' | trans( {},'VSPaymentBundle' ) }}
+   	</h4>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <!-- ============================================================== -->
+        <!-- basic tabs  -->
+        <!-- ============================================================== -->
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="card">
+            	<h5 class="card-header">{{ 'vs_payment.template.gateway' | trans( {},'VSPaymentBundle' ) }}: {{ gateway.gatewayName }}</h5>
+            	<div class="card-body">
+	                <section class="panel">
+	                    <div class="panel-body bio-graph-info">
+		                    
+		                    {% if formErrors is defined %}
+                                {{ vs_form.errors( formErrors ) }}     
+                            {% endif %}
+		                    
+		                    {{ form_start(form) }}
+                                {{ form_widget(form._token) }}
+                				
+                                <div class="form-group">
+                                    {{ form_label(form.title, null, {
+                                        'label_attr': {'class': 'form-label'}
+                                        }) 
+                                    }}
+                                    
+                                    {{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                                <div class="form-group">
+                                    {{ form_label(form.description, null, {
+                                        'label_attr': {'class': 'form-label'}
+                                        }) 
+                                    }}
+                                    
+                                    {{ form_widget(form.description, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                                
+                                <div class="form-group">
+                                    {{ form_label(form.currency, null, {
+                                        'label_attr': {'class': 'form-label'}
+                                        }) 
+                                    }}
+                                    
+                                    {{ form_widget(form.currency, {'attr': {'class': 'form-select'}}) }}
+                                </div>
+    
+                                <fieldset class="border border-dark rounded p-3 mb-4">
+                                    <legend class="w-auto float-none ps-2 pe-2">{{ 'vs_payment.template.gateway_config_ext.config.payum_config_options' | trans( {},'VSPaymentBundle' ) }}</legend>
+                                    
+                                    <div class="form-check form-check-secondary mb-3">
+                                        <input type="checkbox" id="gateway_config_form_useSandbox" name="gateway_config_form[useSandbox]" 
+                                            class="form-check-input"
+                                            {% if item.enabled %}checked="checked"{% endif %}
+                                        />
+                                        <label class="form-check-label" for="gateway_config_form_useSandbox">
+                                            {{ form.useSandbox.vars.label | trans( {},'VSPaymentBundle' ) }}
+                                        </label>
+                                    </div>
+        
+    		                        <div class="form-group">
+    		                            {{ form_label(form.gatewayName, null, {
+                                            'label_attr': {'class': 'form-label'}
+                                            }) 
+                                        }}
+    		                            
+    		                            {{ form_widget(form.gatewayName, {'attr': {'class': 'form-control', 'aria-describedby': 'gatewayNameHelp'}}) }}
+    		                            <small id="gatewayNameHelp" class="form-text text-muted">
+                                            {{ 'vs_payment.form.gatewayNameHelp' | trans( {},'VSPaymentBundle' ) }}
+                                        </small>
+    		                        </div> 
+    		                        <div class="form-group">    
+    		                            {{ form_label(form.factoryName, null, {
+                                            'label_attr': {'class': 'form-label'}
+                                            }) 
+                                        }}
+    		                            {{ form_widget(form.factoryName, {'attr': {
+    		                            	'data-getConfigUrl': path( 'vs_payment_gateways_config_options' ),
+    		                            	'class': 'form-select',
+    		                            	'aria-describedby': 'factoryHelp'
+    		                            }}) }}
+    		                            <small id="factoryHelp" class="form-text text-muted">
+                                            {{ 'vs_payment.form.factoryHelp' | trans( {},'VSPaymentBundle' ) }}
+                                        </small>
+    		                        </div>
+                                </fieldset>
+                                
+		                        <div class="fieldsContainer" id="gatewayConfigOptions">
+                                    {% include '@VSPayment/Pages/GatewayConfigExt/config_options.html.twig' with { 'sandbox': false, 'options': gateway.getConfig( true, false ) } %}
+		                        </div>
+		                        
+		                        <div class="fieldsContainer" id="gatewaySandboxConfigOptions">
+                                    {% include '@VSPayment/Pages/GatewayConfigExt/config_options.html.twig' with { 'sandbox': true, 'options': gateway.getConfig( true, true ) } %}
+                                </div>
+		                        
+		                        {{ vs_form.buttons( form ) }}
+                            {{ form_end(form, {'render_rest': false}) }}
+	                    </div>
+	                </section>  
+				</div>
+			</div>
+		</div>
+    </div>  
+{% endblock %}
+
+{% block body_scripts %}
+	{{ parent() }}
+	
+    {{ encore_entry_script_tags( 'js/gateway-config' ) }}
+{% endblock %}
