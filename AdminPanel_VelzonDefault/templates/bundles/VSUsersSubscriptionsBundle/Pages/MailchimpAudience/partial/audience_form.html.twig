@@ -5,21 +5,21 @@
 {% endif %}
 
 {% if(item.id) %}{% set method = "PUT" %}{% else %}{% set method = "POST" %}{% endif %}
-{{ form_start(form, { 'attr': {'class': 'form-horizontal '}, 'method': method }) }}
+{{ form_start(form, { 'method': method }) }}
     {{ form_widget(form._token) }}
     
     <div class="form-group">
         {{ form_label(form.locale, null, {
-            'label_attr': {'class': 'col-form-label'}
+            'label_attr': {'class': 'form-label'}
             }) 
         }}
         
-        {{ form_widget(form.locale, {'attr': {'class': 'form-control'}}) }}
+        {{ form_widget(form.locale, {'attr': {'class': 'form-select'}}) }}
     </div>
     
     <div class="form-group">
         {{ form_label(form.audienceId, null, {
-            'label_attr': {'class': 'col-form-label'}
+            'label_attr': {'class': 'form-label'}
             }) 
         }}
         {{ form_widget(form.audienceId, {'attr': {'class': 'form-control'}}) }}
@@ -27,7 +27,7 @@
     
     <div class="form-group">
         {{ form_label(form.description, null, {
-            'label_attr': {'class': 'col-form-label'}
+            'label_attr': {'class': 'form-label'}
             }) 
         }}
         {{ form_widget(form.description, {'attr': {'class': 'form-control'}}) }}
