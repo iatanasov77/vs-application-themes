@@ -6,9 +6,9 @@
 {% import "@VSApplication/Macros/tree.html.twig" as vs_tree %}
 
 {% if( item.id ) %}
-	{% set pageTitle = 'vs_users.template.userscrud_update_title' %} | trans( {},'VSUsersBundle' ) }}
+	{% set pageTitle = 'vs_users.template.userscrud_update_title' | trans( {},'VSUsersBundle' ) %}
 {% else %}
-	{% set pageTitle = 'vs_users.template.userscrud_create_title' %} | trans( {},'VSUsersBundle' ) }}
+	{% set pageTitle = 'vs_users.template.userscrud_create_title' | trans( {},'VSUsersBundle' ) %}
 {% endif %}
 
 {% block title %}{{ parent() }} :: {{ pageTitle | trans( {},'VSUsersBundle' ) }}{% endblock %}
