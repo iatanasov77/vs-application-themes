@@ -1,10 +1,10 @@
 <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title">{{ 'vs_cms.modal.page_preview.title' | trans( {},'VSCmsBundle' ) }}</h5>
-            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
+            <h5 class="modal-title">
+                {{ 'vs_cms.modal.page_preview.title' | trans( {},'VSCmsBundle' ) }}
+			</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
         </div>
         <div class="modal-body">
             {{ form_start(formPreview, { 'attr': {'class': 'form-horizontal', 'id': 'formPreview'} }) }} 
@@ -27,7 +27,7 @@
             <button type="button" class="btn btn-primary" id="btnSaveFormPreview">
 				{{ 'vs_cms.modal.page_preview.button_preview' | trans( {},'VSCmsBundle' ) }}
 			</button>
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            <button type="button" class="btn btn-light" data-bs-dismiss="modal">
 				{{ 'vs_application.form.cancel' | trans( {},'VSApplicationBundle' ) }}
 			</button>
         </div>
