@@ -15,9 +15,24 @@
     
     {% for parentItem in item.children %}
         {% if( parentItem.displayed and parentItem.hasChildren ) %}
+        
+        	{# Detect Current Parent #}
+            {% set isCurrentParent = false %}
+            {% if ( parentItem.hasChildren ) %}
+                {% for childItem in parentItem.children %}
+                    {% if childItem.isCurrent %}
+                        {% set isCurrentParent = true %}
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        
             <li class="nav-item ">
-                <a class="nav-link"
-                    data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#submenu-users-subscriptions-{{ loop.index }}" aria-controls="submenu-users-subscriptions-{{ loop.index }}"
+                <a class="nav-link menu-link {% if isCurrentParent %}active{% endif %}"
+                    data-bs-toggle="collapse"
+                    role="button"
+                    {% if isCurrentParent %}aria-expanded="true"{% else %}aria-expanded="false"{% endif %}
+                    data-bs-target="#submenu-users-subscriptions-{{ loop.index }}"
+                    aria-controls="submenu-users-subscriptions-{{ loop.index }}"
                     href="{{ parentItem.uri }}"
                  >
                     {#
