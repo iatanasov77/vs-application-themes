@@ -1,0 +1,32 @@
+{% extends "@VSApplication/layout.html.twig" %}
+
+{% if( item.id ) %}
+    {% set pageTitle = 'vs_users_subscriptions.template.edit_audience' | trans( {},'VSUsersSubscriptionsBundle' ) %}
+{% else %}
+    {% set pageTitle = 'vs_users_subscriptions.template.create_audience' | trans( {},'VSUsersSubscriptionsBundle' ) %}
+{% endif %}
+
+{% block title %}{{ parent() }} :: {{ pageTitle }}{% endblock %}
+{% block pageTitle %}<i class="icon_genius"></i> {{ pageTitle }}{% endblock %}
+
+{% block content %}
+	<div class="row">
+        <!-- ============================================================== -->
+        <!-- basic tabs  -->
+        <!-- ============================================================== -->
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="card">
+            	<h5 class="card-header">{{ 'vs_users_subscriptions.template.details' | trans( {},'VSUsersSubscriptionsBundle' ) }}</h5>
+            	<div class="card-body">
+		            <section class="panel">                                          
+		                <div class="panel-body bio-graph-info">
+		                	<div id="mailchimpAudienceContainer" data-audienceId="{{ item.id }}">
+                                {% include '@VSUsersSubscriptions/Pages/MailchimpAudience/partial/audience_form.html.twig' %}
+                            </div>
+		                </div>
+		            </section>  
+        		</div>
+			</div>
+		</div>
+    </div>
+{% endblock content %}

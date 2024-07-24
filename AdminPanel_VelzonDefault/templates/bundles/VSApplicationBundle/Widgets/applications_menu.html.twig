@@ -4,13 +4,11 @@
             {{ 'vs_application.menu.project_version' | trans( {},'VSApplicationBundle' ) }}: 
             {{ widget.params.installationInfo.version }}
         </li>
+    {% else %}
+    	<li class="menu-title"><span data-key="t-menu">{{ 'vs_application.menu.application_links' | trans( {},'VSApplicationBundle' ) }}</span></li>
     {% endif %}
     
     {% if ( widget.params.applications | length ) > 1 %}
-        {% if not widget.params.installationInfo %}
-            <li class="nav-divider">{{ 'vs_application.menu.application_links' | trans( {},'VSApplicationBundle' ) }}</li>
-        {% endif %}
-        
         <li class="nav-item ">
             <a class="nav-link"
                 data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#submenu-applications" aria-controls="submenu-applications"
