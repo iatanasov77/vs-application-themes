@@ -10,7 +10,7 @@
     {% endfor %}
     
     {% if hasChilds %}
-        <li class="nav-divider">{{ 'vs_application.menu.payment' | trans( {},'VSApplicationBundle' ) }}</li>
+        <li class="menu-title"><span data-key="t-menu">{{ 'vs_application.menu.payment' | trans( {},'VSApplicationBundle' ) }}</span></li>
     {% endif %}
     
     {% for parentItem in item.children %}
