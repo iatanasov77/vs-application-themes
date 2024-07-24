@@ -22,7 +22,7 @@
                     <div class="text-center">
                         <div class="profile-user position-relative d-inline-block mx-auto  mb-4">
                             {% if app.user.info and app.user.info.avatar %}
-                               <img src="{{ app.user.info.avatar.path|imagine_filter('users_crud_index_profile_thumb') }}" alt="" class="rounded-circle avatar-xl img-thumbnail user-profile-image" />
+                               <img src="{{ app.user.info.avatar.path | imagine_filter( 'users_crud_index_thumb' ) }}" alt="" class="rounded-circle avatar-xl img-thumbnail user-profile-image" />
                             {% else %}
                                 <img src="{{ asset( 'build/velzon-child/images/users/avatar-1.jpg' ) }}" alt="" class="rounded-circle avatar-xl img-thumbnail user-profile-image" />
                             {% endif %}

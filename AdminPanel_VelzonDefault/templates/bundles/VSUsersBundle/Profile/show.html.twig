@@ -19,7 +19,7 @@
             <div class="col-auto">
                 <div class="avatar-lg">
                     {% if app.user.info and app.user.info.avatar %}
-                       <img src="{{ app.user.info.avatar.path | imagine_filter('users_crud_index_profile_thumb') }}" alt="" class="img-thumbnail rounded-circle" />
+                       <img src="{{ app.user.info.avatar.path | imagine_filter( 'users_crud_index_thumb' ) }}" alt="" class="img-thumbnail rounded-circle" />
                     {% else %}
                         <img src="{{ asset( '/build/default/images/avatar-1.jpg' ) }}" alt="" class="img-thumbnail rounded-circle" />
                     {% endif %}
