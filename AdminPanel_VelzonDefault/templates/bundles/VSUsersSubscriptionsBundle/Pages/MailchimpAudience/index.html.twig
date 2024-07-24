@@ -1,5 +1,8 @@
 {% extends "@VSApplication/layout.html.twig" %}
 
+{# Import Macros #}
+{% import "@VSApplication/Macros/alerts.html.twig" as alerts %}
+
 {% block title %}{{ parent() }} :: {{ 'vs_users_subscriptions.template.mailchimp_audiences' | trans( {},'VSUsersSubscriptionsBundle' ) }}{% endblock %}
 {% block pageTitle %}
 	<h4 class="pageheader-title">
