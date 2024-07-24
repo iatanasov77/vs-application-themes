@@ -23,7 +23,7 @@
                 <div style="float: left;"></div>
                 <div style="float: right; margin-right: 30px; margin-bottom: 20px;">
                     {% if(item.id) %}
-                        <a id="pageClone" class="btn btn-info btn-circle btn-sm pageClone"  
+                        <a id="pageClone" class="btn btn-primary pageClone"  
                         	data-pageId="{{ item.id }}" 
                         	data-url={{ path( 'vs_cms_pages_clone', {'pageId': item.id} ) }}
                         	href="javascript:void(0);" 
@@ -31,7 +31,7 @@
                         >
                             {{ 'vs_cms.template.button_clone' | trans( {},'VSCmsBundle' ) }}
                         </a>
-                        <a id="pagePreview" class="btn btn-info btn-circle btn-sm pagePreview" 
+                        <a id="pagePreview" class="btn btn-primary pagePreview" 
                         	data-url="{{ path( 'vs_cms_pages_preview', {'pageId': item.id, 'locale': app.request.locale} ) }}" 
                         	href="javascript:void(0);" 
                         	title="{{ 'vs_cms.template.button_preview' | trans( {},'VSCmsBundle' ) }}"
