@@ -1,7 +1,12 @@
 {% extends "@VSApplication/layout.html.twig" %}
 
 {% block title %}{{ parent() }} :: {{ 'vs_users.template.profile_show_title' | trans( {},'VSUsersBundle' ) }}{% endblock %}
-{% block pageTitle %}<i class="fa fa-user-md"></i> {{ 'vs_users.template.profile_show_title' | trans( {},'VSUsersBundle' ) }}{% endblock %}
+{% block pageTitle %}
+	<h4 class="pageheader-title">
+    	<i class="ri-account-circle-line"></i> 
+        {{ 'vs_users.template.profile_show_title' | trans( {},'VSUsersBundle' ) }}
+    </h4>
+{% endblock %}
 
 {% block content %}
     <div class="position-relative mx-n4 mt-n4">
