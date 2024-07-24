@@ -1,0 +1,141 @@
+{% extends "@VSApplication/layout.html.twig" %}
+
+{# Import Macros #}
+{% from '@SyliusResource/Macros/actions.html.twig' import create %}
+{% import "@VSApplication/Macros/form.html.twig" as vs_form %}
+
+{% if( item.id ) %}
+    {% set pageTitle = 'vs_users_subscriptions.template.edit_paid_service' | trans( {},'VSUsersSubscriptionsBundle' ) %}
+{% else %}
+    {% set pageTitle = 'vs_users_subscriptions.template.create_paid_service' | trans( {},'VSUsersSubscriptionsBundle' ) %}
+{% endif %}
+
+{% block title %}{{ parent() }} :: {{ pageTitle }}{% endblock %}
+{% block pageTitle %}
+	<h4 class="pageheader-title">
+    	<i class="ri-map-pin-line"></i> 
+        {{ pageTitle }}
+   	</h4>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <!-- ============================================================== -->
+        <!-- basic tabs  -->
+        <!-- ============================================================== -->
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="card">
+            	<h5 class="card-header">{{ 'vs_users_subscriptions.template.details' | trans( {},'VSUsersSubscriptionsBundle' ) }}</h5>
+            	<div class="card-body">
+            	
+            		{% if formErrors is defined %}
+                        {{ vs_form.errors( formErrors ) }}     
+                    {% endif %}
+                        
+            		{% if useFormMethod is defined %}{% set formMethod = useFormMethod %}{% else %}{% set formMethod = 'PUT' %}{% endif %}
+                    {{ form_start(form, { 'method': formMethod }) }}
+                        
+    					<div class="form-check form-check-secondary mb-3">
+                            <input type="checkbox" id="payed_service_form_enabled" name="payed_service_form[enabled]" 
+                                class="form-check-input"
+                                {% if item.enabled %}checked="checked"{% endif %}
+                            />
+                            <label class="form-check-label" for="payed_service_form_enabled">
+                                {{ 'vs_users_subscriptions.form.active' | trans( {},'VSUsersSubscriptionsBundle' ) }}
+                            </label>
+                        </div>
+                        
+    					<div class="form-group">
+                            {{ form_label(form.locale, null, {
+                                'label_attr': {'class': 'form-label'}
+                                }) 
+                            }}
+                            
+                            {{ form_widget(form.locale, {'attr': {'class': 'form-control'}}) }}
+                        </div>
+                        
+                        <div class="form-group">
+                            {{ form_label(form.title, null, {
+                                'label_attr': {'class': 'form-label'}
+                                }) 
+                            }}
+                            
+                            {{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}
+                        </div>
+                        
+                        <div class="form-group">
+                        	{{ form_label(form.description, null, {
+                                'label_attr': {'class': 'form-label'}
+                                }) 
+                            }}
+                            {{ form_widget(form.description, {'attr': {'class': 'form-control'}}) }}
+                        </div>
+              
+						<fieldset class="border border-dark rounded p-3">
+                            <legend class="w-auto float-none ps-2 pe-2">{{ 'vs_users_subscriptions.template.subscription_periods' | trans( {},'VSUsersSubscriptionsBundle' ) }}</legend>
+                            <div class="SubscriptionPeriodsContainer"
+                                data-prototype="{% apply escape %}{% include '@VSUsersSubscriptions/Pages/PayedServices/add-period-prototype.html.twig' with {'form': form.subscriptionPeriods.vars.prototype} %}{% endapply %}"
+                            > 
+                                {% for period in form.subscriptionPeriods %}
+                                    {% include '@VSUsersSubscriptions/Pages/PayedServices/add-period-prototype.html.twig' with {'form': period} %}
+                                {% endfor %}
+                            </div>
+                        </fieldset>
+                        <div class="row">&nbsp;</div>
+                        
+                        <fieldset class="border border-dark rounded p-3">
+                            <legend class="w-auto float-none ps-2 pe-2">{{ 'vs_users_subscriptions.template.attributes' | trans( {},'VSUsersSubscriptionsBundle' ) }}</legend>
+                            <div class="AttributesContainer"
+                                data-prototype="{% apply escape %}{% include '@VSUsersSubscriptions/Pages/PayedServices/add-attribute-prototype.html.twig' with {'form': form.attributes.vars.prototype} %}{% endapply %}"
+                            > 
+                                {% for attribute in form.attributes %}
+                                    {% include '@VSUsersSubscriptions/Pages/PayedServices/add-attribute-prototype.html.twig' with {'form': attribute} %}
+                                {% endfor %}
+                            </div>
+                        </fieldset>
+                        <div class="row">&nbsp;</div>
+                        
+                        <fieldset class="border border-dark rounded p-3">
+                            <legend class="w-auto float-none ps-2 pe-2">{{ 'vs_users_subscriptions.template.paid_services_grouping' | trans( {},'VSUsersSubscriptionsBundle' ) }}</legend>
+                            
+                            <div class="form-group">
+                                {{ form_label(form.subscriptionCode, null, {
+                                    'label_attr': {'class': 'form-label'}
+                                    }) 
+                                }}
+                                {{ form_widget(form.subscriptionCode, {'attr': {'class': 'form-control'}}) }}
+                                {{ form_help(form.subscriptionCode, {'attr': {'class': 'form-text text-muted'}}) }}
+                            </div>
+                            
+                            <div class="form-group">
+                                {{ form_label(form.subscriptionPriority, null, {
+                                    'label_attr': {'class': 'form-label'}
+                                    }) 
+                                }}
+                                {{ form_widget(form.subscriptionPriority, {'attr': {'class': 'form-control'}}) }}
+                                {{ form_help(form.subscriptionPriority, {'attr': {'class': 'form-text text-muted'}}) }}
+                            </div>
+                        
+                         </fieldset>
+            			<div class="row">&nbsp;</div>
+            			
+            			{{ vs_form.buttons( form ) }}
+                    {{ form_end(form, {'render_rest': false}) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block head_styles %}
+	{{ parent() }}
+	
+	{{ encore_entry_link_tags( 'js/payed-services-edit' ) }}
+{% endblock %}
+
+{% block body_scripts %}
+    {{ parent() }}
+   
+    {{ encore_entry_script_tags( 'js/payed-services-edit' ) }}
+{% endblock %}
