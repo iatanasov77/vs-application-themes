@@ -50,7 +50,10 @@
                             {% for childItem in parentItem.children %}
                                 {% if( childItem.displayed ) %}
                                     <li class="nav-item">
-                                        <a class="nav-link main-menu-button {% if childItem.isCurrent %}main-menu-current-item{% endif %}" href="{{ childItem.uri }}">
+                                        <a class="nav-link {% if childItem.isCurrent %}active{% endif %}"
+                                        	data-key="t-{{ childItem.name }}"
+                                        	href="{{ childItem.uri }}"
+                                        >
                                             {{ childItem.name }}
                                         </a>
                                     </li>
