@@ -47,23 +47,26 @@ Encore
 
     // Application Images
     .copyFiles({
-         from: './themes/WebGuitarPro_VelzonSaas/assets/images',
+         from: './themes/AdminPanel_VelzonDefault/assets/images',
          to: 'images/[path][name].[ext]',
      })
      
      // Velzon Images
     .copyFiles([
-        //{from: './themes/WebGuitarPro_VelzonSaas/assets/vendor/Velzon_v4.2.0/lang', to: 'lang/[path][name].[ext]'},
-        {from: './themes/WebGuitarPro_VelzonSaas/assets/vendor/Velzon_v4.2.0/fonts', to: 'fonts/[path][name].[ext]'},
-        {from: './themes/WebGuitarPro_VelzonSaas/assets/vendor/Velzon_v4.2.0/images/flags', to: 'images/flags/[path][name].[ext]'},
-        {from: './themes/WebGuitarPro_VelzonSaas/assets/vendor/Velzon_v4.2.0/images/users', to: 'images/users/[path][name].[ext]'},
+        //{from: './themes/AdminPanel_VelzonDefault/assets/vendor/Velzon_v4.2.0/lang', to: 'lang/[path][name].[ext]'},
+        {from: './themes/AdminPanel_VelzonDefault/assets/vendor/Velzon_v4.2.0/fonts', to: 'fonts/[path][name].[ext]'},
+        {from: './themes/AdminPanel_VelzonDefault/assets/vendor/Velzon_v4.2.0/images/flags', to: 'images/flags/[path][name].[ext]'},
+        {from: './themes/AdminPanel_VelzonDefault/assets/vendor/Velzon_v4.2.0/images/users', to: 'images/users/[path][name].[ext]'},
     ])
 
     // Global Assets
-    .addStyleEntry( 'css/app', './themes/WebGuitarPro_VelzonSaas/assets/css/app.scss' )
-    .addEntry( 'js/layout', './themes/WebGuitarPro_VelzonSaas/assets/js/layout.js' )
-    .addEntry( 'js/app', './themes/WebGuitarPro_VelzonSaas/assets/app.js' )
-    .addEntry( 'js/app-login', './themes/WebGuitarPro_VelzonSaas/assets/app-login.js' )
+    .addStyleEntry( 'css/app', './themes/AdminPanel_VelzonDefault/assets/css/app.scss' )
+    .addEntry( 'js/layout', './themes/AdminPanel_VelzonDefault/assets/js/layout.js' )
+    .addEntry( 'js/app', './themes/AdminPanel_VelzonDefault/assets/app.js' )
+    .addEntry( 'js/app-login', './themes/AdminPanel_VelzonDefault/assets/app-login.js' )
+    
+    // VsApplicationBundle Pages
+    .addEntry( 'js/profile-edit', './themes/AdminPanel_VelzonDefault/assets/js/pages/profile-edit.js' )
 ;
 
 Encore.configureDefinePlugin( ( options ) => {
