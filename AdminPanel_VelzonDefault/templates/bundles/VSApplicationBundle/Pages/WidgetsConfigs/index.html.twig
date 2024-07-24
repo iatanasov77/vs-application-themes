@@ -4,12 +4,12 @@
 {% import "@VSApplication/Macros/alerts.html.twig" as alerts %}
 {% from "@VSApplication/Macros/pagination.html.twig" import pagination %}
 
-{% block title %}{{ parent() }} :: {{ 'vs_application.template.widgets_index_title' | trans( {},'VSApplicationBundle' ) }}{% endblock %}
+{% block title %}{{ parent() }} :: {{ 'vs_application.menu.widgets_registry' | trans( {},'VSApplicationBundle' ) }}{% endblock %}
 
 {% block pageTitle %}
     <h4 class="pageheader-title">
     	<i class="ri-honour-line"></i> 
-        {{ 'vs_application.template.widgets_index_title' | trans( {},'VSApplicationBundle' ) }}
+        {{ 'vs_application.menu.widgets_registry' | trans( {},'VSApplicationBundle' ) }}
    	</h4>
 {% endblock %}
 
