@@ -14,6 +14,7 @@
     {% endif %}
     
     {% for parentItem in item.children %}
+        
         {% if( parentItem.displayed and parentItem.hasChildren ) %}
         
         	{# Detect Current Parent #}
@@ -39,14 +40,12 @@
                     <i data-feather="{{ parentItem.attributes.iconClass }}" class="icon-dual"></i> 
                     #}
                     <i class="{{ parentItem.attributes.iconClass }}"></i> 
-                    <span>{{ parentItem.name }}</span>
-                {% if(parentItem.hasChildren) %}
-                    <!--  <span class="menu-arrow arrow_carrot-right"></span> -->
-                {% endif %}
+                    <span data-key="t-{{ parentItem.name }}">{{ parentItem.name }}</span>
                 </a>
+                
                 {% if(parentItem.hasChildren) %}
-                    <div id="submenu-users-subscriptions-{{ loop.index }}" class="collapse submenu" style="">
-                        <ul class="nav flex-column">
+                    <div class="collapse menu-dropdown {% if isCurrentParent %}show{% endif %}" id="submenu-users-subscriptions-{{ loop.index }}">
+                        <ul class="nav nav-sm flex-column">
                             {% for childItem in parentItem.children %}
                                 {% if( childItem.displayed ) %}
                                     <li class="nav-item">
@@ -64,10 +63,7 @@
                 {% endif %}
             </li>
         {% endif %}
+        
     {% endfor %}
-    
-    {% if hasChilds %}
-        <li class="nav-divider"><hr /></li>
-    {% endif %}
     
 {% endblock %}
