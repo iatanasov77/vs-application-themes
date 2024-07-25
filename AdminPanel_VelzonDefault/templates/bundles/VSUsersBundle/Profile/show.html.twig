@@ -1,0 +1,192 @@
+{% extends "@VSApplication/layout.html.twig" %}
+
+{% block title %}{{ parent() }} :: {{ 'vs_users.template.profile_show_title' | trans( {},'VSUsersBundle' ) }}{% endblock %}
+{% block pageTitle %}
+	<h4 class="pageheader-title">
+    	<i class="ri-account-circle-line"></i> 
+    	{{ 'vs_users.template.profile_show_title' | trans( {},'VSUsersBundle' ) }}
+    </h4>
+{% endblock %}
+
+{% block content %}
+	<div class="profile-foreground position-relative mx-n4 mt-n4">
+        <div class="profile-wid-bg">
+            <img src="{{ asset( 'build/velzon-child/images/profile-bg.jpg' ) }}" alt="" class="profile-wid-img" />
+        </div>
+    </div>
+    <div class="pt-4 mb-4 mb-lg-3 pb-lg-4 profile-wrapper">
+        <div class="row g-4">
+            <div class="col-auto">
+                <div class="avatar-lg">
+                    {% if app.user.info and app.user.info.avatar %}
+                       <img src="{{ app.user.info.avatar.path | imagine_filter( 'users_crud_index_thumb' ) }}" alt="" class="img-thumbnail rounded-circle" />
+                    {% else %}
+                        <img src="{{ asset( '/build/default/images/avatar-1.jpg' ) }}" alt="" class="img-thumbnail rounded-circle" />
+                    {% endif %}
+                </div>
+            </div>
+            <!--end col-->
+            <div class="col">
+                <div class="p-2">
+                    <h3 class="text-white mb-1">{{ app.user.info.fullName }}</h3>
+                    <p class="text-white text-opacity-75">{{ app.user.info.designation }}</p>
+                </div>
+            </div>
+            <!--end col-->
+            
+
+        </div>
+        <!--end row-->
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div>
+                <div class="d-flex profile-wrapper">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-pills animation-nav profile-nav gap-2 gap-lg-3 flex-grow-1" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link fs-14 active" data-bs-toggle="tab" href="#overview-tab" role="tab">
+                                <i class="ri-airplay-fill d-inline-block d-md-none"></i> 
+                                <span class="d-none d-md-inline-block">
+                                    {{ 'vs_users.template.profile_overview' | trans( {},'VSUsersBundle' ) }}
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fs-14" data-bs-toggle="tab" href="#activities" role="tab">
+                                <i class="ri-list-unordered d-inline-block d-md-none"></i> 
+                                <span class="d-none d-md-inline-block">
+                                    {{ 'vs_users.template.profile_activities' | trans( {},'VSUsersBundle' ) }}
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fs-14" data-bs-toggle="tab" href="#notifications" role="tab">
+                                <i class="ri-list-unordered d-inline-block d-md-none"></i> 
+                                <span class="d-none d-md-inline-block">
+                                    {{ 'vs_users.template.profile_notifications' | trans( {},'VSUsersBundle' ) }}
+                                </span>
+                            </a>
+                        </li>
+                        
+                        {% if hasSubscriptionsExtension %}
+                            <li class="nav-item">
+                                <a class="nav-link fs-14" data-bs-toggle="tab" href="#subscriptions" role="tab">
+                                    <i class="ri-list-unordered d-inline-block d-md-none"></i> 
+                                    <span class="d-none d-md-inline-block">
+                                        {{ 'vs_users.template.profile_show_tab_subscriptions' | trans( {},'VSUsersBundle' ) }}
+                                    </span>
+                                </a>
+                            </li>
+                        {% endif %}
+                        
+                        {% if hasPaymentExtension %}
+                            <li class="nav-item">
+                                <a class="nav-link fs-14" data-bs-toggle="tab" href="#orders" role="tab">
+                                    <i class="ri-list-unordered d-inline-block d-md-none"></i> 
+                                    <span class="d-none d-md-inline-block">
+                                        {{ 'vs_users.template.profile_show_tab_orders' | trans( {},'VSUsersBundle' ) }}
+                                    </span>
+                                </a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                    <div class="flex-shrink-0">
+                        <a href="{{ path( 'vs_users_profile_edit' ) }}" class="btn btn-success">
+                            <i class="ri-edit-box-line align-bottom"></i> 
+                            {{ 'vs_users.template.profile_edit_profile' | trans( {},'VSUsersBundle' ) }}
+                        </a>
+                    </div>
+                </div>
+                <!-- Tab panes -->
+                <div class="tab-content pt-4 text-muted">
+                
+                    <div class="tab-pane active" id="overview-tab" role="tabpanel">
+                        <div class="row">
+                            
+                            <div class="col-xxl-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title mb-3">{{ 'vs_users.template.profile_about' | trans( {},'VSUsersBundle' ) }}</h5>
+                                        
+                                        <div class="row">
+                                            <div class="col-6 col-md-4">
+                                                <div class="d-flex mt-4">
+                                                    <div class="flex-shrink-0 avatar-xs align-self-center me-3">
+                                                        <div class="avatar-title bg-light rounded-circle fs-16 text-primary">
+                                                            <i class="ri-user-2-fill"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-grow-1 overflow-hidden">
+                                                        <p class="mb-1">{{ 'vs_users.form.profile.designation' | trans( {},'VSUsersBundle' ) }} :</p>
+                                                        <h6 class="text-truncate mb-0">{{ app.user.info.designation }}</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--end col-->
+                                        </div>
+                                        <!--end row-->
+                                    </div>
+                                    <!--end card-body-->
+                                </div><!-- end card -->
+
+                                {#
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        {% include '@VSUsers/Profile/partial/_profile-recent-activity.html.twig' %}
+                                    </div><!-- end col -->
+                                </div><!-- end row -->
+                                #}
+                                
+                            </div>
+                            <!--end col-->
+                        </div>
+                        <!--end row-->
+                    </div>
+                    
+                    <div class="tab-pane fade" id="activities" role="tabpanel">
+                        {% include '@VSUsers/Profile/tab/_profile-activity.html.twig' %}
+                    </div>
+                    
+                    <div class="tab-pane fade" id="notifications" role="tabpanel">
+                        {% include '@VSUsers/Profile/tab/_profile-notification.html.twig' %}
+                    </div>
+                    
+                    {% if hasSubscriptionsExtension %}
+                        <div class="tab-pane fade" id="subscriptions" role="tabpanel">
+                            {% include '@VSUsers/Profile/tab/_profile-subscriptions.html.twig' %}
+                        </div>
+                    {% endif %}
+                    
+                    {% if hasPaymentExtension %}
+                        <div class="tab-pane fade" id="orders" role="tabpanel">
+                            {% include '@VSUsers/Profile/tab/_profile-orders.html.twig' %}
+                        </div>
+                    {% endif %}
+                    <!--end tab-pane-->
+                    
+                </div>
+                <!--end tab-content-->
+            </div>
+        </div>
+        <!--end col-->
+    </div>
+    <!--end row-->
+{% endblock content %}
+
+{% block modals %}
+    {% include '@VSUsers/Profile/modal/notification_show.html.twig' %}
+{% endblock %}
+
+{% block head_styles %} 
+    {{ parent() }}
+    {{ encore_entry_link_tags( 'js/profile' ) }}
+{% endblock %}
+
+{% block body_scripts %}
+	{{ parent() }}
+	
+    {{ encore_entry_script_tags( 'js/profile' ) }}
+    {{ encore_entry_script_tags( 'js/filemanager-file-upload' ) }}
+{% endblock %}

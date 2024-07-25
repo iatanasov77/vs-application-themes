@@ -1,0 +1,45 @@
+{% extends "@VSApplication/layout.html.twig" %}
+
+{% import "@VSApplication/Macros/form.html.twig" as vs_form %}
+
+{% if( item.id ) %}
+    {% set pageTitle = 'vs_payment.template.currency_update_title' | trans( {},'VSPaymentBundle' ) %}
+{% else %}
+    {% set pageTitle = 'vs_payment.template.currency_create_title' | trans( {},'VSPaymentBundle' ) %}
+{% endif %}
+
+{% block title %}{{ parent() }} :: {{ pageTitle }}{% endblock %}
+{% block pageTitle %}
+    <h4 class="pageheader-title">
+    	<i class="ri-currency-fill"></i> 
+        {% if(item.id) %}{{ pageTitle }}: {{ item.code }}{% else %}{{ pageTitle }}{% endif %}
+   	</h4>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="card">
+                <h5 class="card-header">{{ 'vs_payment.template.currency_title' | trans( {},'VSPaymentBundle' ) }}</h5>
+                <div class="card-body">
+                    {% if formErrors is defined %}
+                        {{ vs_form.errors( formErrors ) }}     
+                    {% endif %}
+                    
+                    {% if(item.id) %}{% set method = "PUT" %}{% else %}{% set method = "POST" %}{% endif %}
+                    {{ form_start(form, { 'method': method }) }}
+                        <div class="form-group">
+                            {{ form_label(form.code, null, {
+                                'label_attr': {'class': 'form-label'}
+                                }) 
+                            }}
+                            {{ form_widget(form.code, {'attr': {'class': 'form-select' }}) }}
+                        </div>
+                        
+                        {{ vs_form.buttons( form ) }}
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>  
+{% endblock content %}

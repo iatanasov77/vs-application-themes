@@ -1,0 +1,17 @@
+<div class="row mb-2">
+	<div class="col-lg-4">
+		{% set nameAttrs    = ( form.name.vars.errors | length ) ?
+            {'attr': {'class': 'form-control fieldTitle is-invalid'} } :
+            {'attr': {'class': 'form-control fieldTitle'} }
+        %}
+        {{ form_widget(form.name, nameAttrs ) }}
+        <div class="invalid-feedback">{{ form_errors( form.name ) }}</div>
+    </div>
+    <div class="col-lg-4">
+        {{ form_widget(form.value, {'attr': {'class': 'form-control fieldType'}}) }}
+    </div>
+	<div class="col-lg-1">
+	    <a href="javascript:;" class="btn btn-success btnAddField"><i class="icon_plus_alt2"></i></a>
+	    <a href="javascript:;" class="btn btn-danger btnRemoveField"><i class="icon_close_alt2"></i></a>
+	</div>
+</div>

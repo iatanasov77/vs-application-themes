@@ -1,0 +1,70 @@
+{% import "@VSApplication/Macros/alerts.html.twig" as alerts %}
+
+{{ form_start(form, { 'action': path('vs_application_settings_handle', {'applicationId': applicationId}), 'attr': {'id': 'formSettings_' ~ applicationId} }) }}
+    
+    {% if formErrors is defined %}
+        {{ vs_form.errors( formErrors ) }}     
+    {% endif %}
+    
+    <div class="form-check form-check-secondary mb-3">
+        <input type="checkbox" id="settings_form_maintenanceMode" name="settings_form[maintenanceMode]" 
+            class="form-check-input"
+            {% if form.vars.value.maintenanceMode %}checked="checked"{% endif %}
+        />
+        <label class="form-check-label" for="settings_form_maintenanceMode">
+            {{ 'vs_application.form.maintenance_mode' | trans( {},'VSApplicationBundle' ) }}
+        </label>
+    </div>
+
+    {% set comboDataSourceUrl  = path( 'vs_cms_pages_tree_combo_with_leafs', {'taxonomyId': pcTaxonomyId}) %}
+    {% set comboTreePlaceholder = 'vs_application.form.maintenance_page_placeholder' | trans( {},'VSApplicationBundle' ) %}
+    {% set comboDataOptions    = "
+    		url:'" ~ comboDataSourceUrl ~ "',
+    		required: false,
+    		multiple: false,
+    		checkbox : true,
+    		onlyLeafCheck: true,
+    		prompt:'" ~ comboTreePlaceholder ~"',
+    		onCheck: function( node, checked ) {
+        		var cc = $(this).combotree( 'combo' );
+        		$( cc ).combotree( 'hidePanel' );
+        		$( cc ).combotree( 'setValue', checked?node.id:null );
+        	},
+    		onBeforeLoad: function( node ) {
+    		    //showSpiner
+    		},
+    		onLoadSuccess: function( node ) {
+    			//hideSpiner
+    		}
+    " %}
+    <div class="form-group">
+        {{ form_label(form.maintenancePage, null, {
+            'label_attr': {'class': 'form-label'}
+            }) 
+        }}
+        
+        {{ form_widget(form.maintenancePage, {
+            'attr': {
+                'class': 'form-select easyui-combotree',
+                'data-options': comboDataOptions,
+                'data-value': applicationId,
+            }
+        }) }}
+    </div>
+
+{% if applicationId %}
+	<div class="form-group">
+        {{ form_label(form.theme, null, {
+            'label_attr': {'class': 'form-label'}
+            }) 
+        }}
+        
+        {{ form_widget(form.theme, {
+            'attr': {
+                'class': 'form-select',
+            }
+        }) }}
+    </div>
+{% endif %}
+
+{{ form_end(form, {'render_rest': false}) }}

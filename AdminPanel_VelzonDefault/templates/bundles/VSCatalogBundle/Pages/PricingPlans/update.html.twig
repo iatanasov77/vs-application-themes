@@ -1,0 +1,43 @@
+{% extends "@VSApplication/layout.html.twig" %}
+
+{% if( item.id ) %}
+	{% set pageTitle = 'vs_payment.template.pricing_plan_update_title' | trans( {},'VSPaymentBundle' ) %}
+{% else %}
+	{% set pageTitle = 'vs_payment.template.pricing_plan_create_title' | trans( {},'VSPaymentBundle' ) %}
+{% endif %}
+
+{% block title %}{{ parent() }} :: {{ pageTitle}}{% endblock %}
+{% block pageTitle %}
+	<h4 class="pageheader-title">
+    	<i class="ri-service-fill"></i> 
+        {% if(item.id) %}{{ pageTitle }}:    {{ item.title }}{% else %}{{ pageTitle }}{% endif %}
+   	</h4>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="card">
+            	<h5 class="card-header">{{ 'vs_payment.template.pricing_plan_details' | trans( {},'VSPaymentBundle' ) }}</h5>
+            	<div class="card-body">
+		            <div id="pageFormContainer" data-pageId="{{ item.id }}">
+                        {% include '@VSCatalog/Pages/PricingPlans/partial/pricing_plan_form.html.twig' %}
+                    </div>
+        		</div>
+			</div>
+		</div>
+    </div>
+{% endblock content %}
+
+{% block head_styles %}
+    {{ parent() }}
+    
+    {{ encore_entry_link_tags( 'js/pricing-plans-edit' ) }}
+{% endblock %}
+
+{% block body_scripts %}
+    {{ parent() }}
+   
+    {{ encore_entry_script_tags( 'js/pricing-plans-edit' ) }}
+{% endblock %}
+

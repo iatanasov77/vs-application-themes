@@ -8,5 +8,3 @@ window.bootstrap = bootstrap;
 require( 'particles.js' );
 require( './vendor/Velzon_v4.2.0/js/pages/particles.app.js' );
 require( './vendor/Velzon_v4.2.0/js/pages/password-addon.init.js' );
-
-

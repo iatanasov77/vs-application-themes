@@ -1,0 +1,68 @@
+{% extends "@VSApplication/layout.html.twig" %}
+
+{% import "@VSApplication/Macros/form.html.twig" as vs_form %}
+
+{% block title %}{{ parent() }} :: {{ 'vs_payment.template.payment_method_config_ext.config.title' | trans( {},'VSPaymentBundle' ) }}{% endblock %}
+{% block pageTitle %}
+	<h4 class="pageheader-title">
+    	<i class="ri-secure-payment-line"></i> 
+        {{ 'vs_payment.template.payment_method_config_ext.config.title' | trans( {},'VSPaymentBundle' ) }}
+   	</h4>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <!-- ============================================================== -->
+        <!-- basic tabs  -->
+        <!-- ============================================================== -->
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="card">
+                <h5 class="card-header">{{ 'vs_payment.template.payment_method' | trans( {},'VSPaymentBundle' ) }}: {% if item.id %}{{ item.name }}{% endif %}</h5>
+                
+            	<div class="card-body">
+            	   <section class="panel">
+                        <div class="panel-body bio-graph-info">
+        		            
+        		            {% if formErrors is defined %}
+                                {{ vs_form.errors( formErrors ) }}     
+                            {% endif %}
+        		            
+        		            {{ form_start(form) }}
+        		                {{ form_widget(form._token) }}
+        						
+        		                <div class="form-check form-check-secondary mb-3">
+                                    <input type="checkbox" id="payment_method_form_enabled" name="payment_method_form[enabled]" 
+                                        class="form-check-input"
+                                        value="{{ form.vars.value.enabled }}"
+                                        {% if form.vars.value.enabled %}checked="checked"{% endif %}
+                                    />
+                                    <label class="form-check-label" for="payment_method_form_enabled">
+                                        {{ form.enabled.vars.label | trans( {},'VSPaymentBundle' ) }}
+                                    </label>
+                                </div>
+                                
+		                        <div class="form-group">
+		                            {{ form_label(form.name, null, {
+		                                'label_attr': {'class': 'form-label'}
+		                                }) 
+		                            }}
+		                            {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
+		                        </div>
+		                        
+		                        <div class="form-group">
+		                            {{ form_label(form.gateway, null, {
+		                                'label_attr': {'class': 'form-label'}
+		                                }) 
+		                            }}
+		                            {{ form_widget(form.gateway, {'attr': {'class': 'form-select'}}) }}
+		                        </div>
+        		                
+                                {{ vs_form.buttons( form ) }}
+        		            {{ form_end(form, {'render_rest': false}) }}
+        		        </div>
+        		    </section>
+				</div>
+			</div>
+		</div>
+    </div>   
+{% endblock %}

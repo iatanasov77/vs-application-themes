@@ -1,5 +1,6 @@
 {
     "name": "vankosoft/admin-panel-velzon-default",
+    "description": "AdminPanel VelzonDefault Theme",
     "authors": [
         {
             "name": "Ivan Atanasov",
@@ -8,7 +9,7 @@
     ],
     "extra": {
         "sylius-theme": {
-            "title": "AdminPanel VelzonDefault Theme"
+            "title": "AdminPanel VelzonDefault"
         }
     }
 }

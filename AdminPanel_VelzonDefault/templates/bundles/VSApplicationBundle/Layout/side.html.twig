@@ -1,0 +1,28 @@
+{% include '@VSApplication/Layout/side-logo.html.twig' %}
+
+<div id="scrollbar">
+    <div class="container-fluid">
+
+        <div id="two-column-menu"></div>
+        
+        <ul class="navbar-nav" id="navbar-nav">
+        	{{ vs_widget_render( 'admin-main-menu', ['main-menu-applications'] ) }}
+            
+    		{{ knp_menu_render('mainSystem', {'template': '@VSApplication/Menu/mainSystem.html.twig'}) }}
+    		
+            {{ knp_menu_render('mainCms', {'template': '@VSApplication/Menu/mainCms.html.twig'}) }}
+            
+            {% if installedBundles['VSUsersSubscriptionsBundle'] is defined %}
+                {{ knp_menu_render('mainUsersSubscriptions', {'template': '@VSUsersSubscriptions/Menu/mainUsersSubscriptions.html.twig'}) }}
+            {% endif %}
+                
+            {% if installedBundles['VSPaymentBundle'] is defined %}
+                {{ knp_menu_render('mainPayment', {'template': '@VSPayment/Menu/mainPayment.html.twig'}) }}
+            {% endif %}
+            
+            {% if installedBundles['VSCatalogBundle'] is defined %}
+                {{ knp_menu_render('mainCatalog', {'template': '@VSCatalog/Menu/mainCatalog.html.twig'}) }}
+            {% endif %}
+        </ul>
+    </div>
+</div>
