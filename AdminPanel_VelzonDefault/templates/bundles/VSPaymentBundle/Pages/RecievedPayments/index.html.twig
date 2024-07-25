@@ -1,0 +1,42 @@
+{% extends "@VSApplication/layout.html.twig" %}
+
+{% block title %}{{ parent() }} :: {{ 'vs_payment.template.payment_index_title' | trans( {},'VSPaymentBundle' ) }}{% endblock %}
+{% block pageTitle %}
+	<h4 class="pageheader-title">
+    	<i class="ri-list-ordered-2"></i> 
+        {{ 'vs_payment.template.payment_index_title' | trans( {},'VSPaymentBundle' ) }}
+   	</h4>
+{% endblock %}
+
+{% block content %}
+    <div class="row mb-5">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <fieldset class="border border-dark rounded p-3">
+                <legend class="w-auto float-none ps-2 pe-2">{{ 'vs_payment.template.search_payments' | trans( {},'VSPaymentBundle' ) }}</legend>
+                
+                <div id="SearchFormContainer">
+                    {% include '@VSPayment/Pages/RecievedPayments/payments_filter_form.html.twig' with {'form': filterForm} %}
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" id="PaymentsTableContainer">
+            {% include '@VSPayment/Pages/RecievedPayments/payments_table.html.twig' %}
+        </div>
+    </div>
+    
+    {% include '@VSApplication/Partial/resource-delete.html.twig' %}
+{% endblock %}
+
+{% block head_styles %}
+    {{ parent() }}
+    {{ encore_entry_link_tags( 'js/recieved-payments' ) }}
+{% endblock %}
+
+{% block body_scripts %}
+    {{ parent() }}
+    
+    {{ encore_entry_script_tags( 'js/recieved-payments' ) }}
+{% endblock %}
