@@ -25,7 +25,7 @@
                 
                 <div class="dropdown ms-1 topbar-head-dropdown header-item">
                     {% set currentLang = ( app.request.locale | split( '_' ) )[1] | lower %}
-                    {% set currentFlag = '/build/velzon-child/images/flags/' ~ currentLang ~ '.svg' %}
+                    {% set currentFlag = '/build/velzon-theme/images/flags/' ~ currentLang ~ '.svg' %}
                     <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         {#
                         <i class="flag flag-{{ ( app.request.locale | split( '_' ) )[1] | lower }} rounded" style="height: 12px; margin-left: 8px;"></i>
@@ -48,7 +48,7 @@
                             {% if app.user.info and app.user.info.avatar %}
                                <img src="{{ app.user.info.avatar.path|imagine_filter('users_crud_index_thumb') }}" alt="" class="rounded-circle header-profile-user" />
                             {% else %}
-                                <img src="{{ asset( 'build/velzon-child/images/users/avatar-1.jpg' ) }}" alt="" class="rounded-circle header-profile-user" />
+                                <img src="{{ asset( 'build/velzon-theme/images/users/avatar-1.jpg' ) }}" alt="" class="rounded-circle header-profile-user" />
                             {% endif %}
                             
                             <span class="text-start ms-xl-2">

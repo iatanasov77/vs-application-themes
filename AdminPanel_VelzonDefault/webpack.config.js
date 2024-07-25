@@ -5,8 +5,8 @@ const pathExists    = require( 'path-exists' );
 const themeAssetsPath         = './vendor/vankosoft/application/src/Vankosoft/ApplicationBundle/Resources/themes/default/assets';
 
 Encore
-    .setOutputPath( 'public/admin-panel/build/velzon-default/' )
-    .setPublicPath( '/build/velzon-default/' )
+    .setOutputPath( 'public/admin-panel/build/velzon-theme/' )
+    .setPublicPath( '/build/velzon-theme/' )
   
     .disableSingleRuntimeChunk()
     .cleanupOutputBeforeBuild()
