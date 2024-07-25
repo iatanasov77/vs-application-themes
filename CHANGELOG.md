@@ -1,3 +1,9 @@
+1.0.1	|	Release date: **25.07.2024**
+============================================
+* New Features and Improvements:
+  - Change Theme Build Path.
+
+
 1.0.0	|	Release date: **25.07.2024**
 ============================================
 * New Features:
