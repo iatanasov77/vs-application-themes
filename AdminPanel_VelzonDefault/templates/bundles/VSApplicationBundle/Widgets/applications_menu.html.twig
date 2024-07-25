@@ -1,9 +1,11 @@
 {% if widget.isActive %}
     {% if widget.params.installationInfo %}
-        <li class="nav-divider">
-            {{ 'vs_application.menu.project_version' | trans( {},'VSApplicationBundle' ) }}: 
-            {{ widget.params.installationInfo.version }}
-        </li>
+    	<li class="menu-title">
+    		<span>
+    		    {{ 'vs_application.menu.project_version' | trans( {},'VSApplicationBundle' ) }}: 
+    		    {{ widget.params.installationInfo.version }}
+    		</span>
+    	</li>
     {% else %}
     	<li class="menu-title"><span data-key="t-menu">{{ 'vs_application.menu.application_links' | trans( {},'VSApplicationBundle' ) }}</span></li>
     {% endif %}
