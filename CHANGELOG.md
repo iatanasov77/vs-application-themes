@@ -1,3 +1,10 @@
+1.0.2	|	Release date: **25.07.2024**
+============================================
+* New Features and Improvements:
+  - Improve AdminPanel SideBar.
+  - Improve Widget Main Menu Applications.
+
+
 1.0.1	|	Release date: **25.07.2024**
 ============================================
 * New Features and Improvements:

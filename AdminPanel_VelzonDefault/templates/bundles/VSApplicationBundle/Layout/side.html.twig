@@ -23,6 +23,8 @@
             {% if installedBundles['VSCatalogBundle'] is defined %}
                 {{ knp_menu_render('mainCatalog', {'template': '@VSCatalog/Menu/mainCatalog.html.twig'}) }}
             {% endif %}
+            
+            {% include '@VSApplication/Layout/side-addition.html.twig' %}
         </ul>
     </div>
 </div>
