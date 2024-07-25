@@ -1,7 +1,7 @@
 <div class="dropdown-menu dropdown-menu-end locales-menu">
     {% for locale in widget.params.locales %}
         {% set currentLang = ( locale.code | split( '_' ) )[1] | lower %}
-        {% set currentFlag = 'build/velzon-child/images/flags/' ~ currentLang ~ '.svg' %}
+        {% set currentFlag = 'build/velzon-theme/images/flags/' ~ currentLang ~ '.svg' %}
         
         <!-- item-->
         <a href="{{ path( 'app_set_locale', {'locale': locale.code} ) }}" 
