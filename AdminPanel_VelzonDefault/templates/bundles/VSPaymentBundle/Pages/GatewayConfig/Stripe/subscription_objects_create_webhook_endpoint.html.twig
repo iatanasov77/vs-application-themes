@@ -3,7 +3,12 @@
 {% import "@VSApplication/Macros/form.html.twig" as vs_form %}
 
 {% block title %}{{ parent() }} :: {{ 'vs_payment.template.payum_stripe_objects.create_webhook_endpoint' | trans( {},'VSPaymentBundle' ) }}{% endblock %}
-{% block pageTitle %}<i class="icon_genius"></i> {{ 'vs_payment.template.payum_stripe_objects.create_webhook_endpoint' | trans( {},'VSPaymentBundle' ) }}{% endblock %}
+{% block pageTitle %}
+	<h4 class="pageheader-title">
+    	<i class="ri-secure-payment-line"></i> 
+        {{ 'vs_payment.template.payum_stripe_objects.create_webhook_endpoint' | trans( {},'VSPaymentBundle' ) }}
+   	</h4>
+{% endblock %}
 
 {% block content %}
     <div class="row">
@@ -21,7 +26,7 @@
                     {{ form_start(form, { 'attr': {'class': 'form-horizontal '} }) }}
                         <div class="form-group">
                             {{ form_label(form.enabled_events, null, {
-                                'label_attr': {'class': 'col-form-label required'}
+                                'label_attr': {'class': 'form-label required'}
                                 }) 
                             }}
                             {{ form_widget(form.enabled_events, {'attr': {'class': 'form-control' }}) }}
@@ -29,7 +34,7 @@
                         
                         <div class="form-group">
                             {{ form_label(form.url, null, {
-                                'label_attr': {'class': 'col-form-label'}
+                                'label_attr': {'class': 'form-label'}
                                 }) 
                             }}
                             {{ form_widget(form.url, {'attr': {'class': 'form-control' }}) }}

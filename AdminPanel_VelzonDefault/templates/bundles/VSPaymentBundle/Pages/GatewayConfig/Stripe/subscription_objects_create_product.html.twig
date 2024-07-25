@@ -3,7 +3,12 @@
 {% import "@VSApplication/Macros/form.html.twig" as vs_form %}
 
 {% block title %}{{ parent() }} :: {{ 'vs_payment.template.payum_stripe_objects.create_stripe_product' | trans( {},'VSPaymentBundle' ) }}{% endblock %}
-{% block pageTitle %}<i class="icon_genius"></i> {{ 'vs_payment.template.payum_stripe_objects.create_stripe_product' | trans( {},'VSPaymentBundle' ) }}{% endblock %}
+{% block pageTitle %}
+	<h4 class="pageheader-title">
+    	<i class="ri-secure-payment-line"></i> 
+        {{ 'vs_payment.template.payum_stripe_objects.create_stripe_product' | trans( {},'VSPaymentBundle' ) }}
+   	</h4>
+{% endblock %}
 
 {% block content %}
     <div class="row">
@@ -22,7 +27,7 @@
                         {#
                         <div class="form-group">
                             {{ form_label(form.id, null, {
-                                'label_attr': {'class': 'col-form-label'}
+                                'label_attr': {'class': 'form-label'}
                                 }) 
                             }}
                             {{ form_widget(form.id, {'attr': {'class': 'form-control' }}) }}
@@ -31,7 +36,7 @@
                         
                         <div class="form-group">
                             {{ form_label(form.name, null, {
-                                'label_attr': {'class': 'col-form-label'}
+                                'label_attr': {'class': 'form-label'}
                                 }) 
                             }}
                             {{ form_widget(form.name, {'attr': {'class': 'form-control' }}) }}
