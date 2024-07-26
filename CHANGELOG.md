@@ -1,3 +1,9 @@
+1.0.3	|	Release date: **26.07.2024**
+============================================
+* New Features:
+  - Improve Applications Menu Widget.
+
+
 1.0.2	|	Release date: **25.07.2024**
 ============================================
 * New Features and Improvements:

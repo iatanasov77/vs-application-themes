@@ -13,14 +13,18 @@
     {% if ( widget.params.applications | length ) > 1 %}
         <li class="nav-item ">
             <a class="nav-link"
-                data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#submenu-applications" aria-controls="submenu-applications"
+                data-bs-toggle="collapse"
+                aria-expanded="false"
+                data-bs-target="#submenu-applications"
+                aria-controls="submenu-applications"
                 href="javascript:;"
             >
+            	<i class="ri-apps-2-line"></i> 
                 <span>{{ 'vs_application.menu.applications' | trans( {},'VSApplicationBundle' ) }}</span>
             </a>
             
             <div id="submenu-applications" class="collapse submenu" style="">
-                <ul class="nav flex-column">
+                <ul class="nav nav-sm flex-column">
                     {% for oApplication in widget.params.applications %}
                         {% if oApplication.code != 'admin-panel' %}
                         	
