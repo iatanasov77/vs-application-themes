@@ -46,16 +46,14 @@
                                            title="{{ 'vs_cms.template.button_preview' | trans( {},'VSCmsBundle' ) }}"   
                                         >
                                             <i class="fas fa-eye" style="color: #be4bdb;"></i>
-                                        </a>
-                                    </div>
-                                    <div class="btn-group">
+                                        </a>&nbsp;
                                         <a class="btn btn-danger btnDeleteResource"
                                             href="{{ path('vs_catalog_pricing_plan_subscription_delete', {'id': item.id}) }}" 
                                             data-csrfToken="{{ csrf_token( item.id ) }}" 
                                             title="{{ 'vs_application.template.items_index_row_action_delete' | trans( {},'VSApplicationBundle' ) }}"
                                         >
                                             <i class="icon_close_alt2"></i>
-                                        </a>
+                                        </a>&nbsp;
                                     </div>
                                 </td>
                             </tr>
