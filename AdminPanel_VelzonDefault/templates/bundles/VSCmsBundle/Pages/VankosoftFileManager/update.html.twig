@@ -87,6 +87,6 @@
 {% block body_scripts %}
     {{ parent() }}
     
-    {{ encore_entry_script_tags( 'js/filemanager-index' ) }}
-    {{ encore_entry_script_tags( 'js/filemanager-file-upload' ) }}
+    {{ encore_entry_script_tags( 'js/filemanager-index', null, 'VelzonTheme' ) }}
+    {{ encore_entry_script_tags( 'js/filemanager-file-upload', null, 'VelzonTheme' ) }}
 {% endblock %}

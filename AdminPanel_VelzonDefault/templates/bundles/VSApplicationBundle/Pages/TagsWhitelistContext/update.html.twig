@@ -85,10 +85,10 @@
 
 {% block head_styles %} 
     {{ parent() }}
-    {{ encore_entry_link_tags( 'js/tags-whitelist-contexts-edit' ) }}
+    {{ encore_entry_link_tags( 'js/tags-whitelist-contexts-edit', null, 'VelzonTheme' ) }}
 {% endblock %}
 
 {% block body_scripts %}
     {{ parent() }}
-    {{ encore_entry_script_tags( 'js/tags-whitelist-contexts-edit' ) }}
+    {{ encore_entry_script_tags( 'js/tags-whitelist-contexts-edit', null, 'VelzonTheme' ) }}
 {% endblock %}

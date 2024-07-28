@@ -62,14 +62,14 @@
                                             title="{{ 'vs_application.template.items_index_row_action_edit' | trans( {},'VSApplicationBundle' ) }}"
                                         >
                                             <i class="fas fa-edit"></i>
-                                        </a>
+                                        </a>&nbsp;
                                         <a class="btn btn-danger btnDeleteResource"
                                             href="{{ path('vs_payment_gateway_config_delete', {'id': item.id}) }}" 
                                             data-csrfToken="{{ csrf_token( item.id ) }}" 
                                             title="{{ 'vs_application.template.items_index_row_action_delete' | trans( {},'VSApplicationBundle' ) }}"
                                         >
                                             <i class="icon_close_alt2"></i>
-                                        </a>
+                                        </a>&nbsp;
                                     </div>
                                 </td>
                             </tr>
@@ -95,11 +95,11 @@
 
 {% block head_styles %}
     {{ parent() }}
-    {{ encore_entry_link_tags( 'js/resource-delete' ) }}
+    {{ encore_entry_link_tags( 'js/resource-delete', null, 'VelzonTheme' ) }}
 {% endblock %}
 
 {% block body_scripts %}
     {{ parent() }}
     
-    {{ encore_entry_script_tags( 'js/resource-delete' ) }}
+    {{ encore_entry_script_tags( 'js/resource-delete', null, 'VelzonTheme' ) }}
 {% endblock %}

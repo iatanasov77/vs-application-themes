@@ -37,21 +37,19 @@
                         <td>{{ vs_translations.flags( translations[item.id] ) }}</td>
                         <td>
                             <div class="btn-group">
-                                <div class="btn-group">
-                                    <a class="btn btn-primary"
-                                        href="{{ path('vs_application_taxonomy_update', {'id': item.id}) }}"
-                                        title="{{ 'vs_application.template.items_index_row_action_edit' | trans( {},'VSApplicationBundle' ) }}"
-                                    >
-                                        <i class="fas fa-edit"></i>
-                                    </a>
-                                    <a class="btn btn-danger btnDeleteResource"
-                                    	href="{{ path('vs_application_taxonomy_delete', {'id': item.id}) }}" 
-                                    	data-csrfToken="{{ csrf_token( item.id ) }}" 
-                                    	title="{{ 'vs_application.template.items_index_row_action_delete' | trans( {},'VSApplicationBundle' ) }}"
-                                    >
-                                        <i class="icon_close_alt2"></i>
-                                    </a>
-                                </div>
+                                <a class="btn btn-primary"
+                                    href="{{ path('vs_application_taxonomy_update', {'id': item.id}) }}"
+                                    title="{{ 'vs_application.template.items_index_row_action_edit' | trans( {},'VSApplicationBundle' ) }}"
+                                >
+                                    <i class="fas fa-edit"></i>
+                                </a>&nbsp;
+                                <a class="btn btn-danger btnDeleteResource"
+                                	href="{{ path('vs_application_taxonomy_delete', {'id': item.id}) }}" 
+                                	data-csrfToken="{{ csrf_token( item.id ) }}" 
+                                	title="{{ 'vs_application.template.items_index_row_action_delete' | trans( {},'VSApplicationBundle' ) }}"
+                                >
+                                    <i class="icon_close_alt2"></i>
+                                </a>&nbsp;
                             </div>
                         </td>
                     </tr>
@@ -76,11 +74,11 @@
 
 {% block head_styles %}
     {{ parent() }}
-    {{ encore_entry_link_tags( 'js/taxonomy-vocabolaries' ) }}
+    {{ encore_entry_link_tags( 'js/taxonomy-vocabolaries', null, 'VelzonTheme' ) }}
 {% endblock %}
 
 {% block body_scripts %}
     {{ parent() }}
     
-    {{ encore_entry_script_tags( 'js/taxonomy-vocabolaries' ) }}
+    {{ encore_entry_script_tags( 'js/taxonomy-vocabolaries', null, 'VelzonTheme' ) }}
 {% endblock %}

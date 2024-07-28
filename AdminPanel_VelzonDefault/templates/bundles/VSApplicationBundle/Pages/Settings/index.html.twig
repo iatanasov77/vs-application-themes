@@ -115,15 +115,15 @@
 {% block head_styles %}
 	{{ parent() }}
 	
-	{{ encore_entry_link_tags( 'js/settings' ) }}
-	{{ encore_entry_link_tags( 'js/applications' ) }}
+	{{ encore_entry_link_tags( 'js/settings', null, 'VelzonTheme' ) }}
+	{{ encore_entry_link_tags( 'js/applications', null, 'VelzonTheme' ) }}
 {% endblock %}
 
 {% block body_scripts %}
     {{ parent() }}
 
-    {{ encore_entry_script_tags( 'js/settings' ) }}
-    {{ encore_entry_script_tags( 'js/applications' ) }}
+    {{ encore_entry_script_tags( 'js/settings', null, 'VelzonTheme' ) }}
+    {{ encore_entry_script_tags( 'js/applications', null, 'VelzonTheme' ) }}
 {% endblock %}
 
 {% block modals %}

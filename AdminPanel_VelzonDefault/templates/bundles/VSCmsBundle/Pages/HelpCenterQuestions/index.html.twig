@@ -42,7 +42,7 @@
                                     	   title="{{ 'vs_application.template.items_index_row_action_edit' | trans( {},'VSApplicationBundle' ) }}"   
                                         >
                                             <i class="fas fa-edit"></i>
-                                        </a>
+                                        </a>&nbsp;
                                         
                                         <a class="btn btn-danger btnDeleteResource"
                                         	href="{{ path('vs_cms_helpcenter_question_delete', {'id': item.id}) }}"
@@ -51,7 +51,7 @@
                                         	title="{{ 'vs_application.template.items_index_row_action_delete' | trans( {},'VSApplicationBundle' ) }}"
                                         >
                                             <i class="icon_close_alt2"></i>
-                                        </a>
+                                        </a>&nbsp;
                                         
                                     </div>
                                 </td>
@@ -75,13 +75,13 @@
 {% block head_styles %}
     {{ parent() }}
     
-    {{ encore_entry_link_tags( 'js/helpcenter-questions' ) }}
+    {{ encore_entry_link_tags( 'js/helpcenter-questions', null, 'VelzonTheme' ) }}
 {% endblock %}
 
 {% block body_scripts %}
     {{ parent() }}
     
-    {{ encore_entry_script_tags( 'js/helpcenter-questions' ) }}
+    {{ encore_entry_script_tags( 'js/helpcenter-questions', null, 'VelzonTheme' ) }}
 {% endblock %}
 
 

@@ -32,11 +32,11 @@
 
 {% block head_styles %}
     {{ parent() }}
-    {{ encore_entry_link_tags( 'js/recieved-payments' ) }}
+    {{ encore_entry_link_tags( 'js/recieved-payments', null, 'VelzonTheme' ) }}
 {% endblock %}
 
 {% block body_scripts %}
     {{ parent() }}
     
-    {{ encore_entry_script_tags( 'js/recieved-payments' ) }}
+    {{ encore_entry_script_tags( 'js/recieved-payments', null, 'VelzonTheme' ) }}
 {% endblock %}

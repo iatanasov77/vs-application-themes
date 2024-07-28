@@ -108,14 +108,14 @@
 {% block head_styles %}
 	{{ parent() }}
 	
-	{{ encore_entry_link_tags( 'js/toc-pages' ) }}
-	{{ encore_entry_link_tags( 'js/toc-pages-delete' ) }}
+	{{ encore_entry_link_tags( 'js/toc-pages', null, 'VelzonTheme' ) }}
+	{{ encore_entry_link_tags( 'js/toc-pages-delete', null, 'VelzonTheme' ) }}
 {% endblock %}
 
 {% block body_scripts %}
     {{ parent() }}
     
-    {{ encore_entry_script_tags( 'js/toc-pages' ) }}
-    {{ encore_entry_script_tags( 'js/toc-pages-delete' ) }}
+    {{ encore_entry_script_tags( 'js/toc-pages', null, 'VelzonTheme' ) }}
+    {{ encore_entry_script_tags( 'js/toc-pages-delete', null, 'VelzonTheme' ) }}
 {% endblock %}
 
