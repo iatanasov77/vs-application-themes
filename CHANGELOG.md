@@ -1,3 +1,10 @@
+1.0.4	|	Release date: **28.07.2024**
+============================================
+* New Features and Improvements:
+  - Improve Index Pages Resource Buttons.
+  - Load All Assets From 'VelzonTheme' Build.
+
+
 1.0.3	|	Release date: **26.07.2024**
 ============================================
 * New Features:
