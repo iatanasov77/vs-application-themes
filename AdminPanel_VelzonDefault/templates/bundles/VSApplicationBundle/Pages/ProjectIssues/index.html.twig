@@ -76,11 +76,11 @@
 {% block head_styles %}
     {{ parent() }}
     
-    {{ encore_entry_link_tags( 'js/project-issues' ) }}
+    {{ encore_entry_link_tags( 'js/project-issues', null, 'VelzonTheme' ) }}
 {% endblock %}
 
 {% block body_scripts %}
     {{ parent() }}
     
-    {{ encore_entry_script_tags( 'js/project-issues' ) }}
+    {{ encore_entry_script_tags( 'js/project-issues', null, 'VelzonTheme' ) }}
 {% endblock %}

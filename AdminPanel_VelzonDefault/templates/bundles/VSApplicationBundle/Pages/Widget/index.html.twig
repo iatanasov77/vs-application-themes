@@ -93,11 +93,11 @@
 {% block head_styles %}
     {{ parent() }}
     
-    {{ encore_entry_link_tags( 'js/widgets' ) }}
+    {{ encore_entry_link_tags( 'js/widgets', null, 'VelzonTheme' ) }}
 {% endblock %}
 
 {% block body_scripts %}
     {{ parent() }}
     
-    {{ encore_entry_script_tags( 'js/widgets' ) }}
+    {{ encore_entry_script_tags( 'js/widgets', null, 'VelzonTheme' ) }}
 {% endblock %}

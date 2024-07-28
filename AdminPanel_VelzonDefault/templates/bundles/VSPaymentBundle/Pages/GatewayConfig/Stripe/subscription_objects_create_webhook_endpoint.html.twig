@@ -61,11 +61,11 @@
 {% block head_styles %}
     {{ parent() }}
     
-    {{ encore_entry_link_tags( 'js/stripe-webhook-endpoint' ) }}
+    {{ encore_entry_link_tags( 'js/stripe-webhook-endpoint', null, 'VelzonTheme' ) }}
 {% endblock %}
 
 {% block body_scripts %}
     {{ parent() }}
     
-    {{ encore_entry_script_tags( 'js/stripe-webhook-endpoint' ) }}
+    {{ encore_entry_script_tags( 'js/stripe-webhook-endpoint', null, 'VelzonTheme' ) }}
 {% endblock %}
