@@ -1,3 +1,9 @@
+1.0.5	|	Release date: **29.07.2024**
+============================================
+* New Features:
+  - Add MDB UiKit Flags Into CSS.
+
+
 1.0.4	|	Release date: **28.07.2024**
 ============================================
 * New Features and Improvements:
