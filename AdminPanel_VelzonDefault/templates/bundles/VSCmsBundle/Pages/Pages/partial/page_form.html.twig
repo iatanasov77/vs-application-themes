@@ -3,7 +3,7 @@
 
     
 {% if formErrors is defined %}
-    {{ vs_form.errors( formErrors ) }}     
+    {{ vs_form.errors( formErrors ) }}
 {% endif %}
     
 {% if(item.id) %}{% set method = "PUT" %}{% else %}{% set method = "POST" %}{% endif %}

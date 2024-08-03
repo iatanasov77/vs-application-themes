@@ -29,7 +29,7 @@
             	<div class="card-body">
             	
             		{% if formErrors is defined %}
-                        {{ vs_form.errors( formErrors ) }}     
+                        {{ vs_form.errors( formErrors ) }}
                     {% endif %}
                         
             		{% if useFormMethod is defined %}{% set formMethod = useFormMethod %}{% else %}{% set formMethod = 'PUT' %}{% endif %}
