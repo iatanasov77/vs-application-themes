@@ -1,3 +1,10 @@
+1.1.0	|	Release date: **09.11.2024**
+============================================
+* Bug-Fixes and Improvements:
+  - Improve Templates.
+  - Fix Velzon Theme SCSS for New Versions of Bootstrap and SASS Loader.
+
+
 1.0.5	|	Release date: **29.07.2024**
 ============================================
 * New Features:
