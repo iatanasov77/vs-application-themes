@@ -3,7 +3,7 @@
 {{ form_start(form, { 'action': path('vs_application_settings_handle', {'applicationId': applicationId}), 'attr': {'id': 'formSettings_' ~ applicationId} }) }}
     
     {% if formErrors is defined %}
-        {{ vs_form.errors( formErrors ) }}     
+        {{ vs_form.errors( formErrors ) }}
     {% endif %}
     
     <div class="form-check form-check-secondary mb-3">
