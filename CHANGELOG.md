@@ -1,3 +1,9 @@
+1.1.1	|	Release date: **12.11.2024**
+============================================
+* Bug-Fixes:
+  - Fix Some Asset Paths.
+
+
 1.1.0	|	Release date: **09.11.2024**
 ============================================
 * Bug-Fixes and Improvements:
