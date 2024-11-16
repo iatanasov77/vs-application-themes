@@ -1,3 +1,12 @@
+1.1.2	|	Release date: **16.11.2024**
+============================================
+* New Features:
+  - Add Templates and JS for Banner Resources.
+* Bug-Fixes:
+  - Fix Missing Macros Import in Taxonomy Update Page.
+  - Fix Some Templates.
+
+
 1.1.1	|	Release date: **12.11.2024**
 ============================================
 * Bug-Fixes:
