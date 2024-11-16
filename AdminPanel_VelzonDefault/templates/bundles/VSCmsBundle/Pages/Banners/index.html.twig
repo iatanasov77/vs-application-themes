@@ -7,7 +7,13 @@
 
 {# Override Blocs #}
 {% block title %}{{ parent() }} :: {{ 'vs_cms.template.list_banners' | trans( {},'VSCmsBundle' ) }}{% endblock %}
-{% block pageTitle %}<i class="icon_genius"></i> {{ 'vs_cms.template.list_banners' | trans( {},'VSCmsBundle' ) }}{% endblock %}
+{% block pageTitle %}
+    <h4 class="pageheader-title">
+        <i class="icon_genius"></i> 
+        {{ 'vs_cms.template.list_banners' | trans( {},'VSCmsBundle' ) }}
+    </h4>
+{% endblock %}
+
 {% block content %}
     <div class="row">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
