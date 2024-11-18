@@ -47,10 +47,12 @@
     {{ parent() }}
     
     {{ encore_entry_link_tags( 'js/banner-places-edit', null, 'VelzonTheme' ) }}
+    {{ encore_entry_link_tags( 'js/banner-modal', null, 'VelzonTheme' ) }}
 {% endblock %}
 
 {% block body_scripts %}
     {{ parent() }}
     
     {{ encore_entry_script_tags( 'js/banner-places-edit', null, 'VelzonTheme' ) }}
+    {{ encore_entry_script_tags( 'js/banner-modal', null, 'VelzonTheme' ) }}
 {% endblock %}
