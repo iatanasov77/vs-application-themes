@@ -80,7 +80,7 @@
 {% block modals %}
     {{ parent() }}
     
-    {% include '@VSPayment/Modal/stripe-customer-payment-methods.html.twig' %}
+    {% include '@VSPayment/Pages/GatewayConfig/Stripe/stripe_object.html.twig' %}
 {% endblock %}
 
 {% block head_styles %}

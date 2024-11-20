@@ -6,11 +6,13 @@
         <h5 class="float-start">
             {{ 'vs_payment.template.payum_stripe_objects.stripe_customers' | trans( {},'VSPaymentBundle' ) }}
         </h5>
-        {#
-        <a href="{{ path( 'gateway_config_stripe_subscription_objects_create_customer' ) }}" class="btn btn-primary float-end">
+        
+        <a class="btn btn-primary float-end btnShowStripeObject"
+            href="javascript:void(0);"
+            data-url="{{ path( 'gateway_config_stripe_subscription_objects_create_customer' ) }}"
+        >
             {{ 'vs_payment.template.payum_stripe_objects.create_stripe_customer' | trans( {},'VSPaymentBundle' ) }}
         </a>
-        #}
     </div>
     
     <div class="card-body">
@@ -35,7 +37,7 @@
                     <td>{{ item.invoice_settings.default_payment_method }}</td>
                     <td>
                         <div class="btn-group">
-                            <a class="btn btn-outline-primary btnShowPaymentMethods"
+                            <a class="btn btn-outline-primary btnShowStripeObject"
                                 href="javascript:void(0);"
                                 data-url="{{ path('gateway_config_stripe_customer_payment_methods', {'customerId': item.id}) }}"
                                 title="{{ 'vs_payment.template.payum_stripe_objects.show_payment_methods' | trans( {},'VSPaymentBundle' ) }}"

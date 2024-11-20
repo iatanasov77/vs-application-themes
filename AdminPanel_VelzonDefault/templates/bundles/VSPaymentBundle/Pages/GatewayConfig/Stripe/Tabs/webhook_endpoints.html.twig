@@ -6,7 +6,10 @@
         <h5 class="float-start">
             {{ 'vs_payment.template.payum_stripe_objects.stripe_webhook_endpoints' | trans( {},'VSPaymentBundle' ) }}
         </h5>
-        <a href="{{ path( 'gateway_config_stripe_subscription_objects_create_webhook_endpoint' ) }}" class="btn btn-primary float-end">
+        <a class="btn btn-primary float-end btnShowStripeObject"
+            href="javascript:void(0);"
+            data-url="{{ path( 'gateway_config_stripe_subscription_objects_create_webhook_endpoint' ) }}"
+        >
             {{ 'vs_payment.template.payum_stripe_objects.create_webhook_endpoint' | trans( {},'VSPaymentBundle' ) }}
         </a>
     </div>
