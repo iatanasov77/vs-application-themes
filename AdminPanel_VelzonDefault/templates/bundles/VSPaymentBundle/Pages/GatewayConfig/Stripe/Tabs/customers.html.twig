@@ -9,7 +9,7 @@
         
         <a class="btn btn-primary float-end btnShowStripeObject"
             href="javascript:void(0);"
-            data-url="{{ path( 'gateway_config_stripe_subscription_objects_create_customer' ) }}"
+            data-url="{{ path( 'gateway_config_stripe_objects_create_customer' ) }}"
         >
             {{ 'vs_payment.template.payum_stripe_objects.create_stripe_customer' | trans( {},'VSPaymentBundle' ) }}
         </a>
@@ -21,6 +21,7 @@
                 <tr>
                     <th width="50">N</th>
                     <th>ID</th>
+                    <th>{{ 'vs_payment.template.payum_stripe_objects.name' | trans( {},'VSPaymentBundle' ) }}</th>
                     <th>{{ 'vs_payment.template.payum_stripe_objects.email' | trans( {},'VSPaymentBundle' ) }}</th>
                     <th>{{ 'vs_payment.template.payum_stripe_objects.balance' | trans( {},'VSPaymentBundle' ) }}</th>
                     <th>{{ 'vs_payment.template.payum_stripe_objects.default_payment_method' | trans( {},'VSPaymentBundle' ) }}</th>
@@ -32,6 +33,7 @@
                 <tr>
                     <td>{{ loop.index }}</td>
                     <td>{{ item.id }}</td>
+                    <td>{{ item.name }}</td>
                     <td>{{ item.email }}</td>
                     <td>{{ ( item.balance / 100 ) | number_format( 2 ) }} {{ item.currency }}</td>
                     <td>{{ item.invoice_settings.default_payment_method }}</td>

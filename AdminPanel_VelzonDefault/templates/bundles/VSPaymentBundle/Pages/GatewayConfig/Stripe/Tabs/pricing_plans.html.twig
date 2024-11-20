@@ -8,7 +8,7 @@
         </h5>
         <a class="btn btn-primary float-end btnShowStripeObject"
             href="javascript:void(0);"
-            data-url="{{ path( 'gateway_config_stripe_subscription_objects_create_plan' ) }}"
+            data-url="{{ path( 'gateway_config_stripe_objects_create_plan' ) }}"
         >
             {{ 'vs_payment.template.payum_stripe_objects.create_stripe_plan' | trans( {},'VSPaymentBundle' ) }}
         </a>
@@ -53,7 +53,7 @@
         </h5>
         <a class="btn btn-primary float-end btnShowStripeObject"
             href="javascript:void(0);"
-            data-url="{{ path( 'gateway_config_stripe_subscription_objects_create_product' ) }}"
+            data-url="{{ path( 'gateway_config_stripe_objects_create_product' ) }}"
         >
             {{ 'vs_payment.template.payum_stripe_objects.create_stripe_product' | trans( {},'VSPaymentBundle' ) }}
         </a>
@@ -96,7 +96,7 @@
         </h5>
         <a class="btn btn-primary float-end btnShowStripeObject"
             href="javascript:void(0);"
-            data-url="{{ path( 'gateway_config_stripe_subscription_objects_create_price' ) }}"
+            data-url="{{ path( 'gateway_config_stripe_objects_create_price' ) }}"
         >
             {{ 'vs_payment.template.payum_stripe_objects.create_stripe_price' | trans( {},'VSPaymentBundle' ) }}
         </a>
@@ -142,7 +142,7 @@
             {{ 'vs_payment.template.payum_stripe_objects.stripe_payment_methods' | trans( {},'VSPaymentBundle' ) }}
         </h5>
         {#
-        <a href="{{ path( 'gateway_config_stripe_subscription_objects_create_customer' ) }}" class="btn btn-primary float-end">
+        <a href="{{ path( 'gateway_config_stripe_objects_create_customer' ) }}" class="btn btn-primary float-end">
             {{ 'vs_payment.template.payum_stripe_objects.create_stripe_customer' | trans( {},'VSPaymentBundle' ) }}
         </a>
         #}

@@ -8,7 +8,7 @@
         </h5>
         <a class="btn btn-primary float-end btnShowStripeObject"
             href="javascript:void(0);"
-            data-url="{{ path( 'gateway_config_stripe_coupon_objects_create_coupon' ) }}"
+            data-url="{{ path( 'gateway_config_stripe_objects_create_coupon' ) }}"
         >
             {{ 'vs_payment.template.payum_stripe_objects.create_stripe_coupon' | trans( {},'VSPaymentBundle' ) }}
         </a>
@@ -49,14 +49,14 @@
                             <div class="btn-group">
                                 <a class="btn btn-outline-primary btnShowStripeObject"
                                     href="javascript:void(0);"
-                                    data-url="{{ path('gateway_config_stripe_coupon_objects_retrieve_coupon', {'id': item.id}) }}"
+                                    data-url="{{ path('gateway_config_stripe_objects_retrieve_coupon', {'id': item.id}) }}"
                                     title="{{ 'vs_payment.template.payum_stripe_objects.retrieve_coupon' | trans( {},'VSPaymentBundle' ) }}"
                                 >
                                     <i class="fas fa-eye" style="color: #be4bdb;"></i>
                                 </a>&nbsp;
                                 
                                 <a class="btn btn-danger"
-                                    href="{{ path('gateway_config_stripe_coupon_objects_delete_coupon', {'id': item.id}) }}"
+                                    href="{{ path('gateway_config_stripe_objects_delete_coupon', {'id': item.id}) }}"
                                     title="{{ 'vs_payment.template.payum_stripe_objects.delete_coupon' | trans( {},'VSPaymentBundle' ) }}"
                                 >
                                     <i class="icon_close_alt2"></i>
