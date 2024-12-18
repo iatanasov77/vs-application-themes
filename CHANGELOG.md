@@ -1,3 +1,15 @@
+1.2.0	|	Release date: **18.12.2024**
+============================================
+* New Features:
+  - Create PaymentBundle Stripe Objects Page eith Tabs.
+  - Use Modal Dialogs for all Stripe Objects Form Templates.
+  - Add Submit Buttons on all Stripe Obbject Modals.
+  - Add 'CreateCustomer' Action into Stripe Objects Actions.
+  - List Connected Accounts in Stripe Objects Page.
+  - Remove some fields from Braowser Tab Index in Velzon Admin Theme Login Form.
+  - Remove CkEditor Plugin Styles from AdminPanel_VelzonDefault Theme.
+
+
 1.1.4	|	Release date: **18.11.2024**
 ============================================
 * New Features and Improvements:
