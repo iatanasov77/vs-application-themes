@@ -1,3 +1,9 @@
+1.2.1	|	Release date: **04.01.2025**
+============================================
+* New Features:
+  - Add New Pages in AdminPanel Velzon Theme.
+
+
 1.2.0	|	Release date: **18.12.2024**
 ============================================
 * New Features:
