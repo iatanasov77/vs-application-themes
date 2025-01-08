@@ -1,3 +1,9 @@
+1.2.4	|	Release date: **08.01.2025**
+============================================
+* New Features:
+  - Update composer requirements.
+
+
 1.2.3	|	Release date: **08.01.2025**
 ============================================
 * Bug-Fixes:

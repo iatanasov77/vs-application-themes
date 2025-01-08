@@ -13,7 +13,8 @@
     ],
     "require": {
         "php": "^8.0",
-        "symfony/webpack-encore-bundle": "^2.1"
+        "symfony/webpack-encore-bundle": "^2.2",
+        "sylius/theme-bundle" : "^2.4"
     },
     "config": {
         "sort-packages": true,
