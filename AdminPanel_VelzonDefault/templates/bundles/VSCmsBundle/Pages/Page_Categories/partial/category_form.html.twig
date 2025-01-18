@@ -46,5 +46,5 @@
         {{ form_widget(form.name, {'attr': {'class': 'form-control'}, 'value' : item.name}) }}
     </div>
     
-    {{ vs_form.buttons( form, metadata ) }}
+    {{ vs_form.buttons( form, metadata is defined ? metadata : null ) }}
 {{ form_end(form, {'render_rest': false}) }}
