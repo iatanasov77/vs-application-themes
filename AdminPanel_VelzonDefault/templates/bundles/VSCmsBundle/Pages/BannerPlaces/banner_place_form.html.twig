@@ -33,5 +33,5 @@
         {{ form_widget(form.imagineFilter, {'attr': {'class': 'form-select'}}) }}
     </div>
     
-    {{ vs_form.buttons( form, metadata ) }}
+    {{ vs_form.buttons( form, metadata is defined ? metadata : null ) }}
 {{ form_end(form, {'render_rest': false}) }}

@@ -1,3 +1,10 @@
+1.2.5	|	Release date: **18.01.2025**
+============================================
+* New Features and Improvements:
+  - Improve Catalog Bundle Pages in AdminPanel VelzonTheme.
+  - Pass 'metadata' parameter in vs_form.buttons twig Macros.
+
+
 1.2.4	|	Release date: **08.01.2025**
 ============================================
 * New Features:
