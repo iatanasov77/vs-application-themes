@@ -6,10 +6,10 @@
             {{ 'vankosoft_org.template.project_issue_tasks_title' | trans( {},'VankoSoftOrg' ) }}
         </div>
         <div class="btn-group float-end">
-            {% if( item.id ) %}
+            {% if( itemId ) %}
                 <a class="btn btn-primary btnIssueTask"
                     title="{{ 'vankosoft_org.template.button_create_issue_task' | trans( {},'VankoSoftOrg' ) }}"
-                    href="{{ path('vsorg_project_issue_task_create', {'issueId': item.id}) }}"
+                    href="{{ path('vsorg_project_issue_task_create', {'issueId': itemId}) }}"
                     data-taskId="0"
                 >
                     {{ 'vankosoft_org.template.button_create_issue_task' | trans( {},'VankoSoftOrg' ) }}
@@ -18,7 +18,7 @@
         </div>
     </div>
     <div class="card-body" style="padding: 0 10px 0 10px;">
-        {% if item.tasks | length > 0 %}
+        {% if itemTasks | length > 0 %}
             {% include 'Pages/ProjectIssues/partial/issue_tasks_table.html.twig' %}
         {% else %}
             {{ alerts.info( 'vs_application.template.there_are_no_items_to_display' | trans( {},'VSApplicationBundle' ) ) }}

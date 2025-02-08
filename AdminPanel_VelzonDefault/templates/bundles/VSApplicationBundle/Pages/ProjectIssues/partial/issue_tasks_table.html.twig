@@ -1,6 +1,6 @@
 <table class="table table-striped table-advance table-hover" id="tableIssueTasks">
     <tbody id="IssueTasksTableBody">
-        {% for task in item.tasks %}
+        {% for task in itemTasks %}
             <tr>
                 <td>{{ task.pipeline.board.name }} - {{ task.pipeline.name }}</td>
                 <td class="w-25">
