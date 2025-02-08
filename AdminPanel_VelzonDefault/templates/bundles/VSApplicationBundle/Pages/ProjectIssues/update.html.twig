@@ -1,10 +1,5 @@
 {% extends "@VSApplication/layout.html.twig" %}
 
-{# Import Macros #}
-{% import "@VSApplication/Macros/form.html.twig" as vs_form %}
-{% import "@VSApplication/Macros/alerts.html.twig" as alerts %}
-{% from "@VSApplication/Macros/pagination.html.twig" import pagination %}
-
 {% if( itemId ) %}
     {% set pageTitle = 'vs_application.template.project_issues.update_title' | trans( {},'VSApplicationBundle' ) %}
 {% else %}
@@ -16,104 +11,44 @@
 
 {% block pageTitle %}
     <h4 class="pageheader-title">
-    	<i class="ri-rocket-line"></i> 
+    	<i class="fas fa-bug"></i> 
         {{ pageTitle }}
    	</h4>
 {% endblock %}
 
 {% block content %}
     <div class="row">
-        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-            <div class="card">
-                <h5 class="card-header">{{ 'vs_application.template.project_issues.issue_details'  | trans( {},'VSApplicationBundle' ) }}</h5>
-                <div class="card-body">
-                
-                    {% if formErrors is defined %}
-                        {{ vs_form.errors( formErrors ) }}
-                    {% endif %}
-                    
-                    <div id="FormContainer">
-                        {% if(itemId) %}{% set method = "PUT" %}{% else %}{% set method = "POST" %}{% endif %}
-                        {{ form_start(form, { 'attr': {'id': 'FormProjectIssue'}, 'method': method }) }}
-                        
-                            <div class="form-group">
-                                {{ form_label(form.title, null, {
-                                    'label_attr': {'class': 'form-label'}
-                                    }) 
-                                }}
-                                {{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}
-                            </div>
-                            
-                            <div class="form-group">
-                                {{ form_label(form.description, null, {
-                                    'label_attr': {'class': 'form-label'}
-                                    }) 
-                                }}
-                                {{ form_widget(form.description, {'attr': {'class': 'form-control'}}) }}
-                            </div>
-                            
-                            <fieldset class="border border-dark rounded p-3 m-3">
-                                <legend class="w-auto float-none ps-2 pe-2">
-                                    {{ 'vs_application.form.project_issue.status'  | trans( {},'VSApplicationBundle' ) }}
-                                </legend>
-                                
-                                {% for status in form.status %}
-                                    <div class="form-check">
-                                        {{ form_widget(status, {'attr': {'class': 'form-check-input project-issue-status-radio', 'checked': loop.index == 1}}) }}
-                                        
-                                        {{ form_label(status, null, {
-                                            'label_attr': {'class': 'form-check-label'}
-                                            }) 
-                                        }}
-                                    </div>
-                                {% endfor %}
-                            </fieldset>
-                            
-                            {{ form_widget( form.labelsWhitelist, { 'value' : labelsWhitelist | join(',') } ) }}
-                            <div class="form-group">
-                                {{ form_label(form.labels, null, {
-                                    'label_attr': {'class': 'form-label'}
-                                    }) 
-                                }}
-                                
-                                {{ form_widget(form.labels, {'attr': {'class': 'form-control'}}) }}
-                            </div>
-                            
-                            <div class="row">&nbsp;</div>
-    
-                            <div class="input-group row vsFormButtonsGroup">
-                                <div class="col-sm-2">
-                                    {{ form_widget(form.btnApply, {'attr': {'class': 'btn btn-primary', 'id':'btnApply'}}) }}
-                                </div>
-                                <div class="col-sm-2">
-                                    {{ form_widget(form.btnSave, {'attr': {'class': 'btn btn-primary', 'id':'btnSave'}}) }}
-                                </div>
-                                
-                                <div class="col-sm-2">
-                                    <a class="btn btn-default" href="{{ path( 'vs_application_project_issues_index' ) }}">
-                                        {{ 'vs_application.form.cancel' | trans( {},'VSApplicationBundle' ) }}
-                                    </a>
-                                </div>
-                                
-                                <div class="col-sm-6"></div>
-                            </div>
-                            
-                        {{ form_end(form, {'render_rest': false}) }}
-                    </div>
-                </div>
-            </div>
+        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8">
+            {% include '@VSApplication/Pages/ProjectIssues/_form.html.twig' %}
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
+            {% include '@VSApplication/Pages/ProjectIssues/_issue_comments.html.twig' %}
+            {% include '@VSApplication/Pages/ProjectIssues/_issue_tasks.html.twig' %}
         </div>
     </div>
+    
+    {% include '@VSApplication/Partial/resource-delete.html.twig' %}
+{% endblock %}
+
+{% block modals %}
+    {% include '@VSApplication/Pages/ProjectIssues/modal/issue_comment_edit.html.twig' %}
+    {% include '@VSApplication/Pages/ProjectIssues/modal/issue_task_edit.html.twig' %}
 {% endblock %}
 
 {% block head_styles %}
     {{ parent() }}
     
+    {{ encore_entry_link_tags( 'js/project-issue-comments-edit', null, 'VelzonTheme' ) }}
+    {{ encore_entry_link_tags( 'js/project-issue-tasks-edit', null, 'VelzonTheme' ) }}
     {{ encore_entry_link_tags( 'js/project-issues-edit', null, 'VelzonTheme' ) }}
+    {{ encore_entry_link_tags( 'ckeditor5', null, 'VelzonTheme' ) }}
 {% endblock %}
 
 {% block body_scripts %}
     {{ parent() }}
     
+    {{ encore_entry_script_tags( 'js/project-issue-comments-edit', null, 'VelzonTheme' ) }}
+    {{ encore_entry_script_tags( 'js/project-issue-tasks-edit', null, 'VelzonTheme' ) }}
     {{ encore_entry_script_tags( 'js/project-issues-edit', null, 'VelzonTheme' ) }}
+    {{ encore_entry_script_tags( 'ckeditor5', null, 'VelzonTheme' ) }}
 {% endblock %}
