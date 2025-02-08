@@ -5,22 +5,20 @@
                 <td>{{ task.pipeline.board.name }} - {{ task.pipeline.name }}</td>
                 <td class="w-25">
                     <div class="btn-group">
-                        {#
                         <a class="btn btn-primary btnIssueTask"
-                           href="{{ path('vsorg_project_issue_task_edit', {'issueId': item.id, 'taskId': task.id}) }}"
+                           href="{{ path('vs_application_project_issue_tasks_update', {'issueId': item.id, 'taskId': task.id}) }}"
                            title="{{ 'vs_application.template.items_index_row_action_edit' | trans( {},'VSApplicationBundle' ) }}"   
                         >
                             <i class="fas fa-edit"></i>
                         </a>
                         <a class="btn btn-danger btnDeleteResource"
-                            href="{{ path('vsorg_kanbanboard_task_delete', {'id': task.id}) }}"
+                            href="{{ path('vs_application_project_issue_tasks_delete', {'id': task.id}) }}"
                             data-csrfToken="{{ csrf_token( task.id ) }}"
-                            data-redirectUrl="{{ path( 'vsorg_project_issues_update', {'id': item.id} ) }}"
+                            data-redirectUrl="{{ path( 'vs_application_project_issues_update', {'id': item.id} ) }}"
                             title="{{ 'vs_application.template.items_index_row_action_delete' | trans( {},'VSApplicationBundle' ) }}"
                         >
                             <i class="icon_close_alt2"></i>
                         </a>
-                        #}
                     </div>
                 </td>
             </tr>
