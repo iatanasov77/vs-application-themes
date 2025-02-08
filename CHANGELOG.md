@@ -1,3 +1,11 @@
+1.3.0	|	Release date: **08.02.2025**
+============================================
+* New Features:
+  - Add New Features into Project Issues.
+  - Create Project Issues Kanbanboard Page.
+  - Create Project Issues Kanbanboard Task Page.
+
+
 1.2.5	|	Release date: **18.01.2025**
 ============================================
 * New Features and Improvements:
