@@ -20,5 +20,8 @@ window.SimpleBar    = SimpleBar;
 import Choices from 'choices.js';
 window.Choices  = Choices;
 
+const flatpickr = require( "flatpickr" );
+window.flatpickr = flatpickr;
+
 require( './vendor/Velzon_v4.2.0/js/app.js' );
 require( './vendor/Velzon_v4.2.0/js/pages/password-addon.init.js' );
