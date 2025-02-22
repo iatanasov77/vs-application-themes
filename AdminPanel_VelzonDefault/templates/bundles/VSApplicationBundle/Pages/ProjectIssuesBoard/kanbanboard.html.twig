@@ -2,7 +2,12 @@
 
 {# Override Blocs #}
 {% block title %}{{ parent() }} :: {{ 'vs_application.template.project_issues.kanbanboard' | trans( {},'VSApplicationBundle' ) }}{% endblock %}
-{% block pageTitle %}{{ 'vs_application.template.project_issues.kanbanboard' | trans( {},'VSApplicationBundle' ) }}{% endblock %}
+{% block pageTitle %}
+    <h4 class="pageheader-title">
+        <i class="fas fa-bug"></i> 
+        {{ 'vs_application.template.project_issues.kanbanboard' | trans( {},'VSApplicationBundle' ) }}
+    </h4>    
+{% endblock %}
 
 {% block content %}
     <div class="card">
