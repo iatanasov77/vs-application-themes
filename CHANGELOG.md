@@ -1,3 +1,9 @@
+1.3.1	|	Release date: **22.02.2025**
+============================================
+* New Features:
+  - Remove Project Version from Side Bar Menu.
+
+
 1.3.0	|	Release date: **08.02.2025**
 ============================================
 * New Features:
