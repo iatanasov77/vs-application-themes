@@ -22,6 +22,10 @@
         {% endblock %}
 
         {% block head_scripts %}
+            <script type="text/javascript">
+                const useCkEditor   = {{ useCkEditor }};
+                window.useCkEditor  = useCkEditor;
+            </script>
             {{ encore_entry_script_tags( 'js/layout', null, 'VelzonTheme' ) }}
         {% endblock %}
     </head>
@@ -52,7 +56,7 @@
                             <div class="col-12">
                                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
                                     {% block pageTitle %}{% endblock %}
-                        
+                                    
                                     <div class="page-title-right">
                                         {{ knp_menu_render('breadcrumbs', {'template': '@VSApplication/Menu/breadcrumb.html.twig'}) }}
                                     </div>
