@@ -1,3 +1,10 @@
+1.3.2	|	Release date: **04.03.2025**
+============================================
+* New Features:
+  - Improve Project Issues Kanbanboard Page.
+  - Set useCkEditor constant in JavaScript on AdminPanel Layout.
+
+
 1.3.1	|	Release date: **22.02.2025**
 ============================================
 * New Features:
