@@ -87,3 +87,7 @@
     {{ vs_form.buttons( form, metadata is defined ? metadata : null ) }}
     
 {{ form_end(form, {'render_rest': false}) }}
+
+{% if isAjaxRequest is defined and isAjaxRequest and useCkEditor == 5 %}
+    {{ encore_entry_script_tags( 'ckeditor5', null, 'VelzonTheme' ) }}
+{% endif %}
