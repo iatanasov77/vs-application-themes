@@ -1,3 +1,9 @@
+1.3.3	|	Release date: **05.03.2025**
+============================================
+* Bug-Fixes:
+  - Load CkEditor 5 in SliderItem Form if it is Set In ENV .
+
+
 1.3.2	|	Release date: **04.03.2025**
 ============================================
 * New Features:
