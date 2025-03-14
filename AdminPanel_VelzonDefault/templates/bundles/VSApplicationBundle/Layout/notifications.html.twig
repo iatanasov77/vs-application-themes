@@ -55,10 +55,10 @@
     				{% endfor %}
                     
                     <div class="my-3 text-center view-all">
-                        <button type="button" class="btn btn-soft-success waves-effect waves-light">
+                        <a href="{{ path( 'vs_users_profile_show' ) }}#notifications" class="btn btn-soft-success waves-effect waves-light">
                         	{{ 'vs_application.template.button_view_all_notifications' | trans( {},'VSApplicationBundle' ) }} 
                         	<i class="ri-arrow-right-line align-middle"></i>
-                        </button>
+                        </a>
                     </div>
             	</div>
     
