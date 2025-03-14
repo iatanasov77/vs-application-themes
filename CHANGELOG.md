@@ -1,3 +1,9 @@
+1.3.4	|	Release date: **14.03.2025**
+============================================
+* Bug-Fixes:
+  - Add Missing Loading of CkEditor5 in Some Pages.
+
+
 1.3.3	|	Release date: **05.03.2025**
 ============================================
 * Bug-Fixes:
