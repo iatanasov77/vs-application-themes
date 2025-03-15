@@ -1,3 +1,9 @@
+1.3.5	|	Release date: **15.03.2025**
+============================================
+* Bug-Fixes:
+  - Fix Application Layout Notifications Dropdown
+
+
 1.3.4	|	Release date: **14.03.2025**
 ============================================
 * Bug-Fixes:
