@@ -3,7 +3,8 @@
         <i class='bx bx-bell fs-22'></i>
         {% if app.user.unreadedNotifications.count > 0 %}
             <span class="position-absolute topbar-badge fs-10 translate-middle badge rounded-pill bg-danger">
-            	{{ app.user.unreadedNotifications.count }}<span class="visually-hidden">{{ 'vs_users.template.profile_notification_unreaded' | trans( {},'VSUsersBundle' ) }}</span>
+            	{{ app.user.unreadedNotifications.count }}
+            	<span class="visually-hidden">{{ 'vs_users.template.profile_notification_unreaded' | trans( {},'VSUsersBundle' ) }}</span>
             </span>
         {% endif %}
     </button>
@@ -17,7 +18,7 @@
                     </div>
                     <div class="col-auto dropdown-tabs">
                     	<span class="badge bg-light-subtle text-body fs-13"> 
-                    	    {{ app.user.unreadedNotifications.count }} {{ 'vs_users.template.new_notifications' | trans( {},'VSUsersBundle' ) }}
+                    	    {{ app.user.unreadedNotifications.count }} {{ 'vs_application.template.new' | trans( {},'VSApplicationBundle' ) }}
                     	</span>
                     </div>
                 </div>
@@ -72,13 +73,15 @@
         	
         	<div class="notification-actions" id="notification-actions">
                 <div class="d-flex text-muted justify-content-center">
-                    Select <div id="select-content" class="text-body fw-semibold px-1">0</div> Result 
+                    {{ 'vs_application.template.select' | trans( {},'VSApplicationBundle' ) }} 
+                    <div id="select-content" class="text-body fw-semibold px-1">0</div> 
+                    {{ 'vs_application.template.results' | trans( {},'VSApplicationBundle' ) }} 
                     <button type="button" 
                         class="btn btn-link link-danger p-0 ms-3" 
                         data-bs-toggle="modal" 
                         data-bs-target="#removeNotificationModal"
                     >
-                        Remove
+                        {{ 'vs_application.template.remove' | trans( {},'VSApplicationBundle' ) }}
                     </button>
                 </div>
             </div>
