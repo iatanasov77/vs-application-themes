@@ -102,6 +102,8 @@
 {% endblock %}
 
 {% block modals %}
+    {{ parent() }}
+    
     {% include '@VSCms/Modals/toc_page_edit.html.twig' %}
 {% endblock %}
 

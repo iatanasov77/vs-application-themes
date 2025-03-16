@@ -176,6 +176,8 @@
 {% endblock content %}
 
 {% block modals %}
+    {{ parent() }}
+    
     {% include '@VSUsers/Profile/modal/notification_show.html.twig' %}
 {% endblock %}
 

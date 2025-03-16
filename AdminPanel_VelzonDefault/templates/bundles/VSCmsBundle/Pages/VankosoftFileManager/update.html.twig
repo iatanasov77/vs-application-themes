@@ -81,6 +81,8 @@
 {% endblock content %}
 
 {% block modals %}
+    {{ parent() }}
+    
     {% include '@VSCms/Modals/filemanager_upload_file.html.twig' %}
 {% endblock %}
 

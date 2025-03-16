@@ -31,6 +31,8 @@
 {% endblock %}
 
 {% block modals %}
+    {{ parent() }}
+    
     {% include '@VSApplication/Pages/ProjectIssues/modal/issue_comment_edit.html.twig' %}
     {% include '@VSApplication/Pages/ProjectIssues/modal/issue_task_edit.html.twig' %}
 {% endblock %}
