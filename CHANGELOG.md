@@ -1,3 +1,16 @@
+1.3.8	|	Release date: **16.03.2025**
+============================================
+* Bug-Fixes and Improvements:
+  - Improve Layout Top Notifications.
+  - Add Notification Actions for Layout Notifications Dropdown.
+  - Make  Actions to work on Remove Notifications Modal.
+  - Fix Many Templates that use twig block 'modals' and not add modals from layout.
+  - Add Some Missing Images.
+  - Add a Custom Logic for JS in Profile Show Page.
+  - Send an Ajax Request to Remove Selected Notifications from Notifications Dropdown.
+  - Add Button 'Clear All' in Notifications Dropdown.
+
+
 1.3.7	|	Release date: **15.03.2025**
 ============================================
 * New Features:

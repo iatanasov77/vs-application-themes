@@ -11,7 +11,7 @@
 {% block content %}
 	<div class="profile-foreground position-relative mx-n4 mt-n4">
         <div class="profile-wid-bg">
-            <img src="{{ asset( 'build/velzon-theme/images/profile-bg.jpg' ) }}" alt="" class="profile-wid-img" />
+            <img src="{{ asset( '/build/velzon-theme/images/profile-bg.jpg' ) }}" alt="" class="profile-wid-img" />
         </div>
     </div>
     <div class="pt-4 mb-4 mb-lg-3 pb-lg-4 profile-wrapper">
@@ -21,7 +21,7 @@
                     {% if app.user.info and app.user.info.avatar %}
                        <img src="{{ app.user.info.avatar.path | imagine_filter( 'users_crud_index_thumb' ) }}" alt="" class="img-thumbnail rounded-circle" />
                     {% else %}
-                        <img src="{{ asset( '/build/default/images/avatar-1.jpg' ) }}" alt="" class="img-thumbnail rounded-circle" />
+                        <img src="{{ asset( '/build/velzon-theme/images/avatar-1.jpg' ) }}" alt="" class="img-thumbnail rounded-circle" />
                     {% endif %}
                 </div>
             </div>
@@ -176,17 +176,22 @@
 {% endblock content %}
 
 {% block modals %}
+    {{ parent() }}
+    
     {% include '@VSUsers/Profile/modal/notification_show.html.twig' %}
 {% endblock %}
 
 {% block head_styles %} 
     {{ parent() }}
+    
     {{ encore_entry_link_tags( 'js/profile', null, 'VelzonTheme' ) }}
+    {{ encore_entry_link_tags( 'js/velzon-profile', null, 'VelzonTheme' ) }}
 {% endblock %}
 
 {% block body_scripts %}
 	{{ parent() }}
 	
     {{ encore_entry_script_tags( 'js/profile', null, 'VelzonTheme' ) }}
+    {{ encore_entry_script_tags( 'js/velzon-profile', null, 'VelzonTheme' ) }}
     {{ encore_entry_script_tags( 'js/filemanager-file-upload', null, 'VelzonTheme' ) }}
 {% endblock %}
