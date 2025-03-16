@@ -24,12 +24,16 @@ $( function()
                 url: VsPath( 'vs_users_notifications_remove' ),
                 dataType: 'json',
                 data: JSON.stringify( removeIds ),
-                success: function ()
+                processData: false,
+                contentType: false,
+                cache: false,
+                success: function ( data )
                 {
+                    alert( document.location );
                     //document.getElementById( 'NotificationModalbtn-close' ).click();
                     document.location   = document.location;
                 },
-                error: function()
+                error: function( XMLHttpRequest, textStatus, errorThrown )
                 {
                     alert( "SYSTEM ERROR!!!" );
                 }
