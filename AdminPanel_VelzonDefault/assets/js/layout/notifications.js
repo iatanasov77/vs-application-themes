@@ -23,7 +23,6 @@ $( function()
                 type: "POST",
                 url: VsPath( 'vs_users_notifications_remove' ),
                 dataType: 'json',
-                async: false,
                 data: JSON.stringify( removeIds ),
                 success: function ()
                 {
