@@ -61,6 +61,7 @@ Encore
         {from: './themes/AdminPanel_VelzonDefault/assets/vendor/Velzon_v4.2.0/fonts', to: 'fonts/[path][name].[ext]'},
         {from: './themes/AdminPanel_VelzonDefault/assets/vendor/Velzon_v4.2.0/images/flags', to: 'images/flags/[path][name].[ext]'},
         {from: './themes/AdminPanel_VelzonDefault/assets/vendor/Velzon_v4.2.0/images/users', to: 'images/users/[path][name].[ext]'},
+        {from: './themes/AdminPanel_VelzonDefault/assets/vendor/Velzon_v4.2.0/images/svg', to: 'images/svg/[path][name].[ext]'},
     ])
 
     // Global Assets

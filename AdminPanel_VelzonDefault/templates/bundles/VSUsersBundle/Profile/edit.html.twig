@@ -11,7 +11,7 @@
 {% block content %}
     <div class="position-relative mx-n4 mt-n4">
         <div class="profile-wid-bg profile-setting-img">
-            <img src="{{ asset( 'build/velzon-theme/images/profile-bg.jpg' ) }}" class="profile-wid-img" alt="">
+            <img src="{{ asset( '/build/velzon-theme/images/profile-bg.jpg' ) }}" class="profile-wid-img" alt="">
             <div class="overlay-content">
                 <div class="text-end p-3">
                     {% include '@VSUsers/Profile/partial/_profile-change_avatar.html.twig' with {'f': otherForms.changeAvatarForm.createView} %}
@@ -29,7 +29,7 @@
                             {% if app.user.info and app.user.info.avatar %}
                                <img src="{{ app.user.info.avatar.path | imagine_filter( 'users_crud_index_thumb' ) }}" alt="" class="rounded-circle avatar-xl img-thumbnail user-profile-image" />
                             {% else %}
-                                <img src="{{ asset( 'build/velzon-theme/images/users/avatar-1.jpg' ) }}" alt="" class="rounded-circle avatar-xl img-thumbnail user-profile-image" />
+                                <img src="{{ asset( '/build/velzon-theme/images/users/avatar-1.jpg' ) }}" alt="" class="rounded-circle avatar-xl img-thumbnail user-profile-image" />
                             {% endif %}
                             
                             {% include '@VSUsers/Profile/partial/_profile-edit_avatar.html.twig' with {'f': otherForms.changeAvatarForm.createView} %}
