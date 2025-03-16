@@ -183,12 +183,15 @@
 
 {% block head_styles %} 
     {{ parent() }}
+    
     {{ encore_entry_link_tags( 'js/profile', null, 'VelzonTheme' ) }}
+    {{ encore_entry_link_tags( 'js/velzon-profile', null, 'VelzonTheme' ) }}
 {% endblock %}
 
 {% block body_scripts %}
 	{{ parent() }}
 	
     {{ encore_entry_script_tags( 'js/profile', null, 'VelzonTheme' ) }}
+    {{ encore_entry_script_tags( 'js/velzon-profile', null, 'VelzonTheme' ) }}
     {{ encore_entry_script_tags( 'js/filemanager-file-upload', null, 'VelzonTheme' ) }}
 {% endblock %}

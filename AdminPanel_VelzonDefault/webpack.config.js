@@ -72,6 +72,7 @@ Encore
     
     // VsApplicationBundle Pages
     .addEntry( 'js/profile-edit', './themes/AdminPanel_VelzonDefault/assets/js/pages/profile-edit.js' )
+    .addEntry( 'js/velzon-profile', './themes/AdminPanel_VelzonDefault/assets/js/pages/profile.js' )
     
     //////////////////////////////////////////////////////////////////
     // Standard Pages
