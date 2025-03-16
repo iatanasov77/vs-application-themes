@@ -25,3 +25,5 @@ window.flatpickr = flatpickr;
 
 require( './vendor/Velzon_v4.2.0/js/app.js' );
 require( './vendor/Velzon_v4.2.0/js/pages/password-addon.init.js' );
+
+require( './js/layout/notifications.js' );

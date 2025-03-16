@@ -37,7 +37,7 @@
                     </div>
                     
     				{% for notification in app.user.unreadedNotifications %}
-                        <div class="text-reset notification-item d-block dropdown-item position-relative">
+                        <div class="text-reset notification-item d-block dropdown-item position-relative" data-notification-id="{{ notification.id }}">
                             <div class="d-flex">
                                 <img src="{{ asset( 'build/velzon-theme/images/users/avatar-2.jpg' ) }}" class="me-3 rounded-circle avatar-xs flex-shrink-0" alt="user-pic">
                                 <div class="flex-grow-1">
@@ -53,8 +53,8 @@
                                 </div>
                                 <div class="px-2 fs-15">
                                     <div class="form-check notification-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="all-notification-check02">
-                                        <label class="form-check-label" for="all-notification-check02"></label>
+                                        <input class="form-check-input" type="checkbox" value="" id="all-notification-check_{{ loop.index }}">
+                                        <label class="form-check-label" for="all-notification-check_{{ loop.index }}"></label>
                                     </div>
                                 </div>
                             </div>
