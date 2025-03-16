@@ -30,8 +30,17 @@
                 
                 <div data-simplebar style="max-height: 300px;" class="pe-2">
                     <div class="my-3 text-center view-all">
-                        <a href="{{ path( 'vs_users_profile_show' ) }}#notifications" class="btn btn-soft-success waves-effect waves-light">
+                        <a href="{{ path( 'vs_users_profile_show' ) }}#notifications"
+                            class="btn btn-soft-success waves-effect waves-light me-2"
+                        >
                             {{ 'vs_application.template.button_view_all_notifications' | trans( {},'VSApplicationBundle' ) }} 
+                            <i class="ri-arrow-right-line align-middle"></i>
+                        </a>
+                        
+                        <a href="{{ path( 'vs_users_notifications_clear_all' ) }}"
+                            class="btn btn-soft-danger waves-effect waves-light"
+                        >
+                            {{ 'vs_users.template.profile_notification_clear_all' | trans( {},'VSUsersBundle' ) }} 
                             <i class="ri-arrow-right-line align-middle"></i>
                         </a>
                     </div>
@@ -62,9 +71,18 @@
     				{% endfor %}
                     
                     <div class="my-3 text-center view-all">
-                        <a href="{{ path( 'vs_users_profile_show' ) }}#notifications" class="btn btn-soft-success waves-effect waves-light">
+                        <a href="{{ path( 'vs_users_profile_show' ) }}#notifications"
+                            class="btn btn-soft-success waves-effect waves-light"
+                        >
                         	{{ 'vs_application.template.button_view_all_notifications' | trans( {},'VSApplicationBundle' ) }} 
                         	<i class="ri-arrow-right-line align-middle"></i>
+                        </a>
+                        
+                        <a href="{{ path( 'vs_users_notifications_clear_all' ) }}"
+                            class="btn btn-soft-danger waves-effect waves-light"
+                        >
+                            {{ 'vs_users.template.profile_notification_clear_all' | trans( {},'VSUsersBundle' ) }} 
+                            <i class="ri-arrow-right-line align-middle"></i>
                         </a>
                     </div>
             	</div>

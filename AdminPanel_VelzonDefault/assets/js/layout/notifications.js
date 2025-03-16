@@ -29,8 +29,7 @@ $( function()
                 cache: false,
                 success: function ( data )
                 {
-                    alert( document.location );
-                    //document.getElementById( 'NotificationModalbtn-close' ).click();
+                    //alert( document.location );
                     document.location   = document.location;
                 },
                 error: function( XMLHttpRequest, textStatus, errorThrown )
