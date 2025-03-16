@@ -1,3 +1,5 @@
+// bin/console fos:js-routing:dump --format=json --target=public/shared_assets/js/fos_js_routes_admin.json
+import { VsPath } from '@/js/includes/fos_js_routes.js';
 
 $( function()
 {
@@ -16,8 +18,24 @@ $( function()
                 }
             });
             
-            alert( JSON.stringify( removeIds ) );
-            document.getElementById( "NotificationModalbtn-close" ).click();
+            //alert( JSON.stringify( removeIds ) );
+            $.ajax({
+                type: "POST",
+                url: VsPath( 'vs_users_notifications_remove' ),
+                dataType: 'json',
+                async: false,
+                data: JSON.stringify( removeIds ),
+                success: function ()
+                {
+                    //document.getElementById( 'NotificationModalbtn-close' ).click();
+                    document.location   = document.location;
+                },
+                error: function()
+                {
+                    alert( "SYSTEM ERROR!!!" );
+                }
+            });
+            
         });
     });
 });
