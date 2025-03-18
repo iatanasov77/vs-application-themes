@@ -19,7 +19,7 @@
                             <th>{{ 'vs_users.template.userscrud_index_tablecolumns_username' | trans( {},'VSUsersBundle' ) }}</th>
                             <th>{{ 'vs_users.template.userscrud_index_tablecolumns_email' | trans( {},'VSUsersBundle' ) }}</th>
                             <th>{{ 'vs_users.template.userscrud_index_tablecolumns_fullname' | trans( {},'VSUsersBundle' ) }}</th>
-                            <th>{{ 'vs_users.template.userscrud_index_tablecolumns_roles' | trans( {},'VSUsersBundle' ) }}</th>
+                            <th width="150">{{ 'vs_users.template.userscrud_index_tablecolumns_roles' | trans( {},'VSUsersBundle' ) }}</th>
                             <th>{{ 'vs_users.form.user.enabled' | trans( {},'VSUsersBundle' ) }}</th>
                             <th>{{ 'vs_users.form.user.verified' | trans( {},'VSUsersBundle' ) }}</th>
                             
@@ -48,7 +48,7 @@
                                     </td>
                                     <td>{{ item.email  }}</td>
                                     <td>{{ item.info.getFullName() }}</td>
-                                    <td>{{ item.roles | join(' , ')  }}</td>
+                                    <td>{{ item.roles | join( ' ' )  }}</td>
                                     <td>
                                         {% if item.enabled %}
                                             <i class="fas fa-check" style="color: #82c91e;">
@@ -75,29 +75,49 @@
                                     {% endif %}
                                     
                                     <td>
-                                    	<div class="btn-group">
-                                    		<a class="btn btn-primary" 
-                                    		    href="{{ path('vs_users_users_update', {'id': item.id}) }}"
-                                    		    title="{{ 'vs_users.template.userscrud_update_title' | trans( {},'VSUsersBundle' ) }}"
-                                    		>
-                                                <i class="fas fa-edit"></i>
-                                            </a>&nbsp;
-                                            <a class="btn btn-primary btnUserInfo" href="javascript:void(0);"
-                                                data-url="{{ path('vs_users_user_info_display', {'userId': item.id}) }}"
-                                                title="{{ 'vs_users.template.userscrud_userinfo_title' | trans( {},'VSUsersBundle' ) }}"
+                                        <div class="dropdown">
+                                            <a href="javascript:void(0);" class="btn btn-light btn-icon" id="dropdownMenuLink15"
+                                                data-bs-toggle="dropdown"
+                                                aria-expanded="true"
+                                                title="Show Actions"
                                             >
-                                                <i class="fas fa-info"></i>
-                                            </a>&nbsp;
-                                        {% if item.username != 'admin' %}
-                                            <a class="btn btn-danger btnDeleteResource"
-                                                href="{{ path('vs_users_users_delete', {'id': item.id}) }}"
-                                                data-csrfToken="{{ csrf_token( item.id ) }}"
-                                                data-message="vs_application.form.vs_form_delete.users_crud_message"
-                                                title="{{ 'vs_users.template.userscrud_delete_title' | trans( {},'VSUsersBundle' ) }}"
-                                            >
-                                                <i class="icon_close_alt2"></i>
-                                            </a>&nbsp;
-                                        {% endif %}
+                                                <i class="ri-equalizer-fill"></i>
+                                            </a>
+                                            
+                                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink15">
+                                                <li>
+                                            		<a class="btn btn-primary" 
+                                            		    href="{{ path('vs_users_users_update', {'id': item.id}) }}"
+                                            		    title="{{ 'vs_users.template.userscrud_update_title' | trans( {},'VSUsersBundle' ) }}"
+                                            		>
+                                                        <i class="fas fa-edit me-2 align-middle text-muted"></i>
+                                                        {{ 'vs_users.template.userscrud_update_title' | trans( {},'VSUsersBundle' ) }}
+                                                    </a>
+                                                <li>
+                                                <li>
+                                                    <a class="btn btn-primary btnUserInfo" href="javascript:void(0);"
+                                                        data-url="{{ path('vs_users_user_info_display', {'userId': item.id}) }}"
+                                                        title="{{ 'vs_users.template.userscrud_userinfo_title' | trans( {},'VSUsersBundle' ) }}"
+                                                    >
+                                                        <i class="fas fa-info me-2 align-middle text-muted"></i>
+                                                        {{ 'vs_users.template.userscrud_userinfo_title' | trans( {},'VSUsersBundle' ) }}
+                                                    </a>
+                                                <li>
+                                                    
+                                                {% if item.username != 'admin' %}
+                                                    <li>
+                                                        <a class="btn btn-danger btnDeleteResource"
+                                                            href="{{ path('vs_users_users_delete', {'id': item.id}) }}"
+                                                            data-csrfToken="{{ csrf_token( item.id ) }}"
+                                                            data-message="vs_application.form.vs_form_delete.users_crud_message"
+                                                            title="{{ 'vs_users.template.userscrud_delete_title' | trans( {},'VSUsersBundle' ) }}"
+                                                        >
+                                                            <i class="fas fa-trash me-2 align-middle text-muted"></i>
+                                                            {{ 'vs_users.template.userscrud_delete_title' | trans( {},'VSUsersBundle' ) }}
+                                                        </a>
+                                                    </ul>li>
+                                                {% endif %}
+                                            </ul>
                                         </div>
                                     </td>
                                 </tr>
