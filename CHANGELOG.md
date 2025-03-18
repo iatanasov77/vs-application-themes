@@ -1,3 +1,9 @@
+1.3.11	|	Release date: **18.03.2025**
+============================================
+* New Features:
+  - Restrict Some Columns in UsersCrud Index Page Only for Super Admins.
+
+
 1.3.10	|	Release date: **18.03.2025**
 ============================================
 * New Features:
