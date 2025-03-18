@@ -86,7 +86,7 @@
                                             
                                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink15">
                                                 <li>
-                                            		<a class="btn btn-primary" 
+                                            		<a class="dropdown-item btn btn-primary" 
                                             		    href="{{ path('vs_users_users_update', {'id': item.id}) }}"
                                             		    title="{{ 'vs_users.template.userscrud_update_title' | trans( {},'VSUsersBundle' ) }}"
                                             		>
@@ -95,7 +95,7 @@
                                                     </a>
                                                 <li>
                                                 <li>
-                                                    <a class="btn btn-primary btnUserInfo" href="javascript:void(0);"
+                                                    <a class="dropdown-item btn btn-primary btnUserInfo" href="javascript:void(0);"
                                                         data-url="{{ path('vs_users_user_info_display', {'userId': item.id}) }}"
                                                         title="{{ 'vs_users.template.userscrud_userinfo_title' | trans( {},'VSUsersBundle' ) }}"
                                                     >
@@ -106,7 +106,7 @@
                                                     
                                                 {% if item.username != 'admin' %}
                                                     <li>
-                                                        <a class="btn btn-danger btnDeleteResource"
+                                                        <a class="dropdown-item btn btn-danger btnDeleteResource"
                                                             href="{{ path('vs_users_users_delete', {'id': item.id}) }}"
                                                             data-csrfToken="{{ csrf_token( item.id ) }}"
                                                             data-message="vs_application.form.vs_form_delete.users_crud_message"
