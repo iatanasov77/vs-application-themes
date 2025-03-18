@@ -1,3 +1,9 @@
+1.3.10	|	Release date: **18.03.2025**
+============================================
+* New Features:
+  - Improve Users Crud Index Page.
+
+
 1.3.9	|	Release date: **18.03.2025**
 ============================================
 * New Features and Improvements:
