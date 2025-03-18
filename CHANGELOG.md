@@ -1,3 +1,12 @@
+1.3.9	|	Release date: **18.03.2025**
+============================================
+* New Features and Improvements:
+  - Improve Users Roles Index Page.
+  - Improve Widgets Index Page.
+  - Add Allowed Roles field into User Edit Page.
+  - Improve User Edit Page.
+
+
 1.3.8	|	Release date: **16.03.2025**
 ============================================
 * Bug-Fixes and Improvements:
