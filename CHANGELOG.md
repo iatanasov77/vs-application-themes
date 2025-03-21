@@ -1,3 +1,10 @@
+1.3.13	|	Release date: **21.03.2025**
+============================================
+* Bug-Fixes:
+  - Some Fixes for wrong images paths.
+  - Fix Profile Edit Form.
+
+
 1.3.12	|	Release date: **20.03.2025**
 ============================================
 * Bug-Fixes:
