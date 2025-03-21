@@ -4,7 +4,7 @@
 {% import "@VSApplication/Macros/alerts.html.twig" as alerts %}
 
 {# Override Blocs #}
-{% block title %}{{ parent() }} :: {{ 'vankosoft_org.template.page_title_kanbanboard_index' | trans( {},'VankoSoftOrg' ) }} :: {{ resource.title }}{% endblock %}
+{% block title %}{{ parent() }} :: {{ 'vankosoft_org.template.page_title_kanbanboard_index' | trans( {},'VankoSoftOrg' ) }} :: {{ board.name }}{% endblock %}
 {% block pageTitle %}
     <h4 class="pageheader-title">
         <i class="fas fa-bug"></i> 
