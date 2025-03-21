@@ -13,7 +13,9 @@
                 />
                 {% set profilePictureName = app.user.info.avatar.originalName %}
             {% else %}
-                <img src="{{ asset( '/build/default/images/avatar-1.jpg' ) }}" alt="" class="user-avatar-md rounded-circle" />
+                <img src="{{ asset( '/build/velzon-theme/images/users/avatar-1.jpg' ) }}" alt=""
+                    class="user-avatar-md rounded-circle"
+                />
                 {% set profilePictureName = 'avatar-1.jpg' %}
             {% endif %}
             </div>
