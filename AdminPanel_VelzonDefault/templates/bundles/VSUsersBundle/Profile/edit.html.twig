@@ -83,6 +83,12 @@
     <!--end row-->
 {% endblock content %}
 
+{% block head_styles %}
+    {{ parent() }}
+    
+    {{ encore_entry_link_tags( 'js/profile-edit', null, 'VelzonTheme' ) }}
+{% endblock %}
+
 {% block body_scripts %}
     {{ parent() }}
     
