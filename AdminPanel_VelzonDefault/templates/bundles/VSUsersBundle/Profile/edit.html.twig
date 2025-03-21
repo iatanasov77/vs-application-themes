@@ -27,9 +27,13 @@
                     <div class="text-center">
                         <div class="profile-user position-relative d-inline-block mx-auto  mb-4">
                             {% if app.user.info and app.user.info.avatar %}
-                               <img src="{{ app.user.info.avatar.path | imagine_filter( 'users_crud_index_thumb' ) }}" alt="" class="rounded-circle avatar-xl img-thumbnail user-profile-image" />
+                                <img src="{{ app.user.info.avatar.path | imagine_filter( 'users_crud_index_thumb' ) }}" alt=""
+                                    class="rounded-circle avatar-xl img-thumbnail user-profile-image"
+                                />
                             {% else %}
-                                <img src="{{ asset( '/build/velzon-theme/images/users/avatar-1.jpg' ) }}" alt="" class="rounded-circle avatar-xl img-thumbnail user-profile-image" />
+                                <img src="{{ asset( '/build/velzon-theme/images/users/avatar-1.jpg' ) }}" alt=""
+                                    class="rounded-circle avatar-xl img-thumbnail user-profile-image"
+                                />
                             {% endif %}
                             
                             {% include '@VSUsers/Profile/partial/_profile-edit_avatar.html.twig' with {'f': otherForms.changeAvatarForm.createView} %}
@@ -78,6 +82,12 @@
     </div>
     <!--end row-->
 {% endblock content %}
+
+{% block head_styles %}
+    {{ parent() }}
+    
+    {{ encore_entry_link_tags( 'js/profile-edit', null, 'VelzonTheme' ) }}
+{% endblock %}
 
 {% block body_scripts %}
     {{ parent() }}
