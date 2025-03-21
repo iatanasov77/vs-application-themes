@@ -15,7 +15,7 @@
             {% else %}
                 <img src="{{ asset( '/build/velzon-theme/images/users/avatar-1.jpg' ) }}" alt="{{ app.user.info.fullName }}"
                     class="user-avatar-md rounded-circle"
-                    style="width: 120px; height: 120px;"
+                    style="width: 120px;"
                 />
                 {% set profilePictureName = 'avatar-1.jpg' %}
             {% endif %}
@@ -25,7 +25,15 @@
                     'label_attr': {'class': 'form-label'}
                     }) 
                 }}
-                <div class="form-field-file">
+                <div class="input-group form-field-file">
+                    {{ form_widget(form.profilePicture, {
+                        'attr': {
+                            'class': 'form-control',
+                            'placeholder': profilePictureName
+                        }
+                    }) }}
+                    <label class="input-group-text" for="profile_form_profilePicture" id="profilePictureName">{{ profilePictureName }}</label>
+            
                     {{ form_widget(form.profilePicture, {'attr': {'class': 'form-control' }}) }}
                     <label class="input-group-text" for="profile_form_profilePicture" id="profilePictureName">{{ profilePictureName }}</label>
                 </div>
