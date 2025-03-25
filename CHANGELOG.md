@@ -1,3 +1,11 @@
+1.3.14	|	Release date: **25.03.2025**
+============================================
+* New Features:
+  - Create ProjectIssuesBoardTask Show Page.
+* Bug-Fixes:
+  - Fix Project Issue Board Page.
+
+
 1.3.13	|	Release date: **21.03.2025**
 ============================================
 * Bug-Fixes:
