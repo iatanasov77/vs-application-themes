@@ -51,10 +51,10 @@
                             <legend class="w-auto float-none ps-2 pe-2">{{ 'vs_payment.template.exchange_rate_service_options' | trans( {},'VSPaymentBundle' ) }}</legend>
                             
                             <div class="ExchangeRateServiceOptionsContainer"
-                                data-prototype="{% apply escape %}{% include '@VSPayment/Pages/ExchangeRateService/partial/add-service-option-prototype.html.twig' with {'form': form.rules.vars.prototype} %}{% endapply %}"
+                                data-prototype="{% apply escape %}{% include '@VSPayment/Pages/ExchangeRateService/partial/add-service-option-prototype.html.twig' with {'form': form.options.vars.prototype} %}{% endapply %}"
                             >
-                                {% for ruleForm in form.rules %}
-                                    {% include '@VSPayment/Pages/ExchangeRateService/partial/add-service-option-prototype.html.twig' with {'form': ruleForm} %}
+                                {% for optionForm in form.options %}
+                                    {% include '@VSPayment/Pages/ExchangeRateService/partial/add-service-option-prototype.html.twig' with {'form': optionForm} %}
                                 {% endfor %}
                             </div>
                             
