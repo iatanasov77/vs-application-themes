@@ -48,16 +48,7 @@
                         </div>
                         
                         <fieldset class="border border-dark rounded p-3 mb-4">
-                            <legend class="w-auto float-none ps-2 pe-2">{{ 'vs_payment.form.promotion_coupon_generator.expiration_and_usage_limits' | trans( {},'VSPaymentBundle' ) }}</legend>
-                            
-                            <div class="form-group">
-                                {{ form_label(form.ratio, null, {
-                                    'label_attr': {'class': 'col-form-label'}
-                                    }) 
-                                }}
-                                {{ form_widget(form.ratio, {'attr': {'class': 'form-control' }}) }}
-                            </div>
-                            
+                            <legend class="w-auto float-none ps-2 pe-2">{{ 'vs_payment.template.exchange_rate_service_options' | trans( {},'VSPaymentBundle' ) }}</legend>
                             
                             <div class="ExchangeRateServiceOptionsContainer"
                                 data-prototype="{% apply escape %}{% include '@VSPayment/Pages/ExchangeRateService/partial/add-service-option-prototype.html.twig' with {'form': form.rules.vars.prototype} %}{% endapply %}"
