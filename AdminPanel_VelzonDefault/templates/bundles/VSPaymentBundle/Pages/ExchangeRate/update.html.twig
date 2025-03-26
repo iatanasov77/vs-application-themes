@@ -52,7 +52,17 @@
                                 'label_attr': {'class': 'form-label'}
                                 }) 
                             }}
-                            {{ form_widget(form.ratio, {'attr': {'class': 'form-control' }}) }}
+                            
+                            <div class="input-group mb-3">
+                                {{ form_widget(form.ratio, {'attr': {'class': 'form-control' }}) }}
+                                {% if item.id %}
+                                    <div class="input-group-append">
+                                        <button type="button" class="btn btn-primary" id="btnGetRatio">
+                                            {{ 'vs_payment.form.get_exchange_rate_ratio' | trans( {},'VSPaymentBundle' ) }}
+                                        </button>
+                                    </div>
+                                {% endif %}
+                            </div>
                         </div>
                         
                         {{ vs_form.buttons( form ) }}
