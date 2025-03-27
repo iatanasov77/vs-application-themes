@@ -1,3 +1,11 @@
+1.4.0	|	Release date: **27.03.2025**
+============================================
+* New Features:
+  - Create Templates for Payment Bundle ExchangeRateService Resource.
+  - Add Button on Exchange Rate Form to Get Ratio From Swap Service.
+  - Add a New Field into Pricing Plan Form.
+
+
 1.3.14	|	Release date: **25.03.2025**
 ============================================
 * New Features:
