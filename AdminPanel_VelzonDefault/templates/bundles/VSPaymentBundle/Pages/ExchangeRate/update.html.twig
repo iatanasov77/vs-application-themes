@@ -52,7 +52,24 @@
                                 'label_attr': {'class': 'form-label'}
                                 }) 
                             }}
-                            {{ form_widget(form.ratio, {'attr': {'class': 'form-control' }}) }}
+                            
+                            <div class="input-group mb-3">
+                                {{ form_widget(form.ratio, {'attr': {'class': 'form-control' }}) }}
+                                {% if item.id %}
+                                    <div class="input-group-append">
+                                        <button type="button" class="btn btn-primary btn-load"
+                                            id="btnGetRatio"
+                                            data-url="{{ path( 'vs_payment_exchange_rate_service_ext', {serviceId: 'european_central_bank', exchangeRateId: item.id} ) }}"
+                                        >
+                                            <span class="d-flex align-items-center" id="GetExchangeRateRatioLoader">
+                                                <span class="flex-grow-1 ms-2">
+                                                    {{ 'vs_payment.form.get_exchange_rate_ratio' | trans( {},'VSPaymentBundle' ) }}
+                                                </span>
+                                            </span>
+                                        </button>
+                                    </div>
+                                {% endif %}
+                            </div>
                         </div>
                         
                         {{ vs_form.buttons( form ) }}
@@ -62,3 +79,14 @@
         </div>
     </div>  
 {% endblock content %}
+
+{% block head_styles %}
+    {{ parent() }}
+    {{ encore_entry_link_tags( 'js/exchange-rates', null, 'VelzonTheme' ) }}
+{% endblock %}
+
+{% block body_scripts %}
+    {{ parent() }}
+    
+    {{ encore_entry_script_tags( 'js/exchange-rates', null, 'VelzonTheme' ) }}
+{% endblock %}
