@@ -20,7 +20,7 @@ window.SimpleBar    = SimpleBar;
 import Choices from 'choices.js';
 window.Choices  = Choices;
 
-const flatpickr = require( "flatpickr" );
+import flatpickr from 'flatpickr';
 window.flatpickr = flatpickr;
 
 require( './vendor/Velzon_v4.2.0/js/app.js' );
