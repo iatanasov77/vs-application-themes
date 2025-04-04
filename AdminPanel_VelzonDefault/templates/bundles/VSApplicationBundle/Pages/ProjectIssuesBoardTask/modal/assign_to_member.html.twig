@@ -18,7 +18,7 @@
                     <div class="avatar-group justify-content-center">
                         {% set memberIds = [] %}
                         {% for member in task.assignedTo %}
-                            {% set memberIds = memberIds | push( member.id ) %}
+                            {% set memberIds = memberIds | merge( [member.id] ) %}
                             <a href="javascript: void(0);" class="avatar-group-item"
                                 data-bs-toggle="tooltip"
                                 data-bs-trigger="hover"
@@ -39,7 +39,7 @@
                     <div class="vstack gap-3">
                         
                         {% for boardMember in board.members %}
-                            {% if not boardMember.id in memberIds %}
+                            {% if boardMember.id not in memberIds %}
                                 <div class="d-flex align-items-center">
                                     <div class="avatar-xs flex-shrink-0 me-3">
                                         <img src="{{ boardMember.photoPath }}" alt="" class="img-fluid rounded-circle">
