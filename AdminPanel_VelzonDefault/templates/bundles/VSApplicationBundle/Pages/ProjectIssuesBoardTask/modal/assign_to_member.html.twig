@@ -16,7 +16,9 @@
                         <h5 class="mb-0 fs-13">Members :</h5>
                     </div>
                     <div class="avatar-group justify-content-center">
+                        {% set memberIds = [] %}
                         {% for member in task.assignedTo %}
+                            {% set memberIds = memberIds | push( member.id ) %}
                             <a href="javascript: void(0);" class="avatar-group-item"
                                 data-bs-toggle="tooltip"
                                 data-bs-trigger="hover"
@@ -37,28 +39,30 @@
                     <div class="vstack gap-3">
                         
                         {% for boardMember in board.members %}
-                            <div class="d-flex align-items-center">
-                                <div class="avatar-xs flex-shrink-0 me-3">
-                                    <img src="{{ boardMember.photoPath }}" alt="" class="img-fluid rounded-circle">
+                            {% if not boardMember.id in memberIds %}
+                                <div class="d-flex align-items-center">
+                                    <div class="avatar-xs flex-shrink-0 me-3">
+                                        <img src="{{ boardMember.photoPath }}" alt="" class="img-fluid rounded-circle">
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <h5 class="fs-13 mb-0">
+                                            <a href="javascript:void(0);" class="text-body d-block">
+                                                {{ boardMember.name }}
+                                            </a>
+                                        </h5>
+                                    </div>
+                                    <div class="flex-shrink-0">
+                                        <button type="button" class="btn btn-light btn-sm"
+                                            id="btnAssignMember"
+                                            data-taskId="{{ task.id }}"
+                                            data-memberId="{{ boardMember.id }}"
+                                        >
+                                            Add
+                                         </button>
+                                    </div>
                                 </div>
-                                <div class="flex-grow-1">
-                                    <h5 class="fs-13 mb-0">
-                                        <a href="javascript:void(0);" class="text-body d-block">
-                                            {{ boardMember.name }}
-                                        </a>
-                                    </h5>
-                                </div>
-                                <div class="flex-shrink-0">
-                                    <button type="button" class="btn btn-light btn-sm"
-                                        id="btnAssignMember"
-                                        data-taskId="{{ task.id }}"
-                                        data-memberId="{{ boardMember.id }}"
-                                    >
-                                        Add
-                                     </button>
-                                </div>
-                            </div>
-                            <!-- end member item -->
+                                <!-- end member item -->
+                            {% endif %}
                         {% endfor %}
                         
                     </div>
