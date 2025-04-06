@@ -11,9 +11,11 @@
     {# Hidden Fields Needed For OneUp Uploader #}
     {{ form_widget( form.id ) }}
     {{ form_widget( form.fileId, { 'id': 'FileResourceId' } ) }}
-    {{ form_widget( form.fileClass, { 'id': 'FileResourceClass' } ) }}
     {{ form_widget( form.ownerId, { 'id': 'FileOwnerId' } ) }}
+    {#
+    {{ form_widget( form.fileClass, { 'id': 'FileResourceClass' } ) }}
     {{ form_widget( form.ownerClass, { 'id': 'FileOwnerClass' } ) }}
+    #}
     
     {# Main Entity Fields #}
     <div class="form-group">
