@@ -1,4 +1,4 @@
-<tr data-node-id="{{ comment.id }}" {% if parentId %}data-node-pid="{{ comment.parent.id }}"{% endif %}>
+<tr data-node-id="{{ comment.id }}" {% if parentId %}data-node-pid="{{ parentId }}"{% endif %}>
     <td>{{ comment.authorName }}</td>
     
     <td>
