@@ -2,7 +2,7 @@
     <tbody id="IssueTasksTableBody">
         {% for task in itemTasks %}
             <tr>
-                <td>{{ task.pipeline.board.name }} - {{ task.pipeline.name }}</td>
+                <td>{{ task.boardName }} - {{ task.pipelineName }}</td>
                 <td class="w-25">
                     <div class="btn-group">
                         <a class="btn btn-primary btnIssueTask"
