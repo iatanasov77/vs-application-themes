@@ -4,11 +4,11 @@
 {% import "@VSApplication/Macros/alerts.html.twig" as alerts %}
 
 {# Override Blocs #}
-{% block title %}{{ parent() }} :: {{ 'vs_application.menu.kanbanboard_show' | trans( {},'VSApplicationBundle' ) }} :: {{ board.pipelines[pipelineId]['tasks'][taskId]['title'] }}{% endblock %}
+{% block title %}{{ parent() }} :: {{ 'vs_application.menu.kanbanboard_show' | trans( {},'VSApplicationBundle' ) }} :: {{ task.title }}{% endblock %}
 {% block pageTitle %}
     <h4 class="pageheader-title">
         <i class="fas fa-bug"></i> 
-        {{ 'vs_application.menu.kanbanboard_show' | trans( {},'VSApplicationBundle' ) }}: {{ board.pipelines[pipelineId]['tasks'][taskId]['title'] }}
+        {{ 'vs_application.menu.kanbanboard_show' | trans( {},'VSApplicationBundle' ) }}: {{ task.title }}
     </h4>
 {% endblock %}
 
