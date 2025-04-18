@@ -7,10 +7,17 @@
         {% for comment in task.comments %}
             <div class="d-flex mb-4">
                 <div class="flex-shrink-0">
-                    <img src="{{ asset( 'build/velzon-theme/images/users/avatar-7.jpg' ) }}"
-                        alt="{{ comment.authorEmail }}"
-                        class="avatar-xs rounded-circle"
-                    />
+                    {% if  comment.authorPhoto %}
+                        <img src="{{ comment.authorPhoto }}"
+                            alt="{{ comment.authorEmail }}"
+                            class="avatar-xs rounded-circle"
+                        />
+                    {% else %}
+                        <img src="{{ asset( 'build/velzon-theme/images/users/avatar-7.jpg' ) }}"
+                            alt="{{ comment.authorEmail }}"
+                            class="avatar-xs rounded-circle"
+                        />
+                    {% endif %}
                 </div>
                 <div class="flex-grow-1 ms-3">
                     <h5 class="fs-13">
@@ -19,7 +26,7 @@
                     </h5>
                     <p class="text-muted">{{ comment.message | raw }}</p>
                     <a class="badge text-muted bg-light btnIssueComment"
-                        href="{{ path('vsorg_project_issue_comment_create', {'issueId': resource.issue.id, 'parentCommentId': comment.id}) }}"
+                        href="{{ path('vsorg_project_issue_comment_create', {'issueId': task.issue.id, 'parentCommentId': comment.id}) }}"
                         data-commentId="0"
                         data-redirectUrl="{{ path( 'vs_application_project_issues_kanbanboard_task_show', {'taskId': task.id} ) }}"
                     >
