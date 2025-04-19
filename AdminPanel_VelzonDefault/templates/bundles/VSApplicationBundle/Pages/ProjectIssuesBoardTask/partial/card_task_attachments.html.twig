@@ -1,7 +1,9 @@
 <div class="card">
     <div class="card-body">
         <div class="d-flex mb-3">
-            <h6 class="card-title mb-0 flex-grow-1">Attachments</h6>
+            <h6 class="card-title mb-0 flex-grow-1">
+                {{ 'vs_application.template.project_issues.task_attachments' | trans( {},'VSApplicationBundle' ) }}
+            </h6>
             <div class="flex-shrink-0">
                 
                 <!--
@@ -12,7 +14,7 @@
                     data-taskId="{{ task.id }}"
                 >
                     <i class="ri-attachment-2 align-bottom"></i> 
-                    Add Attachment
+                    {{ 'vs_application.template.project_issues.add_attachment' | trans( {},'VSApplicationBundle' ) }}
                 </button>
             </div>
         </div>
@@ -37,13 +39,17 @@
                                 </a>
                             </h5>
                             <div>
-                                {{ fileManager.fileSize( attachment ) | readable_filesize }}
+                                {{ attachment.size | readable_filesize }}
                             </div>
                         </div>
                         <div class="flex-shrink-0 ms-2">
                             <div class="d-flex gap-1">
                                 <a class="btn btn-icon text-muted btn-sm fs-18"
-                                    href="{{ path( 'vsorg_kanbanboard_task_attachment_download', {'taskId': task.id, 'attachmentId': attachment.id} ) }}"
+                                    
+                                    href="{{ path( 'vs_application_project_issues_kanbanboard_task_download_attachment', {'taskId': task.id, 'attachmentId': attachment.id} ) }}"
+                                    {#
+                                    href="{{ attachment.downloadUrl }}"
+                                    #}
                                     title="{{ 'vs_application.template.items_index_row_action_download' | trans( {},'VSApplicationBundle' ) }}"
                                 >
                                     <i class="ri-download-2-line"></i>
@@ -55,15 +61,19 @@
                                         <i class="ri-more-fill"></i>
                                     </button>
                                     <ul class="dropdown-menu">
+                                        {#
                                         <li>
                                             <a class="dropdown-item" href="javascript:void(0);">
                                                 <i class="ri-pencil-fill align-bottom me-2 text-muted"></i> 
                                                 Rename
                                             </a>
                                         </li>
+                                        #}
                                         <li>
-                                            <a class="dropdown-item"
-                                                href="{{ path( 'vsorg_kanbanboard_task_attachment_delete', {'taskId': task.id, 'attachmentId': attachment.id} ) }}"
+                                            <a class="dropdown-item btnDeleteResource"
+                                                href="{{ path( 'vs_application_project_issues_kanbanboard_task_delete_attachment', {'taskId': task.id, 'attachmentId': attachment.id} ) }}"
+                                                data-csrfToken="{{ csrf_token( attachment.id ) }}"
+                                                data-redirectUrl="{{ path( 'vs_application_project_issues_kanbanboard_task_show', {'taskId': task.id} ) }}"
                                                 title="{{ 'vs_application.template.items_index_row_action_delete' | trans( {},'VSApplicationBundle' ) }}"
                                             >
                                                 <i class="ri-delete-bin-fill align-bottom me-2 text-muted"></i> 
@@ -78,9 +88,11 @@
                 </div>
             {% endfor %}
             
+            {#
             <div class="mt-2 text-center">
                 <button type="button" class="btn btn-success">View more</button>
             </div>
+            #}
         </div>
     </div>
 </div>

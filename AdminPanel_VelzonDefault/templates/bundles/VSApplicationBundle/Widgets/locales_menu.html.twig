@@ -1,17 +1,19 @@
 <div class="dropdown-menu dropdown-menu-end locales-menu">
     {% for locale in widget.params.locales %}
-        {% set currentLang = ( locale.code | split( '_' ) )[1] | lower %}
-        {% set currentFlag = 'build/velzon-theme/images/flags/' ~ currentLang ~ '.svg' %}
-        
-        <!-- item-->
-        <a href="{{ path( 'app_set_locale', {'locale': locale.code} ) }}" 
-            class="dropdown-item notify-item language py-2" 
-            data-lang="{{ ( locale.code | split( '_' ) )[0] }}" title="{{ locale.title | capitalize }}"
-            title="{{ locale.title }}"
-        >
-            <img src="{{ asset( currentFlag ) }}" alt="Header Language" height="18" class="me-2 rounded">
+        {% if locale.active %}
+            {% set currentLang = ( locale.code | split( '_' ) )[1] | lower %}
+            {% set currentFlag = 'build/velzon-theme/images/flags/' ~ currentLang ~ '.svg' %}
             
-            <span class="align-middle">{{ locale.title }}</span>
-        </a>
+            <!-- item-->
+            <a href="{{ path( 'app_set_locale', {'locale': locale.code} ) }}" 
+                class="dropdown-item notify-item language py-2" 
+                data-lang="{{ ( locale.code | split( '_' ) )[0] }}" title="{{ locale.title | capitalize }}"
+                title="{{ locale.title }}"
+            >
+                <img src="{{ asset( currentFlag ) }}" alt="Header Language" height="18" class="me-2 rounded">
+                
+                <span class="align-middle">{{ locale.title }}</span>
+            </a>
+        {% endif %}
     {% endfor %}
 </div>
