@@ -1,3 +1,27 @@
+1.4.2	|	Release date: **19.04.2025**
+============================================
+* New Features:
+  - Improve Project Issues Kanbanboard Page.
+  - Add an Enabled Flag on Locales Pages and Use it in Locales Widgets.
+  - Improve Project Issues Kanbanboard Page.
+  - Create Kanbanboard Task From ProjectIssueBoard Page.
+  - Add Some Kanboard Forms Translations.
+  - Remove with condition 'Add Members' button on Kanbanboard Page.
+  - Improve Kanbaboard Task Edit Page.
+  - Add Kanbanboard Task Attachment Form.
+  - Improve Kanbaboard Task Edit Page.
+  - Improve File Upload Modals in AdminPanel Theme.
+  - Create Project Issues Api DeleteTask Attachment.
+  - Create Project Issues Api Delete Task Member.
+  - Create Kanbanboard Task Comments.
+  - Show Project Issue Comments on Edit Page.
+  - Show Sub-Tasks For Kanbanboard Task.
+  - Use a Vankosoft API KanbanBoard Show Task Endpoint.
+  - Create KanbanBoard Task Sub-Tasks.
+  - Fix Kanbanboard Task Comments Tab.
+  - Download Kanbanboard Task Attachment by API.
+
+
 1.4.1	|	Release date: **31.03.2025**
 ============================================
 * Bug-Fixes:
