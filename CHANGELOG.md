@@ -1,3 +1,11 @@
+1.4.3	|	Release date: **25.04.2025**
+============================================
+* New Features:
+  - Make Actions of Kanbanboard Show Page to Works.
+* Bug-Fixes:
+  - Fix User Profile - Subscriptions Tab.
+
+
 1.4.2	|	Release date: **19.04.2025**
 ============================================
 * New Features:
