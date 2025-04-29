@@ -94,7 +94,7 @@
     
     <fieldset class="border border-dark rounded p-3">
         <legend class="w-auto float-none ps-2 pe-2">
-            {{ 'vs_payment.form.pricing_plan.set_as_premium' | trans( {},'VSPaymentBundle' ) }}
+            {{ 'vs_catalog.form.pricing_plan.set_as_premium' | trans( {},'VSCatalogBundle' ) }}
         </legend>
         
         <div class="premiumContainer">
@@ -106,7 +106,7 @@
                         value="{{ item.premium }}"
                         {% if item.premium %}checked="checked"{% endif %}
                     />
-                    <span class="custom-control-label">{{ 'vs_payment.form.pricing_plan.premium' | trans( {},'VSPaymentBundle' ) }}</span>
+                    <span class="custom-control-label">{{ 'vs_catalog.form.pricing_plan.premium' | trans( {},'VSCatalogBundle' ) }}</span>
                 </label>
                 
                 
