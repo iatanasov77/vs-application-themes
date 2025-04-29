@@ -1,3 +1,10 @@
+1.4.4	|	Release date: **29.04.2025**
+============================================
+* New Features:
+  - Add Pricing Plan Attribute Field into the Form.
+  - Move Some Pricing Plan Resource Translations From Payment Bundle.
+
+
 1.4.3	|	Release date: **25.04.2025**
 ============================================
 * New Features:
