@@ -98,7 +98,7 @@
                                 </fieldset>
                                 
 		                        <div class="fieldsContainer" id="gatewayConfigOptions">
-                                    {% include '@VSPayment/Pages/GatewayConfigExt/config_options.html.twig' with { 'sandbox': false, 'options': gateway.config } %}
+                                    {% include '@VSPayment/Pages/GatewayConfigExt/config_options.html.twig' with { 'sandbox': false, 'options': gateway.config( true, false ) } %}
 		                        </div>
 		                        
 		                        <div class="fieldsContainer" id="gatewaySandboxConfigOptions">
