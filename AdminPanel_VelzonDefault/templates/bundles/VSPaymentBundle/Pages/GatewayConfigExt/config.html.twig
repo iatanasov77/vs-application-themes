@@ -98,11 +98,11 @@
                                 </fieldset>
                                 
 		                        <div class="fieldsContainer" id="gatewayConfigOptions">
-                                    {% include '@VSPayment/Pages/GatewayConfigExt/config_options.html.twig' with { 'sandbox': false, 'options': gateway.getConfig( true, false ) } %}
+                                    {% include '@VSPayment/Pages/GatewayConfigExt/config_options.html.twig' with { 'sandbox': false, 'options': gateway.config } %}
 		                        </div>
 		                        
 		                        <div class="fieldsContainer" id="gatewaySandboxConfigOptions">
-                                    {% include '@VSPayment/Pages/GatewayConfigExt/config_options.html.twig' with { 'sandbox': true, 'options': gateway.getConfig( true, true ) } %}
+                                    {% include '@VSPayment/Pages/GatewayConfigExt/config_options.html.twig' with { 'sandbox': true, 'options': gateway.sandboxConfig } %}
                                 </div>
 		                        
 		                        {{ vs_form.buttons( form ) }}
