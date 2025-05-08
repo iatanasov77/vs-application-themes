@@ -1,3 +1,11 @@
+1.5.2	|	Release date: **08.05.2025**
+============================================
+* New Features:
+  - Update webpack.config
+* Bug-Fixes:
+  - Fix a Template that use Constant from Wrong Namespace.
+
+
 1.5.1	|	Release date: **08.05.2025**
 ============================================
 * Bug-Fixes:
