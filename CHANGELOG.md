@@ -1,3 +1,9 @@
+1.5.0	|	Release date: **08.05.2025**
+============================================
+* New Features:
+  - Move Project Issues Templates into Another Bundle.
+
+
 1.4.5	|	Release date: **01.05.2025**
 ============================================
 * Bug-Fixes:
