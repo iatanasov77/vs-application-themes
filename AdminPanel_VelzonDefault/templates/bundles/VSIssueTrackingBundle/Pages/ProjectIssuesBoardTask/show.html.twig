@@ -32,7 +32,7 @@
                         <h6 class="mb-3 fw-semibold text-uppercase">{{ 'vs_application.template.project_issues.summary' | trans( {},'VSApplicationBundle' ) }}</h6>
                         {{ task.summary | raw }}
                         
-                        {% if task.issueType == constant( 'Vankosoft\\ApplicationBundle\\Component\\ProjectIssue\\KanbanboardTask::ISSUE_TYPE_EPIC' ) %}
+                        {% if task.issueType == constant( 'Vankosoft\\IssueTrackingBundle\\Component\\ProjectIssue\\KanbanboardTask::ISSUE_TYPE_EPIC' ) %}
                             {% include '@VSIssueTracking/Pages/ProjectIssuesBoardTask/partial/table_subtasks.html.twig' %}
                         {% endif %}
                         
