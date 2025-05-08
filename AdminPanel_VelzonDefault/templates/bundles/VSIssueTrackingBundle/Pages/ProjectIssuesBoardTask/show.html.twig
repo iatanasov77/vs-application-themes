@@ -16,12 +16,12 @@
     <div class="row">
         <div class="col-xxl-3">
             {# Time Tracking NOT Implemented
-                {% include '@VSApplication/Pages/ProjectIssuesBoardTask/partial/card_task_time_tracking.html.twig' %}
+                {% include '@VSIssueTracking/Pages/ProjectIssuesBoardTask/partial/card_task_time_tracking.html.twig' %}
             #}
             
-            {% include '@VSApplication/Pages/ProjectIssuesBoardTask/partial/card_task_details.html.twig' %}
-            {% include '@VSApplication/Pages/ProjectIssuesBoardTask/partial/card_task_members.html.twig' %}
-            {% include '@VSApplication/Pages/ProjectIssuesBoardTask/partial/card_task_attachments.html.twig' %}
+            {% include '@VSIssueTracking/Pages/ProjectIssuesBoardTask/partial/card_task_details.html.twig' %}
+            {% include '@VSIssueTracking/Pages/ProjectIssuesBoardTask/partial/card_task_members.html.twig' %}
+            {% include '@VSIssueTracking/Pages/ProjectIssuesBoardTask/partial/card_task_attachments.html.twig' %}
         </div>
         <!---end col-->
         
@@ -33,7 +33,7 @@
                         {{ task.summary | raw }}
                         
                         {% if task.issueType == constant( 'Vankosoft\\ApplicationBundle\\Component\\ProjectIssue\\KanbanboardTask::ISSUE_TYPE_EPIC' ) %}
-                            {% include '@VSApplication/Pages/ProjectIssuesBoardTask/partial/table_subtasks.html.twig' %}
+                            {% include '@VSIssueTracking/Pages/ProjectIssuesBoardTask/partial/table_subtasks.html.twig' %}
                         {% endif %}
                         
                         <div class="pt-3 border-top border-top-dashed mt-4">
@@ -76,11 +76,11 @@
                 
                 <div class="card-body">
                     <div class="tab-content">
-                        {% include '@VSApplication/Pages/ProjectIssuesBoardTask/partial/tab_task_comments.html.twig' %}
-                        {% include '@VSApplication/Pages/ProjectIssuesBoardTask/partial/tab_task_attachments.html.twig' %}
+                        {% include '@VSIssueTracking/Pages/ProjectIssuesBoardTask/partial/tab_task_comments.html.twig' %}
+                        {% include '@VSIssueTracking/Pages/ProjectIssuesBoardTask/partial/tab_task_attachments.html.twig' %}
                         
                         {# Time Tracking NOT Implemented
-                            {% include '@VSApplication/Pages/ProjectIssuesBoardTask/partial/tab_task_time_entries.html.twig' %}
+                            {% include '@VSIssueTracking/Pages/ProjectIssuesBoardTask/partial/tab_task_time_entries.html.twig' %}
                         #}
 
                     </div>
@@ -100,10 +100,10 @@
 {% block modals %}
     {{ parent() }}
     
-    {% include '@VSApplication/Pages/ProjectIssuesBoardTask/modal/assign_to_member.html.twig' %}
-    {% include '@VSApplication/Pages/ProjectIssuesBoardTask/modal/add_attachment.html.twig' %}
-    {% include '@VSApplication/Pages/ProjectIssuesBoardTask/modal/create_subtask.html.twig' %}
-    {% include '@VSApplication/Pages/ProjectIssuesBoardTask/modal/issue_comment_edit.html.twig' %}
+    {% include '@VSIssueTracking/Pages/ProjectIssuesBoardTask/modal/assign_to_member.html.twig' %}
+    {% include '@VSIssueTracking/Pages/ProjectIssuesBoardTask/modal/add_attachment.html.twig' %}
+    {% include '@VSIssueTracking/Pages/ProjectIssuesBoardTask/modal/create_subtask.html.twig' %}
+    {% include '@VSIssueTracking/Pages/ProjectIssuesBoardTask/modal/issue_comment_edit.html.twig' %}
 {% endblock %}
 
 {% block head_styles %} 

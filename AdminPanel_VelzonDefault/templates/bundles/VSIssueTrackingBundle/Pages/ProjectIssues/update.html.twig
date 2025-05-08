@@ -19,11 +19,11 @@
 {% block content %}
     <div class="row">
         <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8">
-            {% include '@VSApplication/Pages/ProjectIssues/_form.html.twig' %}
+            {% include '@VSIssueTracking/Pages/ProjectIssues/_form.html.twig' %}
         </div>
         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
-            {% include '@VSApplication/Pages/ProjectIssues/_issue_comments.html.twig' %}
-            {% include '@VSApplication/Pages/ProjectIssues/_issue_tasks.html.twig' %}
+            {% include '@VSIssueTracking/Pages/ProjectIssues/_issue_comments.html.twig' %}
+            {% include '@VSIssueTracking/Pages/ProjectIssues/_issue_tasks.html.twig' %}
         </div>
     </div>
     
@@ -33,8 +33,8 @@
 {% block modals %}
     {{ parent() }}
     
-    {% include '@VSApplication/Pages/ProjectIssues/modal/issue_comment_edit.html.twig' %}
-    {% include '@VSApplication/Pages/ProjectIssues/modal/issue_task_edit.html.twig' %}
+    {% include '@VSIssueTracking/Pages/ProjectIssues/modal/issue_comment_edit.html.twig' %}
+    {% include '@VSIssueTracking/Pages/ProjectIssues/modal/issue_task_edit.html.twig' %}
 {% endblock %}
 
 {% block head_styles %}
