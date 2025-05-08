@@ -1,3 +1,10 @@
+1.5.1	|	Release date: **08.05.2025**
+============================================
+* Bug-Fixes:
+  - Fix All Project Issues Routes Used in Templates.
+  - Fix All Project Issues Templates Includes to this Bundle.
+
+
 1.5.0	|	Release date: **08.05.2025**
 ============================================
 * New Features:
