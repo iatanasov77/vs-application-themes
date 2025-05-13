@@ -2,7 +2,7 @@
 
 <div class="modal-header">
     <h5 class="modal-title">
-        {{ 'vs_payment.template.payum_stripe_objects.create_stripe_customer' | trans( {},'VSPaymentBundle' ) }}
+        {{ 'vs_payment.template.payum_stripe_objects.create_webhook_endpoint' | trans( {},'VSPaymentBundle' ) }}
     </h5>
     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
 </div>
@@ -14,21 +14,23 @@
                 {{ vs_form.errors( formErrors ) }}
             {% endif %}
             
-            {{ form_start(form, { 'action': path( 'gateway_config_stripe_objects_create_customer' ), 'attr': {'class': 'form-horizontal '} }) }}
+            {{ form_start(form, { 'action': path( 'gateway_config_stripe_objects_update_webhook_endpoint' ), 'attr': {'class': 'form-horizontal '} }) }}
+                {{ form_widget(form.id) }}
+                
                 <div class="form-group">
-                    {{ form_label(form.name, null, {
-                        'label_attr': {'class': 'form-label'}
+                    {{ form_label(form.enabled_events, null, {
+                        'label_attr': {'class': 'form-label required'}
                         }) 
                     }}
-                    {{ form_widget(form.name, {'attr': {'class': 'form-control' }}) }}
+                    {{ form_widget(form.enabled_events, {'attr': {'class': 'form-control' }}) }}
                 </div>
                 
                 <div class="form-group">
-                    {{ form_label(form.email, null, {
+                    {{ form_label(form.url, null, {
                         'label_attr': {'class': 'form-label'}
                         }) 
                     }}
-                    {{ form_widget(form.email, {'attr': {'class': 'form-control' }}) }}
+                    {{ form_widget(form.url, {'attr': {'class': 'form-control' }}) }}
                 </div>
             {{ form_end(form) }}
         </div>
