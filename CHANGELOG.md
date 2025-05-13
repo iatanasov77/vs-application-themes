@@ -1,3 +1,9 @@
+1.5.4	|	Release date: **13.05.2025**
+============================================
+* New Features:
+  - Initialize Stripe Objects Dropdown.
+
+
 1.5.3	|	Release date: **13.05.2025**
 ============================================
 * New Features:
