@@ -165,6 +165,7 @@ if ( pathExists.sync( paymentAssetsPath ) ) {
         .addEntry( 'js/customer-groups', paymentAssetsPath + '/js/pages/customer-groups.js' )
         .addEntry( 'js/customer-groups-edit', paymentAssetsPath + '/js/pages/customer-groups-edit.js' )
         .addEntry( 'js/stripe-objects', paymentAssetsPath + '/js/pages/stripe-objects.js' )
+        .addEntry( 'js/stripe-object_form', paymentAssetsPath + '/js/pages/stripe-object_form.js' )
     ;
 }
     
