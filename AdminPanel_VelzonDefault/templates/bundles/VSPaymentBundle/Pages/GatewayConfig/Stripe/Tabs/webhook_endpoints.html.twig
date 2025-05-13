@@ -34,8 +34,9 @@
                     
                     <td>
                         <div class="btn-group">
-                            <a class="btn btn-primary"
-                                href="{{ path('gateway_config_stripe_objects_update_webhook_endpoint', {'id': item.id}) }}"
+                            <a class="btn btn-primary btnShowStripeObject"
+                                href="javascript:void(0);"
+                                data-url="{{ path('gateway_config_stripe_objects_update_webhook_endpoint', {'id': item.id}) }}"
                                 title="{{ 'vs_application.template.items_index_row_action_edit' | trans( {},'VSApplicationBundle' ) }}"
                             >
                                 <i class="fas fa-edit"></i>
