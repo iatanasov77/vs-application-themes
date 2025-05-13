@@ -1,3 +1,9 @@
+1.5.3	|	Release date: **13.05.2025**
+============================================
+* New Features:
+  - Add Update and Delete Butons on Stripe Webhook Endpoints Table.
+
+
 1.5.2	|	Release date: **08.05.2025**
 ============================================
 * New Features:
