@@ -18,18 +18,15 @@
                 {{ form_widget(form.id) }}
                 {{ form_widget(form.selectedEvents) }}
                 
-                {{ dump(form) }}
-                {#
                 <label class="custom-control custom-checkbox">
                     <input type="checkbox" id="webhook_endpoint_form_enabled"
                         class="custom-control-input form-check-input"
                         name="webhook_endpoint_form[enabled]"
-                        value="{{ form.vars.value.enabled }}"
-                        {% if form.vars.value.enabled %}checked="checked"{% endif %}
+                        value="{{ form.children.enabled.vars.value }}"
+                        {% if form.children.enabled.vars.data %}checked="checked"{% endif %}
                     />
-                    <span class="custom-control-label">{{ form.enabled.vars.label | trans( {},'VSPaymentBundle' ) }}</span>
+                    <span class="custom-control-label">{{ form.children.enabled.vars.label | trans( {},'VSPaymentBundle' ) }}</span>
                 </label>
-                #}
                 
                 <div class="form-group">
                     {{ form_label(form.enabled_events, null, {
