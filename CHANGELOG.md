@@ -1,3 +1,10 @@
+1.5.5	|	Release date: **14.05.2025**
+============================================
+* New Features:
+  - Improve Stripe Webhooks Endpoints Template.
+  - Improve Stripe Object - Webhook Endpoint Create and Update Templates.
+
+
 1.5.4	|	Release date: **13.05.2025**
 ============================================
 * New Features:

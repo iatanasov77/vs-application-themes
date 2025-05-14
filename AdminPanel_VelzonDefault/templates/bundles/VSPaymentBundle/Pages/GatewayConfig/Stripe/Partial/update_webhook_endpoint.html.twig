@@ -18,6 +18,16 @@
                 {{ form_widget(form.id) }}
                 {{ form_widget(form.selectedEvents) }}
                 
+                <label class="custom-control custom-checkbox">
+                    <input type="checkbox" id="webhook_endpoint_form_enabled"
+                        class="custom-control-input form-check-input"
+                        name="webhook_endpoint_form[enabled]"
+                        value="{{ form.children.enabled.vars.value }}"
+                        {% if form.children.enabled.vars.data %}checked="checked"{% endif %}
+                    />
+                    <span class="custom-control-label">{{ form.children.enabled.vars.label | trans( {},'VSPaymentBundle' ) }}</span>
+                </label>
+                
                 <div class="form-group">
                     {{ form_label(form.enabled_events, null, {
                         'label_attr': {'class': 'form-label required'}
@@ -33,7 +43,7 @@
                     }}
                     {{ form_widget(form.url, {'attr': {'class': 'form-control' }}) }}
                 </div>
-            {{ form_end(form) }}
+            {{ form_end(form, {'render_rest': false}) }}
         </div>
     </div>
 </div>
