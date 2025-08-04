@@ -1,3 +1,10 @@
+1.6.1	|	Release date: **04.08.2025**
+============================================
+* New Features:
+  - Add a Filter Form in AdminPanel PricingPlans Listing Page.
+  - Add Frontend Sort PricingPlans.
+
+
 1.6.0	|	Release date: **31.07.2025**
 ============================================
 * Bug-Fixes and Improvements:
