@@ -1,3 +1,9 @@
+1.6.2	|	Release date: **13.01.2026**
+============================================
+* Bug-Fixes and Improvements:
+  - Improve AdminPanel Theme Layout.
+
+
 1.6.1	|	Release date: **04.08.2025**
 ============================================
 * New Features:

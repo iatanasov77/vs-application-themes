@@ -45,7 +45,7 @@
                         </a>
                     </div>
                     
-    				{% for notification in app.user.unreadedNotifications %}
+    				{% for notification in app.user.unreadedNotifications | slice( 0, 5 ) %}
                         <div class="text-reset notification-item d-block dropdown-item position-relative" data-notification-id="{{ notification.id }}">
                             <div class="d-flex">
                                 <img src="{{ asset( 'build/velzon-theme/images/users/avatar-2.jpg' ) }}" class="me-3 rounded-circle avatar-xs flex-shrink-0" alt="user-pic">
