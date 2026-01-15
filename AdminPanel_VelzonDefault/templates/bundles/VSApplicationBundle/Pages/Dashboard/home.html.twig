@@ -21,24 +21,28 @@
     
     <div class="row">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-            <nav>
-                <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                    <a class="nav-item nav-link active" id="nav-installation-tab" data-bs-toggle="tab" data-bs-target="#nav-installation" href="#nav-installation" role="tab" aria-controls="nav-installation" aria-selected="true">
+            <ul class="nav nav-pills nav-customs nav-danger mb-3" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" data-bs-toggle="tab" href="#nav-installation" role="tab" aria-selected="true">
                         {{ 'vs_application.template.dashboard_installation_title' | trans( {},'VSApplicationBundle' ) }}
                     </a>
-                    
-                    {% if app_environment == 'dev' %}
-                        <a class="nav-item nav-link" id="nav-test-widgets-tab" data-bs-toggle="tab" data-bs-target="#nav-test-widgets" href="#nav-test-widgets" role="tab" aria-controls="nav-test-widgets" aria-selected="false">
+                </li>
+                {% if app_environment == 'dev' %}
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" data-bs-toggle="tab" href="#nav-test-widgets" role="tab" aria-selected="true">
                             {{ 'vs_application.template.dashboard_test_widgets_title' | trans( {},'VSApplicationBundle' ) }}
                         </a>
-                        <a class="nav-item nav-link" id="nav-test-charts-tab" data-bs-toggle="tab" data-bs-target="#nav-test-charts" href="#nav-test-charts" role="tab" aria-controls="nav-test-charts" aria-selected="false">
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" data-bs-toggle="tab" href="#nav-test-charts" role="tab" aria-selected="true">
                             {{ 'vs_application.template.dashboard_test_charts_title' | trans( {},'VSApplicationBundle' ) }}
                         </a>
-                    {% endif %}
-                </div>
-            </nav>
-            <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="nav-installation" role="tabpanel" aria-labelledby="nav-installation-tab">
+                    </li>
+                {% endif %}
+            </ul>
+            
+            <div class="tab-content">
+                <div class="tab-pane active show" id="nav-installation" role="tabpanel">
                     <div class="card">
                         <div class="card-body">
                             {% include '@VSApplication/Pages/Dashboard/partial/installation.html.twig' %}
@@ -46,14 +50,14 @@
                     </div>
                 </div>
                 {% if app_environment == 'dev' %}
-                    <div class="tab-pane fade" id="nav-test-widgets" role="tabpanel" aria-labelledby="nav-test-widgets-tab">
+                    <div class="tab-pane" id="nav-test-widgets" role="tabpanel">
                         <div class="card">
                             <div class="card-body">
                                 {% include '@VSApplication/Pages/Dashboard/partial/test_widgets.html.twig' %}
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="nav-test-charts" role="tabpanel" aria-labelledby="nav-test-charts-tab">
+                    <div class="tab-pane" id="nav-test-charts" role="tabpanel">
                         <div class="card">
                             <div class="card-body">
                                 {% include '@VSApplication/Pages/Dashboard/partial/test_charts.html.twig' %}
