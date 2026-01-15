@@ -1,3 +1,9 @@
+1.6.3	|	Release date: **15.01.2026**
+============================================
+* New Features and Improvements:
+  - Improve Pages that have tabs.
+
+
 1.6.2	|	Release date: **13.01.2026**
 ============================================
 * Bug-Fixes and Improvements:
