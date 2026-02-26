@@ -1,3 +1,9 @@
+1.6.5	|	Release date: **26.02.2026**
+============================================
+* New Features:
+  - Remove Maintenance Mode Fields From Settings Pages.
+
+
 1.6.4	|	Release date: **17.01.2026**
 ============================================
 * Bug-Fixes and Improvements:
