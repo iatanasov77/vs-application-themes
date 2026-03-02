@@ -1,3 +1,10 @@
+1.6.6	|	Release date: **02.03.2026**
+============================================
+* New Features:
+  - Add Some Assets for Maaintenance Page.
+  - Add Styling For Maintenance Page.
+
+
 1.6.5	|	Release date: **26.02.2026**
 ============================================
 * New Features:
