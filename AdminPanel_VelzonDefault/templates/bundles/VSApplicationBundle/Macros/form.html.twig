@@ -35,20 +35,13 @@
 {% macro buttons( form, metadata = null ) %}
 	<div class="row">&nbsp;</div>
 	
-    <div class="input-group row vsFormButtonsGroup">
-    	<div class="col-sm-2">
-            {{ form_widget(form.btnApply, {'attr': {'class': 'btn btn-primary', 'id':'btnApply'}}) }}
-        </div>
-        <div class="col-sm-2">
-            {{ form_widget(form.btnSave, {'attr': {'class': 'btn btn-primary', 'id':'btnSave'}}) }}
-        </div>
+    <div class="input-group vsFormButtonsGroup">
+        {{ form_widget(form.btnApply, {'attr': {'class': 'btn btn-primary me-4', 'id':'btnApply'}}) }}
+        {{ form_widget(form.btnSave, {'attr': {'class': 'btn btn-primary me-3', 'id':'btnSave'}}) }}
         {% if metadata %}
-        <div class="col-sm-2">
             <a class="btn btn-default" href="{{ path( metadata.applicationName ~ '_' ~ metadata.name ~ '_index' ) }}">
                 {{ 'vs_application.form.cancel' | trans( {},'VSApplicationBundle' ) }}
             </a>
-        </div>
         {% endif %}
-        <div class="col-sm-6"></div>
     </div>
 {% endmacro %}
