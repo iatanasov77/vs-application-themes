@@ -1,3 +1,9 @@
+1.6.8	|	Release date: **06.04.2026**
+============================================
+* New Features:
+  - Add an Access Token Field in Users Form View.
+
+
 1.6.7	|	Release date: **03.03.2026**
 ============================================
 * New Features:
