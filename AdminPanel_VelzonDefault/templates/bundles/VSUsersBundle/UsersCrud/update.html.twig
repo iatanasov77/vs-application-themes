@@ -127,7 +127,6 @@
                             {{ form_widget(form.plain_password.second, {'attr': {'class': 'form-control'}}) }}
                         </div>
                         
-                        {{ dump( app.user.roles ) }}
                         {% if 'ROLE_ACCESS_TOKEN' in app.user.roles %}
                             <div class="form-group">
                                 {{ form_label(form.accessToken, null, {
