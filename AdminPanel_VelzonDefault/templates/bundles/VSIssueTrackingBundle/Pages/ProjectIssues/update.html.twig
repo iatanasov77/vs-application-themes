@@ -1,9 +1,9 @@
 {% extends "@VSApplication/layout.html.twig" %}
 
 {% if( itemId ) %}
-    {% set pageTitle = 'vs_application.template.project_issues.update_title' | trans( {},'VSApplicationBundle' ) %}
+    {% set pageTitle = 'vs_issue_tracking.template.project_issues.update_title' | trans( {},'VSIssueTrackingBundle' ) %}
 {% else %}
-    {% set pageTitle = 'vs_application.template.project_issues.create_title' | trans( {},'VSApplicationBundle' ) %}
+    {% set pageTitle = 'vs_issue_tracking.template.project_issues.create_title' | trans( {},'VSIssueTrackingBundle' ) %}
 {% endif %}
 
 {# Override Blocs #}
