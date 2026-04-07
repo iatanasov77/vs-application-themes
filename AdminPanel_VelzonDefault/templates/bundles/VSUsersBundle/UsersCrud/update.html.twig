@@ -128,7 +128,7 @@
                         </div>
                         
                         {{ dump( app.user.roles ) }}
-                        {% if is_granted( 'ROLE_ACCESS_TOKEN' ) %}
+                        {% if 'ROLE_ACCESS_TOKEN' in app.user.roles %}
                             <div class="form-group">
                                 {{ form_label(form.accessToken, null, {
                                     'label_attr': {'class': 'form-label'}
