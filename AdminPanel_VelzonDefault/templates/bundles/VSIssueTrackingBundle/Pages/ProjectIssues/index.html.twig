@@ -5,11 +5,11 @@
 {% from "@VSApplication/Macros/pagination.html.twig" import pagination %}
 
 {# Override Blocs #}
-{% block title %}{{ parent() }} :: {{ 'vs_application.template.project_issues.index_title' | trans( {},'VSApplicationBundle' ) }}{% endblock %}
+{% block title %}{{ parent() }} :: {{ 'vs_issue_tracking.template.project_issues.index_title' | trans( {},'VSIssueTrackingBundle' ) }}{% endblock %}
 {% block pageTitle %}
     <h4 class="pageheader-title">
     	<i class="fas fa-bug"></i> 
-        {{ 'vs_application.template.project_issues.index_title' | trans( {},'VSApplicationBundle' ) }}
+        {{ 'vs_issue_tracking.template.project_issues.index_title' | trans( {},'VSIssueTrackingBundle' ) }}
    	</h4>    
 {% endblock %}
 
@@ -22,8 +22,8 @@
                     <tr>
                         <th></th>
                         <th>{{ 'vs_application.template.items_index_row_title' | trans( {},'VSApplicationBundle' ) }}</th>
-                        <th>{{ 'vs_application.template.project_issues.labels' | trans( {},'VSApplicationBundle' ) }}</th>
-                        <th>{{ 'vs_application.template.project_issues.status' | trans( {},'VSApplicationBundle' ) }}</th>
+                        <th>{{ 'vs_issue_tracking.template.project_issues.labels' | trans( {},'VSIssueTrackingBundle' ) }}</th>
+                        <th>{{ 'vs_issue_tracking.template.project_issues.status' | trans( {},'VSIssueTrackingBundle' ) }}</th>
                         <th>{{ 'vs_application.template.items_index_row_created' | trans( {},'VSApplicationBundle' ) }}</th>
                         <th>{{ 'vs_application.template.items_index_row_updated' | trans( {},'VSApplicationBundle' ) }}</th>
                         <th width="150">{{ 'vs_application.template.items_index_row_action' | trans( {},'VSApplicationBundle' ) }}</th>
