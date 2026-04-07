@@ -1,3 +1,10 @@
+1.6.9	|	Release date: **07.04.2026**
+============================================
+* Bug-Fixes and Improvements:
+  - Some Improvement.
+  - Fix User Edit Form View.
+
+
 1.6.8	|	Release date: **06.04.2026**
 ============================================
 * New Features:
