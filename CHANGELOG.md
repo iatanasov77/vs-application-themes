@@ -1,3 +1,9 @@
+1.6.10	|	Release date: **07.04.2026**
+============================================
+* Bug-Fixes:
+  - Update Translations Domaim of IssueTrackingBundle.
+
+
 1.6.9	|	Release date: **07.04.2026**
 ============================================
 * Bug-Fixes and Improvements:
