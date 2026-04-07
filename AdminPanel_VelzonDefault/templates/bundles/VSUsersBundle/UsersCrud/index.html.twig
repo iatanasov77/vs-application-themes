@@ -104,7 +104,7 @@
                                                     </a>
                                                 <li>
                                                     
-                                                {% if item.username != 'admin' %}
+                                                {% if item.username != 'admin' or item.username != 'appadmin' %}
                                                     <li>
                                                         <a class="dropdown-item btn btn-danger btnDeleteResource"
                                                             href="{{ path('vs_users_users_delete', {'id': item.id}) }}"
