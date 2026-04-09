@@ -1,3 +1,9 @@
+1.7.1	|	Release date: **09.04.2026**
+============================================
+* New Features:
+  - Improve Some Template With Translations.
+
+
 1.7.0	|	Release date: **09.04.2026**
 ============================================
 * New Features and Improvements:
