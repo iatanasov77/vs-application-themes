@@ -1,3 +1,9 @@
+1.7.3	|	Release date: **09.04.2026**
+============================================
+* Bug-Fixes:
+  - Remove Uneeded Includes of Twig Template.
+
+
 1.7.2	|	Release date: **09.04.2026**
 ============================================
 * New Features:
