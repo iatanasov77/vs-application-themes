@@ -1,3 +1,11 @@
+1.7.0	|	Release date: **09.04.2026**
+============================================
+* New Features and Improvements:
+  - Add a Back to Top Button if Needed on Some Pages.
+  - Assign Task Memeber From Kanbanboard Task.
+  - Remove Assign Member Button from Kanbaboard Task View Page If Not Members to Be Assigned.
+
+
 1.6.10	|	Release date: **07.04.2026**
 ============================================
 * Bug-Fixes:
