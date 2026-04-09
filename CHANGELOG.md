@@ -1,3 +1,9 @@
+1.7.2	|	Release date: **09.04.2026**
+============================================
+* New Features:
+  - Conditionaly Add Link to Kanbanboard Task Member Profile.
+
+
 1.7.1	|	Release date: **09.04.2026**
 ============================================
 * New Features:
