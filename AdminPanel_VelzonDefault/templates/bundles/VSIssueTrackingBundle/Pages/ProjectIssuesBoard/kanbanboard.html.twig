@@ -18,7 +18,7 @@
                     <div class="avatar-group" id="newMembar">
                         
                         {% for member in board.members %}
-                            <a href="javascript: void(0);"
+                            <a href="{% if viewTaskmemberProfile %}pages-profile.html{% else %}javascript:void(0);{% endif %}"
                                 class="avatar-group-item"
                                 data-bs-toggle="tooltip"
                                 data-bs-trigger="hover"
@@ -159,7 +159,8 @@
                                         <div class="flex-shrink-0">
                                             <div class="avatar-group">
                                                 {% for member in task.assignedTo %}
-                                                    <a href="javascript: void(0);" class="avatar-group-item"
+                                                    <a href="{% if viewTaskmemberProfile %}pages-profile.html{% else %}javascript:void(0);{% endif %}"
+                                                        class="avatar-group-item"
                                                         data-bs-toggle="tooltip"
                                                         data-bs-trigger="hover"
                                                         data-bs-placement="top"
