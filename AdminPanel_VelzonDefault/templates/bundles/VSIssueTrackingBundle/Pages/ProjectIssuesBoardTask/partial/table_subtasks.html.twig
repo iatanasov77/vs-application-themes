@@ -57,9 +57,8 @@
                                                     <li class="list-inline-item btnCreateSubtaskModal">
                                                         <a class="edit-item-btn"
                                                             href="javascript:void( 0 );"
-                                                            data-url="{{ path( 'vs_issue_tracking_project_issues_kanbanboard_pipeline_edit_task', { 'pipelineId': task.pipeline.id, 'taskId': subTask.id } ) }}"
                                                             data-taskId="{{ task.id }}"
-                                                            data-issueId="0"
+                                                            data-issueId="{{ subTask.issue.id }}"
                                                             data-subTaskId="{{ subTask.id }}"
                                                         >
                                                             <i class="ri-pencil-fill align-bottom me-2 text-muted"></i>
