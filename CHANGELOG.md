@@ -1,3 +1,12 @@
+1.7.4	|	Release date: **13.04.2026**
+============================================
+* New Features and Improvements:
+  - Add a Modal Dialog For Kanbanboard Delete Task Action.
+  - Add a Modal Dialog For Kanbanboard Edit Task Action.
+  - Add a Modal Dialog For Kanbanboard Edit Sub Task Action.
+  - Improve Kanbanboard Edit Task Form View.
+
+
 1.7.3	|	Release date: **09.04.2026**
 ============================================
 * Bug-Fixes:
