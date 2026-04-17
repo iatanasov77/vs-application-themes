@@ -1,3 +1,9 @@
+1.7.6	|	Release date: **17.04.2026**
+============================================
+* New Features:
+  - Add Error Pages for Production Env.
+
+
 1.7.5	|	Release date: **17.04.2026**
 ============================================
 * New Features:
