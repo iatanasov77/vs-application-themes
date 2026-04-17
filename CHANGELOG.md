@@ -1,3 +1,9 @@
+1.7.5	|	Release date: **17.04.2026**
+============================================
+* New Features:
+  - Improve Listing Page of Association Types.
+
+
 1.7.4	|	Release date: **13.04.2026**
 ============================================
 * New Features and Improvements:
