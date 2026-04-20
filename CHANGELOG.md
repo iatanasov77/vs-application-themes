@@ -1,3 +1,9 @@
+1.7.7	|	Release date: **20.04.2026**
+============================================
+* New Features:
+  - Add SEO Meta Data Form Fields in CMS Page Form View.
+
+
 1.7.6	|	Release date: **17.04.2026**
 ============================================
 * New Features:
