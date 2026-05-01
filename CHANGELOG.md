@@ -1,3 +1,9 @@
+1.7.8	|	Release date: **01.05.2026**
+============================================
+* New Features:
+  - Add Templates for CMS Quick Links Categories.
+
+
 1.7.7	|	Release date: **20.04.2026**
 ============================================
 * New Features:
