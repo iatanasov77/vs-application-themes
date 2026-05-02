@@ -1,3 +1,9 @@
+1.7.11	|	Release date: **02.05.2026**
+============================================
+* Bug-Fixes:
+  - Fix IssueTrackingBundle Kanbanboard Create Issue Form.
+
+
 1.7.10	|	Release date: **01.05.2026**
 ============================================
 * New Features:
