@@ -1,14 +1,11 @@
-<div id="FormContainer" data-itemId="{{ item.id }}">
+<div id="FormContainer" data-itemId="{{ itemId }}">
     
-    {% if useFormMethod is not defined %}
-        {% set useFormMethod = item.id ? 'PUT' : 'POST' %}
-    {% endif %}
-    {% if useFormMethod is defined %}{% set formMethod = useFormMethod %}{% else %}{% set formMethod = 'PUT' %}{% endif %}
+    {% if(itemId) %}{% set method = "PUT" %}{% else %}{% set method = "POST" %}{% endif %}
     
     {{ form_start(form, { 'attr': {
         'class': 'form-horizontal',
         'id': 'ProjectIssueCommentForm'
-    }, 'method': formMethod }) }}
+    }, 'method': method }) }}
         
         {{ form_widget(form.redirectUrl) }}
         
