@@ -1,3 +1,11 @@
+1.7.12	|	Release date: **08.05.2026**
+============================================
+* New Features:
+  - Add Templates for Project Issue Comments.
+  - Fix Issue Tracking Update and Delete Issue Comments Templates.
+  - Fix Creating Comments From KanbanBoard Task Page.
+
+
 1.7.11	|	Release date: **02.05.2026**
 ============================================
 * Bug-Fixes:
