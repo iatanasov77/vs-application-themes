@@ -3,3 +3,27 @@
 {% for message in app.flashes( 'in-maintenance' ) %}
     {{ alerts.warning( message ) }}
 {% endfor %}
+
+{% for alertSuccess in app.flashes( 'success' ) %}
+    {% if alertSuccess is iterable %}
+        {# alertSuccess is probably an array #}
+    {% else %}
+        {{ alerts.info( alertSuccess ) }}
+    {% endif %}
+{% endfor %}
+
+{% for alertSuccess in app.flashes( 'notice' ) %}
+    {% if alertSuccess is iterable %}
+        {# alertSuccess is probably an array #}
+    {% else %}
+        {{ alerts.info( alertSuccess ) }}
+    {% endif %}
+{% endfor %}
+
+{% for alertError in app.flashes( 'error' ) %}
+    {% if alertError is iterable %}
+        {# alertSuccess is probably an array #}
+    {% else %}
+        {{ alerts.error( alertError ) }}
+    {% endif %}
+{% endfor %}
