@@ -1,6 +1,13 @@
 1.7.13	|	Release date: **12.05.2026**
 ============================================
 * New Features:
+* Bug-Fixes:
+* Commits:
+
+
+1.7.13	|	Release date: **12.05.2026**
+============================================
+* New Features:
   - Add Alerts on Main Layout.
 
 
