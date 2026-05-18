@@ -2,25 +2,28 @@
     {{ form_widget( form.parentTask ) }}
     
     <div class="row g-3">
-        <div class="col-lg-12">
-            {{ form_label(form.issue, null, {
-                'label_attr': {'class': 'form-label'}
-                }) 
-            }}
-            
-            <div class="input-group mb-3">
-                {{ form_widget(form.issue, {'attr': {'class': 'form-select'}}) }}
-                <div class="input-group-append ms-2">
-                    <button type="button" class="btn btn-primary" id="btnCreateIssue"
-                        data-pipelineId="{{ item.pipeline.id }}"
-                        data-parentTaskId="{{ item.id }}"
-                    >
-                        {{ 'vs_issue_tracking.template.project_issues.create_issue' | trans( {},'VSIssueTrackingBundle' ) }}
-                    </button>
+    
+        {% if not subTaskId %}
+            <div class="col-lg-12">
+                {{ form_label(form.issue, null, {
+                    'label_attr': {'class': 'form-label'}
+                    }) 
+                }}
+                
+                <div class="input-group mb-3">
+                    {{ form_widget(form.issue, {'attr': {'class': 'form-select'}}) }}
+                    <div class="input-group-append ms-2">
+                        <button type="button" class="btn btn-primary" id="btnCreateIssue"
+                            data-pipelineId="{{ item.pipeline.id }}"
+                            data-parentTaskId="{{ item.id }}"
+                        >
+                            {{ 'vs_issue_tracking.template.project_issues.create_issue' | trans( {},'VSIssueTrackingBundle' ) }}
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!--end col-->
+            <!--end col-->
+        {% endif %}
         
         {#  
         <div class="col-lg-12">
