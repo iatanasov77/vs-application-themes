@@ -83,7 +83,10 @@
                                 <div class="card-body">
                                     <div class="d-flex mb-2">
                                         <h6 class="fs-15 mb-0 flex-grow-1 text-truncate task-title">
-                                            <a href="{{ path( 'vs_issue_tracking_project_issues_kanbanboard_task_show', {'taskId': taskId} ) }}" class="d-block">
+                                            <a class="d-block"
+                                                href="{{ path( 'vs_issue_tracking_project_issues_kanbanboard_task_show', {'taskId': taskId} ) }}"
+                                                data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="{{ task.title }}"
+                                            >
                                                 {{ task.title }}
                                             </a>
                                         </h6>
@@ -252,10 +255,12 @@
     {{ parent() }}
     
     {{ encore_entry_link_tags( 'js/project-issues-board', null, 'VelzonTheme' ) }}
+    {{ encore_entry_link_tags( 'ckeditor5', null, 'VelzonTheme' ) }}
 {% endblock %}
 
 {% block body_scripts %}
     {{ parent() }}
     
     {{ encore_entry_script_tags( 'js/project-issues-board', null, 'VelzonTheme' ) }}
+    {{ encore_entry_script_tags( 'ckeditor5', null, 'VelzonTheme' ) }}
 {% endblock %}
