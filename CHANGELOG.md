@@ -1,3 +1,11 @@
+1.8.0	|	Release date: **19.05.2026**
+============================================
+* New Features:
+  - Add More Fields into Kanbanboard SubTask Form.
+  - Improve Kanbanboard Task Templates.
+  - Improve Edit of Kanbanboard Sub-Task of Task.
+
+
 1.7.14	|	Release date: **13.05.2026**
 ============================================
 * New Features:
