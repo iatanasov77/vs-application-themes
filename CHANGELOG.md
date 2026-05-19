@@ -1,3 +1,9 @@
+1.8.1	|	Release date: **19.05.2026**
+============================================
+* Bug-Fixes and Iprovements:
+  - Improve Views of Kanbanboard Task Forms.
+
+
 1.8.0	|	Release date: **19.05.2026**
 ============================================
 * New Features:
