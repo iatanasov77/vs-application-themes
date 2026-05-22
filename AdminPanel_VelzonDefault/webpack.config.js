@@ -8,6 +8,7 @@ const usersSubscriptionsAssetsPath  = './vendor/vankosoft/users-subscriptions-bu
 const paymentAssetsPath             = './vendor/vankosoft/payment-bundle/lib/Resources/themes/default/assets';
 const catalogAssetsPath             = './vendor/vankosoft/catalog-bundle/lib/Resources/themes/default/assets';
 const issueTrackingAssetsPath       = './vendor/vankosoft/issue-tracking-bundle/lib/Resources/themes/default/assets';
+const vankosoftAgentAssetsPath      = './vendor/vankosoft/agent-bundle/src/Resources/themes/default/assets';
 
 Encore
     .setOutputPath( 'public/admin-panel/build/velzon-theme/' )
@@ -201,6 +202,15 @@ if ( pathExists.sync( issueTrackingAssetsPath ) ) {
         .addEntry( 'js/project-issue-tasks-edit', issueTrackingAssetsPath + '/js/pages/project-issue-tasks-edit.js' )
         .addEntry( 'js/project-issues-board', issueTrackingAssetsPath + '/js/pages/project-issues-board.js' )
         .addEntry( 'js/project-issues-board-task', issueTrackingAssetsPath + '/js/pages/project-issues-board-task.js' )
+    ;
+}
+
+//////////////////////////////////////////////////////////////////
+// Vankosoft Agent Pages
+//////////////////////////////////////////////////////////////////
+if ( pathExists.sync( vankosoftAgentAssetsPath ) ) {
+    Encore
+        .addEntry( 'js/actions-index', vankosoftAgentAssetsPath + '/js/pages/actions-index.js' )
     ;
 }
 
