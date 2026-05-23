@@ -8,7 +8,7 @@ const usersSubscriptionsAssetsPath  = './vendor/vankosoft/users-subscriptions-bu
 const paymentAssetsPath             = './vendor/vankosoft/payment-bundle/lib/Resources/themes/default/assets';
 const catalogAssetsPath             = './vendor/vankosoft/catalog-bundle/lib/Resources/themes/default/assets';
 const issueTrackingAssetsPath       = './vendor/vankosoft/issue-tracking-bundle/lib/Resources/themes/default/assets';
-const vankosoftAgentAssetsPath      = './vendor/vankosoft/agent-bundle/src/Resources/themes/default/assets';
+const vankosoftAgentAssetsPath      = './vendor/vankosoft/agent-bundle/src/Vankosoft/AgentBundle/Resources/themes/default/assets';
 
 Encore
     .setOutputPath( 'public/admin-panel/build/velzon-theme/' )

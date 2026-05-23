@@ -3,11 +3,36 @@
 {# Import Macros #}
 {% import "@VSApplication/Macros/alerts.html.twig" as alerts %}
 
-{% block title %}{{ parent() }} :: {{ 'vs_payment.template.pricing_plans_index_title' | trans( {},'VSPaymentBundle' ) }}{% endblock %}
-{% block pageTitle %}<i class="icon_genius"></i> {{ 'vs_payment.template.pricing_plans_index_title' | trans( {},'VSPaymentBundle' ) }}{% endblock %}
+{% block title %}{{ parent() }} :: {{ 'vs_agent.template.agent_actions_index_title' | trans( {},'VSAgentBundle' ) }}{% endblock %}
+{% block pageTitle %}
+    <h4 class="pageheader-title">
+        <i class="ri-service-fill"></i> 
+        {{ 'vs_payment.template.agent_actions_index_title' | trans( {},'VSAgentBundle' ) }}
+    </h4>
+{% endblock %}
 
 {% block content %}
-
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header align-items-center d-flex">
+                    <h4 class="card-title mb-0 flex-grow-1">
+                        {{ 'vs_payment.template.agent_actions_index_title' | trans( {},'VSAgentBundle' ) }}
+                    </h4>
+                </div><!-- end card header -->
+                <div class="card-body">
+                    <p class="text-muted">Broke Virtual Host Config</p>
+                    <div class="live-preview">
+                        <div class="d-flex flex-wrap gap-2">
+                            <button type="button" class="btn btn-primary waves-effect waves-light" id="btnBrokeVirtualHost">
+                                Broke
+                            </button>
+                        </div>
+                    </div>
+                </div><!-- end card-body -->
+            </div><!-- end card -->
+        </div>
+    </div>
 {% endblock content %}
 
 {% block head_styles %}
