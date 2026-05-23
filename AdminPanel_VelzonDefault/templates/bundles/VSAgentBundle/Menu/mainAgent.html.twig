@@ -28,22 +28,27 @@
             
             <li class="nav-item ">
                 <a class="nav-link menu-link {% if isCurrentParent %}active{% endif %}"
-                    data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#submenu-agent-{{ loop.index }}" aria-controls="submenu-agent-{{ loop.index }}"
+                    data-bs-toggle="collapse"
+                    {% if isCurrentParent %}aria-expanded="true"{% else %}aria-expanded="false"{% endif %}
+                    data-bs-target="#submenu-agent-{{ loop.index }}"
+                    aria-controls="submenu-agent-{{ loop.index }}"
                     href="{{ parentItem.uri }}"
                  >
                     {# <i class="{{ parentItem.attributes.iconClass }}"></i> #}
-                    <span>{{ parentItem.name }}</span>
-                {% if(parentItem.hasChildren) %}
-                    <!--  <span class="menu-arrow arrow_carrot-right"></span> -->
-                {% endif %}
+                    <i class="{{ parentItem.attributes.iconClass }}"></i> 
+                    <span data-key="t-{{ parentItem.name }}">{{ parentItem.name }}</span>
                 </a>
+                
                 {% if(parentItem.hasChildren) %}
-                    <div id="submenu-agent-{{ loop.index }}" class="collapse submenu" style="">
-                        <ul class="nav flex-column">
+                    <div class="collapse menu-dropdown {% if isCurrentParent %}show{% endif %}" id="submenu-agent-{{ loop.index }}">
+                        <ul class="nav nav-sm flex-column">
                             {% for childItem in parentItem.children %}
                                 {% if( childItem.displayed ) %}
                                     <li class="nav-item">
-                                        <a class="nav-link main-menu-button {% if childItem.isCurrent %}main-menu-current-item{% endif %}" href="{{ childItem.uri }}">
+                                        <a class="nav-link {% if childItem.isCurrent %}active{% endif %}"
+                                            data-key="t-{{ childItem.name }}"
+                                            href="{{ childItem.uri }}"
+                                        >
                                             {{ childItem.name }}
                                         </a>
                                     </li>
@@ -54,9 +59,7 @@
                 {% endif %}
             </li>
         {% endif %}
+        
     {% endfor %}
     
-    {% if hasChilds %}
-        <li class="nav-divider"><hr /></li>
-    {% endif %}
 {% endblock %}
