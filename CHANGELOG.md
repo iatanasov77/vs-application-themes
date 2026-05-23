@@ -1,3 +1,11 @@
+1.8.2	|	Release date: **23.05.2026**
+============================================
+* New Features:
+  - Add Vankosoft Agent Menu.
+  - Add Templates for VSAgentBundle .
+  - Create a Form to Send Path to Virtual Host.
+
+
 1.8.1	|	Release date: **19.05.2026**
 ============================================
 * Bug-Fixes and Iprovements:
