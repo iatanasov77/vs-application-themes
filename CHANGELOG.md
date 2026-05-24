@@ -1,3 +1,9 @@
+1.8.3	|	Release date: **24.05.2026**
+============================================
+* New Features:
+  - Add ID Attribute of Div that contains Alerts.
+
+
 1.8.2	|	Release date: **23.05.2026**
 ============================================
 * New Features:
