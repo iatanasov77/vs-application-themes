@@ -21,6 +21,7 @@
                     </h4>
                 </div><!-- end card header -->
                 <div class="card-body">
+                
                     <p class="text-muted">
                         {{ 'vs_agent.template.broke_virtual_host_config' | trans( {},'VSAgentBundle' ) }}
                         
@@ -28,6 +29,15 @@
                             {{ 'vs_agent.template.broke' | trans( {},'VSAgentBundle' ) }}
                         </button>
                     </p>
+                    
+                    <p class="text-muted">
+                        {{ 'vs_agent.template.delete_vankosoft_application' | trans( {},'VSAgentBundle' ) }}
+                        
+                        <button type="button" class="btn btn-primary waves-effect waves-light ms-4" id="btnShowVankosoftApplicationsForm">
+                            {{ 'vs_agent.template.broke' | trans( {},'VSAgentBundle' ) }}
+                        </button>
+                    </p>
+                    
                 </div><!-- end card-body -->
             </div><!-- end card -->
         </div>
