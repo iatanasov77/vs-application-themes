@@ -1,3 +1,9 @@
+1.8.4	|	Release date: **14.06.2026**
+============================================
+* New Features:
+  - Update Agent Bundle Themes.
+
+
 1.8.3	|	Release date: **24.05.2026**
 ============================================
 * New Features:
