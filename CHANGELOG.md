@@ -1,3 +1,9 @@
+1.8.5	|	Release date: **16.06.2026**
+============================================
+* New Features:
+  - Debug Registration Form Create Account Option.
+
+
 1.8.4	|	Release date: **14.06.2026**
 ============================================
 * New Features:
