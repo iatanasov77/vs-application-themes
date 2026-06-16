@@ -46,7 +46,7 @@
                                     <a href="{{ path( 'vs_users_forgot_password_form' ) }}" class="text-muted me-2" tabindex="-1">
                                         {{ 'vs_application.form.login.forgot_password_question' | trans( {},'VSApplicationBundle' ) }}
                                     </a>
-                                    {{ dump( formCreateAccount ) }}
+                                    
                                     {% if formCreateAccount %}
                                         <a href="{{ path( 'vs_users_register_form' ) }}" class="text-secondary" tabindex="-1">
                                             {{ 'vs_application.form.login.button_register' | trans( {},'VSApplicationBundle' ) }}
