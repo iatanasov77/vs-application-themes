@@ -1,3 +1,10 @@
+1.8.6	|	Release date: **19.06.2026**
+============================================
+* New Features:
+  - Fix Some Wrong Paths in Quick Links Categories Page.
+  - Make Quick Links in Category Reordable.
+
+
 1.8.5	|	Release date: **16.06.2026**
 ============================================
 * New Features:
