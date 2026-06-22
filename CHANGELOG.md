@@ -1,3 +1,9 @@
+1.8.7	|	Release date: **22.06.2026**
+============================================
+* New Features:
+  - Improve Create a Quick Link.
+
+
 1.8.6	|	Release date: **19.06.2026**
 ============================================
 * New Features:
