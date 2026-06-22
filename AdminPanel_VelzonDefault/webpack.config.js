@@ -120,10 +120,13 @@ Encore
     
     .addEntry( 'js/helpcenter-questions', applicationAssetsPath + '/js/pages/helpcenter-questions.js' )
     .addEntry( 'js/helpcenter-questions-edit', applicationAssetsPath + '/js/pages/helpcenter-questions-edit.js' )
+    
     .addEntry( 'js/quick-links-categories', applicationAssetsPath + '/js/pages/quick-links-categories.js' )
     .addEntry( 'js/quick-links-categories-edit', applicationAssetsPath + '/js/pages/quick-links-categories-edit.js' )
     .addEntry( 'js/quick-links', applicationAssetsPath + '/js/pages/quick-links.js' )
     .addEntry( 'js/quick-links-edit', applicationAssetsPath + '/js/pages/quick-links-edit.js' )
+    .addEntry( 'js/quick-link-modal', applicationAssetsPath + '/js/pages/quick-link-modal.js' )
+    
     .addEntry( 'js/sliders', applicationAssetsPath + '/js/pages/sliders.js' )
     .addEntry( 'js/sliders-edit', applicationAssetsPath + '/js/pages/sliders-edit.js' )
     .addEntry( 'js/sliders-items', applicationAssetsPath + '/js/pages/sliders-items.js' )
