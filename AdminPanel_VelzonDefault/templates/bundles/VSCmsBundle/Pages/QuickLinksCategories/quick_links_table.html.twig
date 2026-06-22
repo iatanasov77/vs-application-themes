@@ -9,7 +9,7 @@
             <a class="btn btn-primary btnQuickLink" id="btnQuickLink" 
                 title="{{ 'vs_cms.template.button_quick_link_create' | trans( {},'VSCmsBundle' ) }}" 
                 href="javascript:void(0);"
-                data-placeId="{{ item.id }}"
+                data-quickLinkId="{{ item.id }}"
                 data-itemId="0"
             >
                 {{ 'vs_cms.template.button_quick_link_create' | trans( {},'VSCmsBundle' ) }}
@@ -46,7 +46,7 @@
                             <td>
                                 <a href="javascript:void(0);"
                                    class="btn btn-primary btnQuickLink"
-                                   data-placeId="{{ item.id }}"
+                                   data-quickLinkId="{{ item.id }}"
                                    data-itemId="{{ quickLink.id }}"
                                    title="{{ 'vs_application.template.items_index_row_action_edit' | trans( {},'VSApplicationBundle' ) }}"
                                 >

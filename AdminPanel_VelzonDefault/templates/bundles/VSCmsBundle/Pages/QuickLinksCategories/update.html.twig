@@ -31,14 +31,22 @@
     {% include '@VSApplication/Partial/resource-delete.html.twig' %}
 {% endblock %}
 
+{% block modals %}
+    {{ parent() }}
+
+    {% include '@VSCms/Modals/quick_link_edit.html.twig' %}
+{% endblock %}
+
 {% block head_styles %}
     {{ parent() }}
     
     {{ encore_entry_link_tags( 'js/quick-links-categories-edit', null, 'VelzonTheme' ) }}
+    {{ encore_entry_link_tags( 'js/quick-link-modal', null, 'VelzonTheme' ) }}
 {% endblock %}
 
 {% block body_scripts %}
     {{ parent() }}
     
     {{ encore_entry_script_tags( 'js/quick-links-categories-edit', null, 'VelzonTheme' ) }}
+    {{ encore_entry_script_tags( 'js/quick-link-modal', null, 'VelzonTheme' ) }}
 {% endblock %}
