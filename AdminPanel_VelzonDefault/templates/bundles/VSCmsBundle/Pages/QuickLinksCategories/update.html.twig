@@ -35,10 +35,12 @@
     {{ parent() }}
     
     {{ encore_entry_link_tags( 'js/quick-links-categories-edit', null, 'VelzonTheme' ) }}
+    {{ encore_entry_link_tags( 'js/quick-link-modal', null, 'VelzonTheme' ) }}
 {% endblock %}
 
 {% block body_scripts %}
     {{ parent() }}
     
     {{ encore_entry_script_tags( 'js/quick-links-categories-edit', null, 'VelzonTheme' ) }}
+    {{ encore_entry_script_tags( 'js/quick-link-modal', null, 'VelzonTheme' ) }}
 {% endblock %}
