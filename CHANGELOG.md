@@ -1,3 +1,9 @@
+1.8.8	|	Release date: **27.06.2026**
+============================================
+* New Features:
+  - Not VS Agent Menue if Agent is not enabled.
+
+
 1.8.7	|	Release date: **22.06.2026**
 ============================================
 * New Features:
